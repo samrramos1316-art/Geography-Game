@@ -32,16 +32,23 @@
   // country's name is only revealed once the shape question has been answered.
   const QUESTION_ORDER = ['shape', 'location', 'capital', 'flag', 'population', 'government', 'language'];
   const COUNTS = [10, 25, 50, 75, 100, 150];
-  // Continents a player can focus on (the dataset's "Americas" is split in two).
+  // Regions a player can focus on, built from the dataset's UN subregions.
+  // view: [[west, south], [east, north]] in degrees, the part of the map to frame.
+  const sub = (...names) => (c) => names.includes(c.subregion);
   const REGIONS = [
-    // view: [[west, south], [east, north]] in degrees, the part of the map to frame.
     { key: 'Africa', match: (c) => c.region === 'Africa', view: [[-26, -36], [60, 38]] },
-    { key: 'Asia', match: (c) => c.region === 'Asia', view: [[25, -11], [150, 55]] },
+    { key: 'Central America & Caribbean', match: sub('Central America', 'Caribbean'), view: [[-93, 6], [-59, 27]] },
+    { key: 'Central Asia', match: sub('Central Asia'), view: [[45, 35], [88, 56]] },
+    { key: 'East Asia', match: sub('Eastern Asia'), view: [[72, 18], [146, 54]] },
     { key: 'Europe', match: (c) => c.region === 'Europe', view: [[-25, 34], [45, 71]] },
-    { key: 'North America', match: (c) => c.region === 'Americas' && c.subregion !== 'South America', view: [[-140, 6], [-52, 70]] },
-    { key: 'South America', match: (c) => c.subregion === 'South America', view: [[-82, -56], [-34, 13]] },
+    // Iran is usually thought of as Middle Eastern, though the UN lists it under Southern Asia.
+    { key: 'Middle East / West Asia', match: (c) => c.subregion === 'Western Asia' || c.id === 'IRN', view: [[25, 11], [64, 43]] },
+    { key: 'North America', match: sub('North America'), view: [[-140, 14], [-52, 70]] },
     // Oceania straddles the antimeridian, so it gets the whole-world view.
     { key: 'Oceania', match: (c) => c.region === 'Oceania', view: null },
+    { key: 'South America', match: sub('South America'), view: [[-82, -56], [-34, 13]] },
+    { key: 'South Asia', match: (c) => c.subregion === 'Southern Asia' && c.id !== 'IRN', view: [[58, -2], [98, 38]] },
+    { key: 'Southeast Asia', match: sub('South-Eastern Asia'), view: [[92, -11], [142, 29]] },
   ];
   for (const c of COUNTRIES) c.continent = REGIONS.find((r) => r.match(c)).key;
   const catTitle = (key) => CATEGORIES.find((c) => c.key === key).title;
@@ -500,7 +507,7 @@
     $('#select-all').textContent = setup.cats.size === CATEGORIES.length ? 'Clear' : 'Select all';
     const q = setup.cats.size * total;
     $('#setup-summary').innerHTML = setup.cats.size
-      ? `<strong>${total}</strong> ${setup.regions.size ? [...setup.regions].join(' & ') : ''} countries × <strong>${setup.cats.size}</strong> topic${setup.cats.size > 1 ? 's' : ''} = <strong>${q}</strong> questions`
+      ? `<strong>${total}</strong> ${setup.regions.size === 1 ? [...setup.regions][0] + ' ' : ''}countries${setup.regions.size > 1 ? ` from <strong>${setup.regions.size}</strong> regions` : ''} × <strong>${setup.cats.size}</strong> topic${setup.cats.size > 1 ? 's' : ''} = <strong>${q}</strong> questions`
       : 'Pick at least one topic to begin.';
     $('#start-btn').disabled = setup.cats.size === 0;
     // Preview the chosen regions on the map behind the setup card.
