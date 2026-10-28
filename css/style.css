@@ -39,7 +39,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
 #map { width: 100%; height: 100%; display: block; touch-action: none; cursor: grab; }
 #map:active { cursor: grabbing; }
 .sphere { fill: url(#ocean-grad); stroke: rgba(160, 200, 240, 0.18); stroke-width: 1; vector-effect: non-scaling-stroke; }
-.graticule { fill: none; stroke: rgba(160, 200, 240, 0.07); stroke-width: 0.6; vector-effect: non-scaling-stroke; }
+.graticule { pointer-events: none; fill: none; stroke: rgba(160, 200, 240, 0.07); stroke-width: 0.6; vector-effect: non-scaling-stroke; }
 .country {
   fill: var(--land);
   stroke: var(--border);
@@ -437,20 +437,30 @@ h1 em { font-style: italic; color: var(--ink-soft); font-weight: 600; }
 .perfect { padding: 14px; border-radius: 14px; background: rgba(61, 220, 151, 0.1); border: 1px solid rgba(61, 220, 151, 0.3); margin-bottom: 24px; font-weight: 600; }
 
 /* ---------- Responsive ---------- */
-@media (max-width: 860px) {
-  .topbar { padding: 10px 12px; }
+html, body, button { touch-action: manipulation; }
+.hud-label { white-space: nowrap; }
+@media (hover: none) {
+  .kbd, .key-hint { display: none; }
+}
+
+/* Phones & small tablets in portrait: the question panel becomes a bottom sheet. */
+@media (max-width: 860px) and (orientation: portrait) {
+  .panel {
+    left: 10px; right: 10px; top: auto; bottom: calc(10px + env(safe-area-inset-bottom));
+    width: auto;
+    max-height: 58%;
+  }
+  .map-controls { right: 12px; bottom: auto; top: 76px; }
+}
+
+@media (max-width: 860px), (max-height: 520px) {
   .brand-name { display: none; }
+  .topbar { padding: 10px 12px; }
   .hud { gap: 10px; padding: 6px 8px 6px 12px; flex: 1; justify-content: space-between; }
-  .hud-progress { width: auto; flex: 1; }
+  .hud-progress { width: auto; flex: 1; min-width: 0; }
   .hud-stat { min-width: 34px; }
   .hud-stat-value { font-size: 15px; }
   .ghost-btn { padding: 7px 10px; }
-  .panel {
-    left: 10px; right: 10px; top: auto; bottom: 10px;
-    width: auto;
-    max-height: 62%;
-  }
-  .panel.compact { max-height: none; }
   .panel-head { padding: 14px 16px 0; }
   .panel-body { padding: 12px 16px 6px; }
   .panel-foot { padding: 6px 16px 14px; }
@@ -458,7 +468,6 @@ h1 em { font-style: italic; color: var(--ink-soft); font-weight: 600; }
   .shape-box { height: 140px; margin-bottom: 12px; }
   .option { padding: 11px 12px; font-size: 14px; }
   .flag-option img { aspect-ratio: 16 / 10; }
-  .map-controls { right: 12px; bottom: auto; top: 76px; }
   .icon-btn { width: 38px; height: 38px; }
   .category-grid { grid-template-columns: 1fr 1fr; }
   .setup-card, .results-card { padding: 26px 20px 22px; }
@@ -467,6 +476,43 @@ h1 em { font-style: italic; color: var(--ink-soft); font-weight: 600; }
   .bd-row { grid-template-columns: 110px 1fr 56px; font-size: 13px; }
   .overlay { padding: 70px 12px 16px; place-items: start center; }
 }
-@media (max-width: 380px) {
-  .category-grid { grid-template-columns: 1fr; }
+
+@media (max-width: 480px) {
+  h1 { margin-bottom: 20px; }
+  .step { margin-bottom: 20px; }
+  .step-head h2 { font-size: 15px; }
+  .category-grid { gap: 8px; }
+  .cat { padding: 12px; gap: 6px; }
+  .cat .cat-icon { width: 32px; height: 32px; border-radius: 10px; }
+  .cat-title { font-size: 13.5px; padding-right: 18px; }
+  .cat-desc { display: none; }
+  .cat .check { top: 10px; right: 10px; width: 18px; height: 18px; }
+  .count-row { gap: 8px; }
+  .count { min-width: 0; flex: 1 0 calc(25% - 8px); padding: 10px 6px; }
+  .hud-word { display: none; }
+  .hud-stat-label { font-size: 9px; }
+  .q-hint { font-size: 12px; }
+}
+
+/* Short landscape screens (phones turned sideways): narrow side panel. */
+@media (max-height: 520px) and (orientation: landscape) {
+  :root { --panel-w: 300px; }
+  .topbar { padding: 8px 12px; }
+  .hud { padding: 5px 8px 5px 12px; }
+  .panel { left: calc(10px + env(safe-area-inset-left)); top: 62px; max-height: calc(100% - 72px); }
+  .panel-head { padding: 12px 14px 0; }
+  .panel-body { padding: 10px 14px 4px; }
+  .panel-foot { padding: 4px 14px 12px; }
+  .q-kind { margin-bottom: 4px; }
+  .q-text { font-size: 18px; margin-bottom: 10px; }
+  .q-hint { display: none; }
+  .shape-box { height: 110px; margin-bottom: 10px; }
+  .options { gap: 7px; }
+  .option { padding: 8px 10px; font-size: 13.5px; }
+  .flag-option img { aspect-ratio: 2 / 1; }
+  .feedback { margin-top: 10px; padding: 9px 11px; font-size: 13px; }
+  .primary-btn { padding: 11px 18px; }
+  .map-controls { right: calc(12px + env(safe-area-inset-right)); bottom: 12px; }
+  .icon-btn { width: 36px; height: 36px; }
+  .locate-tip { display: none; }
 }

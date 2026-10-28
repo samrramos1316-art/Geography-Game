@@ -53,6 +53,7 @@
     return r.toLocaleString('en-US');
   };
   const flagUrl = (c) => `flags/${c.iso2}.svg`;
+  const IS_TOUCH = window.matchMedia('(hover: none)').matches;
 
   // Countries "similar" to c (same subregion first, then region, then anywhere) whose
   // key value differs from c's and from each other — used for plausible distractors.
@@ -220,7 +221,7 @@
 
   function updateScaled() {
     const k = currentK;
-    markers.attr('r', markerRadius / Math.max(k, 1)).classed('hidden', (d) => d.area * k * k > 260);
+    markers.attr('r', (IS_TOUCH ? markerRadius * 1.3 : markerRadius) / Math.max(k, 1)).classed('hidden', (d) => d.area * k * k > 260);
     pulseLayer.selectAll('circle').attr('r', 12 / k);
     labelLayer
       .selectAll('text')
@@ -254,7 +255,8 @@
     const panel = $('#panel');
     if (panel.hidden) return { x: 0, y: top, w: W, h: H - top };
     const r = panel.getBoundingClientRect();
-    if (W > 860) return { x: r.right + 12, y: top, w: Math.max(200, W - r.right - 24), h: H - top - 12 };
+    const bottomSheet = r.width > W * 0.7;
+    if (!bottomSheet) return { x: r.right + 12, y: top, w: Math.max(160, W - r.right - 24), h: H - top - 12 };
     return { x: 0, y: top, w: W, h: Math.max(140, r.top - top - 8) };
   }
 
@@ -270,7 +272,18 @@
   }
 
   function zoomWorld(duration = 900) {
-    zoomToBounds(path.bounds({ type: 'Sphere' }), { padding: 0.98, maxK: 1, duration });
+    const [[x0, y0], [x1, y1]] = path.bounds({ type: 'Sphere' });
+    const fr = freeRect();
+    // On tall, narrow screens a width-fitted world is a thin strip: zoom in (up to 1.7×)
+    // towards filling the available height, cropping the far east and west.
+    const fitW = fr.w / (x1 - x0);
+    const fitH = fr.h / (y1 - y0);
+    const boost = fr.w < 600 ? Math.min(1.7, Math.max(1, fitH / fitW)) : 1;
+    const k = Math.max(0.4, Math.min(fitW * 0.98, fitH * 0.98, 1) * boost);
+    const cx = (x0 + x1) / 2;
+    const cy = (y0 + y1) / 2;
+    const t = d3.zoomIdentity.translate(fr.x + fr.w / 2 - k * cx, fr.y + fr.h / 2 - k * cy).scale(k);
+    svg.transition().duration(duration).ease(d3.easeCubicInOut).call(zoom.transform, t);
   }
 
   function zoomToCountry(id, duration) {
@@ -343,7 +356,7 @@
   function bindHover(sel, featureOf) {
     sel
       .on('mousemove', (event, d) => {
-        if (namesHidden || !$('#setup').hidden) return (tooltip.hidden = true);
+        if (IS_TOUCH || namesHidden || !$('#setup').hidden) return (tooltip.hidden = true);
         tooltip.textContent = featureOf(d).displayName;
         tooltip.style.left = event.clientX + 'px';
         tooltip.style.top = event.clientY + 'px';
@@ -355,6 +368,20 @@
       });
   }
   bindHover(countryPaths, (d) => d);
+  // A tap on open water just next to a tiny country (a dot on the map) counts as that
+  // country — fingers are much bigger than Tuvalu.
+  spherePath.on('click', (event) => {
+    if (!mapClickHandler) return;
+    const t = d3.zoomTransform(svg.node());
+    const [px, py] = d3.pointer(event, svg.node());
+    let best = null;
+    let bestDist = IS_TOUCH ? 22 : 12;
+    for (const d of markerData) {
+      const dist = Math.hypot(t.applyX(d.xy[0]) - px, t.applyY(d.xy[1]) - py);
+      if (dist < bestDist) [best, bestDist] = [d, dist];
+    }
+    if (best) mapClickHandler(best.f, event);
+  });
 
   $('#zoom-in').addEventListener('click', () => svg.transition().duration(350).call(zoom.scaleBy, 1.6));
   $('#zoom-out').addEventListener('click', () => svg.transition().duration(350).call(zoom.scaleBy, 1 / 1.6));
@@ -465,7 +492,7 @@
   function updateHud() {
     const total = game.countries.length * game.steps.length;
     const done = game.results.length;
-    $('#hud-country').textContent = `Country ${Math.min(game.ci + 1, game.countries.length)} / ${game.countries.length}`;
+    $('#hud-country').innerHTML = `<span class="hud-word">Country </span>${Math.min(game.ci + 1, game.countries.length)} / ${game.countries.length}`;
     $('#progress-fill').style.width = `${(done / total) * 100}%`;
     $('#hud-score').textContent = game.score;
     $('#hud-streak').textContent = game.streak;
@@ -540,8 +567,8 @@
         body.innerHTML = questionHeader(kind, 'Which country has this shape?') + `<div class="shape-box">${shapeSvg(c)}</div>` + optionsHtml(q);
         break;
       case 'location':
-        body.innerHTML = questionHeader(kind, `Where is ${name}?`, 'Click the country on the map. Tiny countries are shown as dots — zoom in for a closer look.');
-        foot.innerHTML = `<div class="locate-actions"><p class="locate-tip">Scroll or pinch to zoom · drag to pan</p><button class="ghost-btn" id="skip-btn">I don't know</button></div>`;
+        body.innerHTML = questionHeader(kind, `Where is ${name}?`, `${IS_TOUCH ? 'Tap' : 'Click'} the country on the map. Tiny countries are shown as dots.`);
+        foot.innerHTML = `<div class="locate-actions"><p class="locate-tip">${IS_TOUCH ? 'Pinch to zoom · drag to pan' : 'Scroll to zoom · drag to pan'}</p><button class="ghost-btn" id="skip-btn">I don't know</button></div>`;
         $('#skip-btn').addEventListener('click', () => answerLocation(null));
         mapClickHandler = (f) => answerLocation(f);
         break;
