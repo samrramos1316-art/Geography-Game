@@ -13,8 +13,11 @@ An interactive, map-based geography quiz covering all **198 countries**
    - Population (rounded to 2 significant figures)
    - System of government
    - Official language
-2. **Pick how many countries** – 10, 25, 50, 75, 100, 150 or All (198).
-3. For each country the selected questions are asked in this order:
+2. **Pick a part of the world** – the whole world, or any mix of Africa, Asia, Europe,
+   North America, South America and Oceania. The map frames that region and dims the rest.
+3. **Pick how many countries** – 10, 25, 50, 75, 100, 150 or All (only counts that fit
+   the chosen regions are offered).
+4. For each country the selected questions are asked in this order:
    **shape → location → capital → flag → population → government → language**.
    Shape always comes first because the country's name stays hidden until it's answered.
 

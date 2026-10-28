@@ -31,7 +31,19 @@
   // The order questions are asked in for each country. Shape comes first because the
   // country's name is only revealed once the shape question has been answered.
   const QUESTION_ORDER = ['shape', 'location', 'capital', 'flag', 'population', 'government', 'language'];
-  const COUNTS = [10, 25, 50, 75, 100, 150, COUNTRIES.length];
+  const COUNTS = [10, 25, 50, 75, 100, 150];
+  // Continents a player can focus on (the dataset's "Americas" is split in two).
+  const REGIONS = [
+    // view: [[west, south], [east, north]] in degrees, the part of the map to frame.
+    { key: 'Africa', match: (c) => c.region === 'Africa', view: [[-26, -36], [60, 38]] },
+    { key: 'Asia', match: (c) => c.region === 'Asia', view: [[25, -11], [150, 55]] },
+    { key: 'Europe', match: (c) => c.region === 'Europe', view: [[-25, 34], [45, 71]] },
+    { key: 'North America', match: (c) => c.region === 'Americas' && c.subregion !== 'South America', view: [[-140, 6], [-52, 70]] },
+    { key: 'South America', match: (c) => c.subregion === 'South America', view: [[-82, -56], [-34, 13]] },
+    // Oceania straddles the antimeridian, so it gets the whole-world view.
+    { key: 'Oceania', match: (c) => c.region === 'Oceania', view: null },
+  ];
+  for (const c of COUNTRIES) c.continent = REGIONS.find((r) => r.match(c)).key;
   const catTitle = (key) => CATEGORIES.find((c) => c.key === key).title;
 
   // ---------------------------------------------------------------------------
@@ -211,11 +223,18 @@
   }
   const featureById = new Map(features.filter((f) => f.country).map((f) => [f.id, f]));
 
+  // Regions being studied (empty = whole world); countries outside them are dimmed.
+  let focusRegions = new Set();
+  const inFocus = (f) => !!f.country && (!focusRegions.size || focusRegions.has(f.country.continent));
+  function baseClass(f) {
+    return 'country' + (inFocus(f) ? '' : ' inactive');
+  }
+
   const countryPaths = countryLayer
     .selectAll('path')
     .data(features)
     .join('path')
-    .attr('class', (f) => 'country' + (f.country ? '' : ' inactive'));
+    .attr('class', baseClass);
 
   let markerData = [];
   let markers = markerLayer.selectAll('circle');
@@ -305,6 +324,16 @@
 
   function zoomWorld(duration = 900) {
     const [[x0, y0], [x1, y1]] = path.bounds({ type: 'Sphere' });
+    const views = REGIONS.filter((r) => focusRegions.has(r.key)).map((r) => r.view);
+    if (views.length && views.every(Boolean)) {
+      // Frame the studied regions: project points along each box's edges.
+      const pts = views.flatMap(([[w, so], [e, n]]) =>
+        d3.range(0, 1.0001, 0.125).flatMap((t) => [[w + (e - w) * t, so], [w + (e - w) * t, n], [w, so + (n - so) * t], [e, so + (n - so) * t]])
+      ).map((p) => projection(p));
+      const b = [[d3.min(pts, (p) => p[0]), d3.min(pts, (p) => p[1])], [d3.max(pts, (p) => p[0]), d3.max(pts, (p) => p[1])]];
+      zoomToBounds(b, { duration, maxK: 8, padding: 1 });
+      return;
+    }
     const fr = freeRect();
     // On tall, narrow screens a width-fitted world is a thin strip: zoom in (up to 1.7×)
     // towards filling the available height, cropping the far east and west.
@@ -340,14 +369,14 @@
     syncMarkerClasses();
   }
   function syncMarkerClasses() {
-    markers.attr('class', (d) => 'marker ' + (mapState.get(d.f) || ''));
+    markers.attr('class', (d) => 'marker ' + (mapState.get(d.f) || (inFocus(d.f) ? '' : 'off')));
   }
   // Pulses and labels, kept as data so they can be re-projected on resize.
   let pulses = [];
   let labels = [];
   function clearMap() {
     mapState.clear();
-    countryPaths.attr('class', (f) => 'country' + (f.country ? '' : ' inactive'));
+    countryPaths.attr('class', baseClass);
     syncMarkerClasses();
     pulses = [];
     labels = [];
@@ -437,9 +466,20 @@
   const setup = {
     cats: new Set(['location', 'capital', 'flag']),
     count: 25,
+    regions: new Set(),
   };
 
+  const setupPool = () => COUNTRIES.filter((c) => !setup.regions.size || setup.regions.has(c.continent));
+
   function renderSetup() {
+    const pool = setupPool();
+    const regionCount = (key) => COUNTRIES.filter((c) => c.continent === key).length;
+    $('#region-row').innerHTML =
+      `<button class="count region" data-region="" aria-pressed="${!setup.regions.size}">Whole world<small>${COUNTRIES.length}</small></button>` +
+      REGIONS.map(
+        (r) => `<button class="count region" data-region="${r.key}" aria-pressed="${setup.regions.has(r.key)}">${r.key}<small>${regionCount(r.key)}</small></button>`
+      ).join('');
+    const total = Math.min(setup.count, pool.length);
     const order = QUESTION_ORDER.filter((k) => setup.cats.has(k));
     $('#category-grid').innerHTML = CATEGORIES.map((c) => {
       const on = setup.cats.has(c.key);
@@ -452,16 +492,36 @@
         <span class="order">${on ? 'Q' + n : ''}</span>
       </button>`;
     }).join('');
-    $('#count-row').innerHTML = COUNTS.map(
-      (n) => `<button class="count" data-count="${n}" aria-pressed="${setup.count === n}">${n === COUNTRIES.length ? `All<small>${n}</small>` : n}</button>`
-    ).join('');
+    $('#count-row').innerHTML =
+      COUNTS.filter((n) => n < pool.length)
+        .map((n) => `<button class="count" data-count="${n}" aria-pressed="${setup.count === n}">${n}</button>`)
+        .join('') +
+      `<button class="count" data-count="all" aria-pressed="${setup.count >= pool.length}">All<small>${pool.length}</small></button>`;
     $('#select-all').textContent = setup.cats.size === CATEGORIES.length ? 'Clear' : 'Select all';
-    const q = setup.cats.size * setup.count;
+    const q = setup.cats.size * total;
     $('#setup-summary').innerHTML = setup.cats.size
-      ? `<strong>${setup.count}</strong> countries × <strong>${setup.cats.size}</strong> topic${setup.cats.size > 1 ? 's' : ''} = <strong>${q}</strong> questions`
+      ? `<strong>${total}</strong> ${setup.regions.size ? [...setup.regions].join(' & ') : ''} countries × <strong>${setup.cats.size}</strong> topic${setup.cats.size > 1 ? 's' : ''} = <strong>${q}</strong> questions`
       : 'Pick at least one topic to begin.';
     $('#start-btn').disabled = setup.cats.size === 0;
+    // Preview the chosen regions on the map behind the setup card.
+    focusRegions = new Set(setup.regions);
+    if (!game) {
+      countryPaths.attr('class', baseClass);
+      syncMarkerClasses();
+      zoomWorld(600);
+    }
   }
+
+  $('#region-row').addEventListener('click', (e) => {
+    const b = e.target.closest('[data-region]');
+    if (!b) return;
+    const k = b.dataset.region;
+    if (!k) setup.regions.clear();
+    else if (setup.regions.has(k)) setup.regions.delete(k);
+    else setup.regions.add(k);
+    if (setup.regions.size === REGIONS.length) setup.regions.clear();
+    renderSetup();
+  });
 
   $('#category-grid').addEventListener('click', (e) => {
     const b = e.target.closest('[data-cat]');
@@ -473,7 +533,7 @@
   $('#count-row').addEventListener('click', (e) => {
     const b = e.target.closest('[data-count]');
     if (!b) return;
-    setup.count = Number(b.dataset.count);
+    setup.count = b.dataset.count === 'all' ? Infinity : Number(b.dataset.count);
     renderSetup();
   });
   $('#select-all').addEventListener('click', () => {
@@ -481,7 +541,7 @@
     else CATEGORIES.forEach((c) => setup.cats.add(c.key));
     renderSetup();
   });
-  $('#start-btn').addEventListener('click', () => startGame(shuffle(COUNTRIES).slice(0, setup.count)));
+  $('#start-btn').addEventListener('click', () => startGame(shuffle(setupPool()).slice(0, setup.count)));
 
   // ---------------------------------------------------------------------------
   // Game
@@ -489,6 +549,7 @@
   let game = null;
 
   function startGame(countries) {
+    focusRegions = new Set(setup.regions);
     game = {
       countries,
       steps: QUESTION_ORDER.filter((k) => setup.cats.has(k)),
@@ -860,7 +921,7 @@
       })
     );
     const steps = game.steps;
-    $('#again-btn').addEventListener('click', () => startGame(shuffle(COUNTRIES).slice(0, setup.count)));
+    $('#again-btn').addEventListener('click', () => startGame(shuffle(setupPool()).slice(0, setup.count)));
     $('#setup-btn').addEventListener('click', backToSetup);
     if (missedCountries.length) {
       $('#retry-btn').addEventListener('click', () => {

@@ -47,7 +47,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
   vector-effect: non-scaling-stroke;
   transition: fill 0.25s ease;
 }
-.country.inactive { fill: #1d3048; }
+.country.inactive { fill: #172539; stroke: rgba(170, 205, 235, 0.14); }
 .map-interactive .country:not(.inactive):hover,
 .map-interactive .marker:hover { fill: var(--land-hover); }
 .country.target { fill: var(--accent); stroke: #fff3d6; }
@@ -61,6 +61,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
   transition: fill 0.25s ease, opacity 0.3s ease;
 }
 .marker.hidden { opacity: 0; pointer-events: none; }
+.marker.off { opacity: 0.2; pointer-events: none; }
 .marker.target { fill: var(--accent); }
 .marker.correct { fill: var(--good); }
 .marker.wrong { fill: var(--bad); }
@@ -269,6 +270,8 @@ h1 em { font-style: italic; color: var(--ink-soft); font-weight: 600; }
 .count:hover { background: rgba(255, 255, 255, 0.07); }
 .count[aria-pressed="true"] { background: var(--ink); color: #0a1626; border-color: var(--ink); }
 .count small { font-weight: 600; opacity: 0.7; margin-left: 4px; }
+.count.region { font-weight: 600; }
+.count.region[aria-pressed="true"] { background: linear-gradient(135deg, var(--accent), var(--accent-2)); border-color: transparent; color: #22160a; }
 
 .setup-footer { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-top: 6px; border-top: 1px solid var(--glass-line); margin-top: 6px; padding-top: 22px; }
 .setup-summary { margin: 0; color: var(--ink-soft); font-size: 14px; }
@@ -490,6 +493,8 @@ html, body, button { touch-action: manipulation; }
   .cat .check { top: 10px; right: 10px; width: 18px; height: 18px; }
   .count-row { gap: 8px; }
   .count { min-width: 0; flex: 1 0 calc(25% - 8px); padding: 10px 6px; }
+  .count.region { flex: 1 0 calc(50% - 8px); }
+  .count.region:first-child { flex-basis: 100%; }
   .hud-word { display: none; }
   .hud-stat-label { font-size: 9px; }
   .q-hint { font-size: 12px; }
