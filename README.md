@@ -12,9 +12,10 @@ An interactive, map-based geography quiz covering all **198 countries**
    - Country shape
    - Population (rounded to 2 significant figures)
    - System of government
+   - Official language
 2. **Pick how many countries** – 10, 25, 50, 75, 100, 150 or All (198).
 3. For each country the selected questions are asked in this order:
-   **shape → location → capital → flag → population → government**.
+   **shape → location → capital → flag → population → government → language**.
    Shape always comes first because the country's name stays hidden until it's answered.
 
 The world map stays on screen the whole time: you can zoom (scroll / pinch / buttons)
@@ -40,7 +41,7 @@ npm run serve        # http://localhost:8080
 | Borders & shapes | [Natural Earth](https://www.naturalearthdata.com/) via `world-atlas` (1:50m; Tuvalu from 1:10m) |
 | Names, capitals, regions | `world-countries` (with a few display tweaks) |
 | Flags | `flag-icons` |
-| Population & government | `scripts/country-facts.mjs` (hand-maintained, ≈2025 estimates) |
+| Population, government & official languages | `scripts/country-facts.mjs` (hand-maintained, ≈2025 estimates) |
 
 Generated files (`data/`, `flags/`, `vendor/`) are committed. To regenerate them
 after editing `scripts/country-facts.mjs`:

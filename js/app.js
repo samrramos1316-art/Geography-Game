@@ -14,6 +14,7 @@
     flag: '<svg viewBox="0 0 24 24" width="20" height="20"><path d="M5 21V4m0 0h11l-2 4 2 4H5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>',
     shape: '<svg viewBox="0 0 24 24" width="20" height="20"><path d="M7 4l5 2 6-1 1 6-2 3 2 5-6 1-3-2-5 1-1-6 2-4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>',
     population: '<svg viewBox="0 0 24 24" width="20" height="20"><circle cx="9" cy="8" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17" cy="9.5" r="2.3" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M3 19c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5M15 14.2c3.3-.6 6 1.2 6 4.3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>',
+    language: '<svg viewBox="0 0 24 24" width="20" height="20"><path d="M4 5h16v11H11l-5 4v-4H4z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 9h8M8 12h5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>',
     government: '<svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 3l8 4H4zM5 9h14M6 9v8m4-8v8m4-8v8m4-8v8M4 20h16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>',
   };
 
@@ -25,10 +26,11 @@
     { key: 'shape', title: 'Country shape', desc: 'Recognise a country by its outline' },
     { key: 'population', title: 'Population', desc: 'Rounded to 2 significant figures' },
     { key: 'government', title: 'System of government', desc: 'Republic, monarchy, and more' },
+    { key: 'language', title: 'Official language', desc: 'Name a language it officially uses' },
   ];
   // The order questions are asked in for each country. Shape comes first because the
   // country's name is only revealed once the shape question has been answered.
-  const QUESTION_ORDER = ['shape', 'location', 'capital', 'flag', 'population', 'government'];
+  const QUESTION_ORDER = ['shape', 'location', 'capital', 'flag', 'population', 'government', 'language'];
   const COUNTS = [10, 25, 50, 75, 100, 150, COUNTRIES.length];
   const catTitle = (key) => CATEGORIES.find((c) => c.key === key).title;
 
@@ -126,10 +128,40 @@
           answer: c.government,
           options: shuffle([c.government, ...shuffle(GOVERNMENTS.filter((g) => g !== c.government)).slice(0, 3)]).map((g) => ({ label: g, correct: g === c.government })),
         };
+      case 'language':
+        return {
+          kind,
+          answer: c.languages[0],
+          options: shuffle([c.languages[0], ...languageDistractors(c)]).map((l) => ({ label: l, correct: l === c.languages[0] })),
+        };
       case 'location':
         return { kind, answer: c.name };
     }
   }
+
+  // Main languages of nearby countries that are not official anywhere in c.
+  function languageDistractors(c) {
+    const used = new Set(c.languages);
+    const picked = [];
+    const pools = [
+      COUNTRIES.filter((o) => o.subregion === c.subregion),
+      COUNTRIES.filter((o) => o.region === c.region),
+      COUNTRIES,
+    ];
+    for (const pool of pools) {
+      for (const o of shuffle(pool)) {
+        if (picked.length >= 3) return picked;
+        const l = o.languages[0];
+        if (used.has(l)) continue;
+        used.add(l);
+        picked.push(l);
+      }
+    }
+    return picked;
+  }
+
+  const listLanguages = (c, max = c.languages.length) =>
+    c.languages.slice(0, max).join(', ') + (c.languages.length > max ? ` +${c.languages.length - max} more` : '');
 
   // ---------------------------------------------------------------------------
   // Map
@@ -584,6 +616,9 @@
       case 'government':
         body.innerHTML = questionHeader(kind, `What is ${name}’s system of government?`) + optionsHtml(q);
         break;
+      case 'language':
+        body.innerHTML = questionHeader(kind, `Which of these is an official language of ${name}?`) + optionsHtml(q);
+        break;
     }
     body.scrollTop = 0;
     body.querySelectorAll('.option').forEach((b) => b.addEventListener('click', () => answerOption(Number(b.dataset.i))));
@@ -648,6 +683,9 @@
     } else {
       msg = `The answer is <strong>${esc(q.answer)}</strong>.`;
     }
+    if (q.kind === 'language' && c.languages.length > 1) {
+      msg += ` <br />Official languages: ${esc(listLanguages(c, 6))}.`;
+    }
     finishQuestion(chosen.correct, msg);
     if (q.kind === 'shape') {
       // The name is now revealed: show where it is.
@@ -698,6 +736,7 @@
         <dt>Capital</dt><dd>${esc(c.capital)}</dd>
         <dt>Population</dt><dd>${formatPopulation(c.population)}</dd>
         <dt>Government</dt><dd>${esc(c.government)}</dd>
+        <dt>Language${c.languages.length > 1 ? 's' : ''}</dt><dd>${esc(listLanguages(c, 3))}</dd>
       </dl>
     </div>`;
   }

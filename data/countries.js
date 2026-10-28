@@ -19,6 +19,10 @@ window.COUNTRIES = [
     "capital": "Kabul",
     "population": 42000000,
     "government": "Theocracy",
+    "languages": [
+      "Pashto",
+      "Dari"
+    ],
     "region": "Asia",
     "subregion": "Southern Asia",
     "latlng": [
@@ -34,6 +38,9 @@ window.COUNTRIES = [
     "capital": "Tirana",
     "population": 2770000,
     "government": "Parliamentary republic",
+    "languages": [
+      "Albanian"
+    ],
     "region": "Europe",
     "subregion": "Southeast Europe",
     "latlng": [
@@ -49,6 +56,10 @@ window.COUNTRIES = [
     "capital": "Algiers",
     "population": 46800000,
     "government": "Semi-presidential republic",
+    "languages": [
+      "Arabic",
+      "Berber"
+    ],
     "region": "Africa",
     "subregion": "Northern Africa",
     "latlng": [
@@ -64,6 +75,9 @@ window.COUNTRIES = [
     "capital": "Andorra la Vella",
     "population": 81000,
     "government": "Parliamentary constitutional monarchy",
+    "languages": [
+      "Catalan"
+    ],
     "region": "Europe",
     "subregion": "Southern Europe",
     "latlng": [
@@ -79,6 +93,9 @@ window.COUNTRIES = [
     "capital": "Luanda",
     "population": 37900000,
     "government": "Presidential republic",
+    "languages": [
+      "Portuguese"
+    ],
     "region": "Africa",
     "subregion": "Middle Africa",
     "latlng": [
@@ -94,6 +111,9 @@ window.COUNTRIES = [
     "capital": "St. John's",
     "population": 94000,
     "government": "Parliamentary constitutional monarchy",
+    "languages": [
+      "English"
+    ],
     "region": "Americas",
     "subregion": "Caribbean",
     "latlng": [
@@ -109,6 +129,9 @@ window.COUNTRIES = [
     "capital": "Buenos Aires",
     "population": 45700000,
     "government": "Presidential republic",
+    "languages": [
+      "Spanish"
+    ],
     "region": "Americas",
     "subregion": "South America",
     "latlng": [
@@ -124,6 +147,9 @@ window.COUNTRIES = [
     "capital": "Yerevan",
     "population": 3000000,
     "government": "Parliamentary republic",
+    "languages": [
+      "Armenian"
+    ],
     "region": "Asia",
     "subregion": "Western Asia",
     "latlng": [
@@ -139,6 +165,9 @@ window.COUNTRIES = [
     "capital": "Canberra",
     "population": 27200000,
     "government": "Parliamentary constitutional monarchy",
+    "languages": [
+      "English"
+    ],
     "region": "Oceania",
     "subregion": "Australia and New Zealand",
     "latlng": [
@@ -154,6 +183,9 @@ window.COUNTRIES = [
     "capital": "Vienna",
     "population": 9160000,
     "government": "Parliamentary republic",
+    "languages": [
+      "German"
+    ],
     "region": "Europe",
     "subregion": "Central Europe",
     "latlng": [
@@ -169,6 +201,9 @@ window.COUNTRIES = [
     "capital": "Baku",
     "population": 10200000,
     "government": "Semi-presidential republic",
+    "languages": [
+      "Azerbaijani"
+    ],
     "region": "Asia",
     "subregion": "Western Asia",
     "latlng": [
@@ -184,6 +219,9 @@ window.COUNTRIES = [
     "capital": "Nassau",
     "population": 400000,
     "government": "Parliamentary constitutional monarchy",
+    "languages": [
+      "English"
+    ],
     "region": "Americas",
     "subregion": "Caribbean",
     "latlng": [
@@ -199,6 +237,9 @@ window.COUNTRIES = [
     "capital": "Manama",
     "population": 1590000,
     "government": "Semi-constitutional monarchy",
+    "languages": [
+      "Arabic"
+    ],
     "region": "Asia",
     "subregion": "Western Asia",
     "latlng": [
@@ -214,6 +255,9 @@ window.COUNTRIES = [
     "capital": "Dhaka",
     "population": 173000000,
     "government": "Parliamentary republic",
+    "languages": [
+      "Bengali"
+    ],
     "region": "Asia",
     "subregion": "Southern Asia",
     "latlng": [
@@ -229,6 +273,9 @@ window.COUNTRIES = [
     "capital": "Bridgetown",
     "population": 282000,
     "government": "Parliamentary republic",
+    "languages": [
+      "English"
+    ],
     "region": "Americas",
     "subregion": "Caribbean",
     "latlng": [
@@ -244,6 +291,10 @@ window.COUNTRIES = [
     "capital": "Minsk",
     "population": 9060000,
     "government": "Presidential republic",
+    "languages": [
+      "Belarusian",
+      "Russian"
+    ],
     "region": "Europe",
     "subregion": "Eastern Europe",
     "latlng": [
@@ -259,6 +310,11 @@ window.COUNTRIES = [
     "capital": "Brussels",
     "population": 11800000,
     "government": "Parliamentary constitutional monarchy",
+    "languages": [
+      "Dutch",
+      "French",
+      "German"
+    ],
     "region": "Europe",
     "subregion": "Western Europe",
     "latlng": [
@@ -274,6 +330,9 @@ window.COUNTRIES = [
     "capital": "Belmopan",
     "population": 417000,
     "government": "Parliamentary constitutional monarchy",
+    "languages": [
+      "English"
+    ],
     "region": "Americas",
     "subregion": "Central America",
     "latlng": [
@@ -289,6 +348,9 @@ window.COUNTRIES = [
     "capital": "Porto-Novo",
     "population": 14500000,
     "government": "Presidential republic",
+    "languages": [
+      "French"
+    ],
     "region": "Africa",
     "subregion": "Western Africa",
     "latlng": [
@@ -304,6 +366,9 @@ window.COUNTRIES = [
     "capital": "Thimphu",
     "population": 791000,
     "government": "Parliamentary constitutional monarchy",
+    "languages": [
+      "Dzongkha"
+    ],
     "region": "Asia",
     "subregion": "Southern Asia",
     "latlng": [
@@ -319,6 +384,12 @@ window.COUNTRIES = [
     "capital": "Sucre",
     "population": 12400000,
     "government": "Presidential republic",
+    "languages": [
+      "Spanish",
+      "Quechua",
+      "Aymara",
+      "Guaraní"
+    ],
     "region": "Americas",
     "subregion": "South America",
     "latlng": [
@@ -334,6 +405,11 @@ window.COUNTRIES = [
     "capital": "Sarajevo",
     "population": 3160000,
     "government": "Parliamentary republic",
+    "languages": [
+      "Bosnian",
+      "Croatian",
+      "Serbian"
+    ],
     "region": "Europe",
     "subregion": "Southeast Europe",
     "latlng": [
@@ -349,6 +425,10 @@ window.COUNTRIES = [
     "capital": "Gaborone",
     "population": 2520000,
     "government": "Parliamentary republic",
+    "languages": [
+      "English",
+      "Tswana"
+    ],
     "region": "Africa",
     "subregion": "Southern Africa",
     "latlng": [
@@ -364,6 +444,9 @@ window.COUNTRIES = [
     "capital": "Brasília",
     "population": 212000000,
     "government": "Presidential republic",
+    "languages": [
+      "Portuguese"
+    ],
     "region": "Americas",
     "subregion": "South America",
     "latlng": [
@@ -379,6 +462,9 @@ window.COUNTRIES = [
     "capital": "Bandar Seri Begawan",
     "population": 462000,
     "government": "Absolute monarchy",
+    "languages": [
+      "Malay"
+    ],
     "region": "Asia",
     "subregion": "South-Eastern Asia",
     "latlng": [
@@ -394,6 +480,9 @@ window.COUNTRIES = [
     "capital": "Sofia",
     "population": 6440000,
     "government": "Parliamentary republic",
+    "languages": [
+      "Bulgarian"
+    ],
     "region": "Europe",
     "subregion": "Southeast Europe",
     "latlng": [
@@ -409,6 +498,12 @@ window.COUNTRIES = [
     "capital": "Ouagadougou",
     "population": 23500000,
     "government": "Military or provisional government",
+    "languages": [
+      "Mooré",
+      "Dyula",
+      "Fula",
+      "Bissa"
+    ],
     "region": "Africa",
     "subregion": "Western Africa",
     "latlng": [
@@ -424,6 +519,11 @@ window.COUNTRIES = [
     "capital": "Gitega",
     "population": 14000000,
     "government": "Presidential republic",
+    "languages": [
+      "Kirundi",
+      "French",
+      "English"
+    ],
     "region": "Africa",
     "subregion": "Eastern Africa",
     "latlng": [
@@ -439,6 +539,9 @@ window.COUNTRIES = [
     "capital": "Phnom Penh",
     "population": 17600000,
     "government": "Parliamentary constitutional monarchy",
+    "languages": [
+      "Khmer"
+    ],
     "region": "Asia",
     "subregion": "South-Eastern Asia",
     "latlng": [
@@ -454,6 +557,10 @@ window.COUNTRIES = [
     "capital": "Yaoundé",
     "population": 29100000,
     "government": "Presidential republic",
+    "languages": [
+      "French",
+      "English"
+    ],
     "region": "Africa",
     "subregion": "Middle Africa",
     "latlng": [
@@ -469,6 +576,10 @@ window.COUNTRIES = [
     "capital": "Ottawa",
     "population": 40100000,
     "government": "Parliamentary constitutional monarchy",
+    "languages": [
+      "English",
+      "French"
+    ],
     "region": "Americas",
     "subregion": "North America",
     "latlng": [
@@ -484,6 +595,9 @@ window.COUNTRIES = [
     "capital": "Praia",
     "population": 525000,
     "government": "Semi-presidential republic",
+    "languages": [
+      "Portuguese"
+    ],
     "region": "Africa",
     "subregion": "Western Africa",
     "latlng": [
@@ -499,6 +613,10 @@ window.COUNTRIES = [
     "capital": "Bangui",
     "population": 5330000,
     "government": "Presidential republic",
+    "languages": [
+      "French",
+      "Sango"
+    ],
     "region": "Africa",
     "subregion": "Middle Africa",
     "latlng": [
@@ -514,6 +632,10 @@ window.COUNTRIES = [
     "capital": "N'Djamena",
     "population": 20300000,
     "government": "Presidential republic",
+    "languages": [
+      "French",
+      "Arabic"
+    ],
     "region": "Africa",
     "subregion": "Middle Africa",
     "latlng": [
@@ -529,6 +651,9 @@ window.COUNTRIES = [
     "capital": "Santiago",
     "population": 19800000,
     "government": "Presidential republic",
+    "languages": [
+      "Spanish"
+    ],
     "region": "Americas",
     "subregion": "South America",
     "latlng": [
@@ -544,6 +669,9 @@ window.COUNTRIES = [
     "capital": "Beijing",
     "population": 1410000000,
     "government": "One-party state",
+    "languages": [
+      "Mandarin Chinese"
+    ],
     "region": "Asia",
     "subregion": "Eastern Asia",
     "latlng": [
@@ -559,6 +687,9 @@ window.COUNTRIES = [
     "capital": "Bogotá",
     "population": 52900000,
     "government": "Presidential republic",
+    "languages": [
+      "Spanish"
+    ],
     "region": "Americas",
     "subregion": "South America",
     "latlng": [
@@ -574,6 +705,11 @@ window.COUNTRIES = [
     "capital": "Moroni",
     "population": 867000,
     "government": "Presidential republic",
+    "languages": [
+      "Comorian",
+      "Arabic",
+      "French"
+    ],
     "region": "Africa",
     "subregion": "Eastern Africa",
     "latlng": [
@@ -589,6 +725,10 @@ window.COUNTRIES = [
     "capital": "Avarua",
     "population": 15000,
     "government": "Parliamentary constitutional monarchy",
+    "languages": [
+      "English",
+      "Cook Islands Māori"
+    ],
     "region": "Oceania",
     "subregion": "Polynesia",
     "latlng": [
@@ -604,6 +744,9 @@ window.COUNTRIES = [
     "capital": "San José",
     "population": 5130000,
     "government": "Presidential republic",
+    "languages": [
+      "Spanish"
+    ],
     "region": "Americas",
     "subregion": "Central America",
     "latlng": [
@@ -619,6 +762,9 @@ window.COUNTRIES = [
     "capital": "Yamoussoukro",
     "population": 31900000,
     "government": "Presidential republic",
+    "languages": [
+      "French"
+    ],
     "region": "Africa",
     "subregion": "Western Africa",
     "latlng": [
@@ -634,6 +780,9 @@ window.COUNTRIES = [
     "capital": "Zagreb",
     "population": 3860000,
     "government": "Parliamentary republic",
+    "languages": [
+      "Croatian"
+    ],
     "region": "Europe",
     "subregion": "Southeast Europe",
     "latlng": [
@@ -649,6 +798,9 @@ window.COUNTRIES = [
     "capital": "Havana",
     "population": 10900000,
     "government": "One-party state",
+    "languages": [
+      "Spanish"
+    ],
     "region": "Americas",
     "subregion": "Caribbean",
     "latlng": [
@@ -664,6 +816,10 @@ window.COUNTRIES = [
     "capital": "Nicosia",
     "population": 1360000,
     "government": "Presidential republic",
+    "languages": [
+      "Greek",
+      "Turkish"
+    ],
     "region": "Europe",
     "subregion": "Southern Europe",
     "latlng": [
@@ -679,6 +835,9 @@ window.COUNTRIES = [
     "capital": "Prague",
     "population": 10700000,
     "government": "Parliamentary republic",
+    "languages": [
+      "Czech"
+    ],
     "region": "Europe",
     "subregion": "Central Europe",
     "latlng": [
@@ -694,6 +853,9 @@ window.COUNTRIES = [
     "capital": "Kinshasa",
     "population": 109000000,
     "government": "Semi-presidential republic",
+    "languages": [
+      "French"
+    ],
     "region": "Africa",
     "subregion": "Middle Africa",
     "latlng": [
@@ -709,6 +871,9 @@ window.COUNTRIES = [
     "capital": "Copenhagen",
     "population": 5980000,
     "government": "Parliamentary constitutional monarchy",
+    "languages": [
+      "Danish"
+    ],
     "region": "Europe",
     "subregion": "Northern Europe",
     "latlng": [
@@ -724,6 +889,10 @@ window.COUNTRIES = [
     "capital": "Djibouti City",
     "population": 1170000,
     "government": "Presidential republic",
+    "languages": [
+      "French",
+      "Arabic"
+    ],
     "region": "Africa",
     "subregion": "Eastern Africa",
     "latlng": [
@@ -739,6 +908,9 @@ window.COUNTRIES = [
     "capital": "Roseau",
     "population": 66000,
     "government": "Parliamentary republic",
+    "languages": [
+      "English"
+    ],
     "region": "Americas",
     "subregion": "Caribbean",
     "latlng": [
@@ -754,6 +926,9 @@ window.COUNTRIES = [
     "capital": "Santo Domingo",
     "population": 11400000,
     "government": "Presidential republic",
+    "languages": [
+      "Spanish"
+    ],
     "region": "Americas",
     "subregion": "Caribbean",
     "latlng": [
@@ -769,6 +944,9 @@ window.COUNTRIES = [
     "capital": "Quito",
     "population": 18100000,
     "government": "Presidential republic",
+    "languages": [
+      "Spanish"
+    ],
     "region": "Americas",
     "subregion": "South America",
     "latlng": [
@@ -784,6 +962,9 @@ window.COUNTRIES = [
     "capital": "Cairo",
     "population": 116000000,
     "government": "Semi-presidential republic",
+    "languages": [
+      "Arabic"
+    ],
     "region": "Africa",
     "subregion": "Northern Africa",
     "latlng": [
@@ -799,6 +980,9 @@ window.COUNTRIES = [
     "capital": "San Salvador",
     "population": 6340000,
     "government": "Presidential republic",
+    "languages": [
+      "Spanish"
+    ],
     "region": "Americas",
     "subregion": "Central America",
     "latlng": [
@@ -814,6 +998,11 @@ window.COUNTRIES = [
     "capital": "Malabo",
     "population": 1890000,
     "government": "Presidential republic",
+    "languages": [
+      "Spanish",
+      "French",
+      "Portuguese"
+    ],
     "region": "Africa",
     "subregion": "Middle Africa",
     "latlng": [
@@ -829,6 +1018,11 @@ window.COUNTRIES = [
     "capital": "Asmara",
     "population": 3540000,
     "government": "One-party state",
+    "languages": [
+      "Tigrinya",
+      "Arabic",
+      "English"
+    ],
     "region": "Africa",
     "subregion": "Eastern Africa",
     "latlng": [
@@ -844,6 +1038,9 @@ window.COUNTRIES = [
     "capital": "Tallinn",
     "population": 1370000,
     "government": "Parliamentary republic",
+    "languages": [
+      "Estonian"
+    ],
     "region": "Europe",
     "subregion": "Northern Europe",
     "latlng": [
@@ -859,6 +1056,10 @@ window.COUNTRIES = [
     "capital": "Mbabane",
     "population": 1240000,
     "government": "Absolute monarchy",
+    "languages": [
+      "Swazi",
+      "English"
+    ],
     "region": "Africa",
     "subregion": "Southern Africa",
     "latlng": [
@@ -874,6 +1075,13 @@ window.COUNTRIES = [
     "capital": "Addis Ababa",
     "population": 132000000,
     "government": "Parliamentary republic",
+    "languages": [
+      "Amharic",
+      "Oromo",
+      "Somali",
+      "Tigrinya",
+      "Afar"
+    ],
     "region": "Africa",
     "subregion": "Eastern Africa",
     "latlng": [
@@ -889,6 +1097,11 @@ window.COUNTRIES = [
     "capital": "Suva",
     "population": 928000,
     "government": "Parliamentary republic",
+    "languages": [
+      "English",
+      "Fijian",
+      "Fiji Hindi"
+    ],
     "region": "Oceania",
     "subregion": "Melanesia",
     "latlng": [
@@ -904,6 +1117,10 @@ window.COUNTRIES = [
     "capital": "Helsinki",
     "population": 5620000,
     "government": "Parliamentary republic",
+    "languages": [
+      "Finnish",
+      "Swedish"
+    ],
     "region": "Europe",
     "subregion": "Northern Europe",
     "latlng": [
@@ -919,6 +1136,9 @@ window.COUNTRIES = [
     "capital": "Paris",
     "population": 68400000,
     "government": "Semi-presidential republic",
+    "languages": [
+      "French"
+    ],
     "region": "Europe",
     "subregion": "Western Europe",
     "latlng": [
@@ -934,6 +1154,9 @@ window.COUNTRIES = [
     "capital": "Libreville",
     "population": 2540000,
     "government": "Presidential republic",
+    "languages": [
+      "French"
+    ],
     "region": "Africa",
     "subregion": "Middle Africa",
     "latlng": [
@@ -949,6 +1172,9 @@ window.COUNTRIES = [
     "capital": "Banjul",
     "population": 2760000,
     "government": "Presidential republic",
+    "languages": [
+      "English"
+    ],
     "region": "Africa",
     "subregion": "Western Africa",
     "latlng": [
@@ -964,6 +1190,9 @@ window.COUNTRIES = [
     "capital": "Tbilisi",
     "population": 3700000,
     "government": "Parliamentary republic",
+    "languages": [
+      "Georgian"
+    ],
     "region": "Asia",
     "subregion": "Western Asia",
     "latlng": [
@@ -979,6 +1208,9 @@ window.COUNTRIES = [
     "capital": "Berlin",
     "population": 84100000,
     "government": "Parliamentary republic",
+    "languages": [
+      "German"
+    ],
     "region": "Europe",
     "subregion": "Western Europe",
     "latlng": [
@@ -994,6 +1226,9 @@ window.COUNTRIES = [
     "capital": "Accra",
     "population": 34400000,
     "government": "Presidential republic",
+    "languages": [
+      "English"
+    ],
     "region": "Africa",
     "subregion": "Western Africa",
     "latlng": [
@@ -1009,6 +1244,9 @@ window.COUNTRIES = [
     "capital": "Athens",
     "population": 10000000,
     "government": "Parliamentary republic",
+    "languages": [
+      "Greek"
+    ],
     "region": "Europe",
     "subregion": "Southern Europe",
     "latlng": [
@@ -1024,6 +1262,9 @@ window.COUNTRIES = [
     "capital": "St. George's",
     "population": 117000,
     "government": "Parliamentary constitutional monarchy",
+    "languages": [
+      "English"
+    ],
     "region": "Americas",
     "subregion": "Caribbean",
     "latlng": [
@@ -1039,6 +1280,9 @@ window.COUNTRIES = [
     "capital": "Guatemala City",
     "population": 18400000,
     "government": "Presidential republic",
+    "languages": [
+      "Spanish"
+    ],
     "region": "Americas",
     "subregion": "Central America",
     "latlng": [
@@ -1054,6 +1298,9 @@ window.COUNTRIES = [
     "capital": "Conakry",
     "population": 14800000,
     "government": "Presidential republic",
+    "languages": [
+      "French"
+    ],
     "region": "Africa",
     "subregion": "Western Africa",
     "latlng": [
@@ -1069,6 +1316,9 @@ window.COUNTRIES = [
     "capital": "Bissau",
     "population": 2200000,
     "government": "Military or provisional government",
+    "languages": [
+      "Portuguese"
+    ],
     "region": "Africa",
     "subregion": "Western Africa",
     "latlng": [
@@ -1084,6 +1334,9 @@ window.COUNTRIES = [
     "capital": "Georgetown",
     "population": 831000,
     "government": "Presidential republic",
+    "languages": [
+      "English"
+    ],
     "region": "Americas",
     "subregion": "South America",
     "latlng": [
@@ -1099,6 +1352,10 @@ window.COUNTRIES = [
     "capital": "Port-au-Prince",
     "population": 11800000,
     "government": "Military or provisional government",
+    "languages": [
+      "Haitian Creole",
+      "French"
+    ],
     "region": "Americas",
     "subregion": "Caribbean",
     "latlng": [
@@ -1114,6 +1371,9 @@ window.COUNTRIES = [
     "capital": "Tegucigalpa",
     "population": 10800000,
     "government": "Presidential republic",
+    "languages": [
+      "Spanish"
+    ],
     "region": "Americas",
     "subregion": "Central America",
     "latlng": [
@@ -1129,6 +1389,9 @@ window.COUNTRIES = [
     "capital": "Budapest",
     "population": 9580000,
     "government": "Parliamentary republic",
+    "languages": [
+      "Hungarian"
+    ],
     "region": "Europe",
     "subregion": "Central Europe",
     "latlng": [
@@ -1144,6 +1407,9 @@ window.COUNTRIES = [
     "capital": "Reykjavík",
     "population": 393000,
     "government": "Parliamentary republic",
+    "languages": [
+      "Icelandic"
+    ],
     "region": "Europe",
     "subregion": "Northern Europe",
     "latlng": [
@@ -1159,6 +1425,10 @@ window.COUNTRIES = [
     "capital": "New Delhi",
     "population": 1450000000,
     "government": "Parliamentary republic",
+    "languages": [
+      "Hindi",
+      "English"
+    ],
     "region": "Asia",
     "subregion": "Southern Asia",
     "latlng": [
@@ -1174,6 +1444,9 @@ window.COUNTRIES = [
     "capital": "Jakarta",
     "population": 283000000,
     "government": "Presidential republic",
+    "languages": [
+      "Indonesian"
+    ],
     "region": "Asia",
     "subregion": "South-Eastern Asia",
     "latlng": [
@@ -1189,6 +1462,9 @@ window.COUNTRIES = [
     "capital": "Tehran",
     "population": 91600000,
     "government": "Theocracy",
+    "languages": [
+      "Persian"
+    ],
     "region": "Asia",
     "subregion": "Southern Asia",
     "latlng": [
@@ -1204,6 +1480,10 @@ window.COUNTRIES = [
     "capital": "Baghdad",
     "population": 46000000,
     "government": "Parliamentary republic",
+    "languages": [
+      "Arabic",
+      "Kurdish"
+    ],
     "region": "Asia",
     "subregion": "Western Asia",
     "latlng": [
@@ -1219,6 +1499,10 @@ window.COUNTRIES = [
     "capital": "Dublin",
     "population": 5310000,
     "government": "Parliamentary republic",
+    "languages": [
+      "Irish",
+      "English"
+    ],
     "region": "Europe",
     "subregion": "Northern Europe",
     "latlng": [
@@ -1234,6 +1518,9 @@ window.COUNTRIES = [
     "capital": "Jerusalem",
     "population": 9900000,
     "government": "Parliamentary republic",
+    "languages": [
+      "Hebrew"
+    ],
     "region": "Asia",
     "subregion": "Western Asia",
     "latlng": [
@@ -1249,6 +1536,9 @@ window.COUNTRIES = [
     "capital": "Rome",
     "population": 59000000,
     "government": "Parliamentary republic",
+    "languages": [
+      "Italian"
+    ],
     "region": "Europe",
     "subregion": "Southern Europe",
     "latlng": [
@@ -1264,6 +1554,9 @@ window.COUNTRIES = [
     "capital": "Kingston",
     "population": 2840000,
     "government": "Parliamentary constitutional monarchy",
+    "languages": [
+      "English"
+    ],
     "region": "Americas",
     "subregion": "Caribbean",
     "latlng": [
@@ -1279,6 +1572,9 @@ window.COUNTRIES = [
     "capital": "Tokyo",
     "population": 124000000,
     "government": "Parliamentary constitutional monarchy",
+    "languages": [
+      "Japanese"
+    ],
     "region": "Asia",
     "subregion": "Eastern Asia",
     "latlng": [
@@ -1294,6 +1590,9 @@ window.COUNTRIES = [
     "capital": "Amman",
     "population": 11600000,
     "government": "Semi-constitutional monarchy",
+    "languages": [
+      "Arabic"
+    ],
     "region": "Asia",
     "subregion": "Western Asia",
     "latlng": [
@@ -1309,6 +1608,10 @@ window.COUNTRIES = [
     "capital": "Astana",
     "population": 20300000,
     "government": "Presidential republic",
+    "languages": [
+      "Kazakh",
+      "Russian"
+    ],
     "region": "Asia",
     "subregion": "Central Asia",
     "latlng": [
@@ -1324,6 +1627,10 @@ window.COUNTRIES = [
     "capital": "Nairobi",
     "population": 56400000,
     "government": "Presidential republic",
+    "languages": [
+      "Swahili",
+      "English"
+    ],
     "region": "Africa",
     "subregion": "Eastern Africa",
     "latlng": [
@@ -1339,6 +1646,10 @@ window.COUNTRIES = [
     "capital": "South Tarawa",
     "population": 134000,
     "government": "Parliamentary republic",
+    "languages": [
+      "English",
+      "Gilbertese"
+    ],
     "region": "Oceania",
     "subregion": "Micronesia",
     "latlng": [
@@ -1354,6 +1665,10 @@ window.COUNTRIES = [
     "capital": "Pristina",
     "population": 1590000,
     "government": "Parliamentary republic",
+    "languages": [
+      "Albanian",
+      "Serbian"
+    ],
     "region": "Europe",
     "subregion": "Southeast Europe",
     "latlng": [
@@ -1369,6 +1684,9 @@ window.COUNTRIES = [
     "capital": "Kuwait City",
     "population": 4930000,
     "government": "Semi-constitutional monarchy",
+    "languages": [
+      "Arabic"
+    ],
     "region": "Asia",
     "subregion": "Western Asia",
     "latlng": [
@@ -1384,6 +1702,10 @@ window.COUNTRIES = [
     "capital": "Bishkek",
     "population": 7190000,
     "government": "Presidential republic",
+    "languages": [
+      "Kyrgyz",
+      "Russian"
+    ],
     "region": "Asia",
     "subregion": "Central Asia",
     "latlng": [
@@ -1399,6 +1721,9 @@ window.COUNTRIES = [
     "capital": "Vientiane",
     "population": 7770000,
     "government": "One-party state",
+    "languages": [
+      "Lao"
+    ],
     "region": "Asia",
     "subregion": "South-Eastern Asia",
     "latlng": [
@@ -1414,6 +1739,9 @@ window.COUNTRIES = [
     "capital": "Riga",
     "population": 1870000,
     "government": "Parliamentary republic",
+    "languages": [
+      "Latvian"
+    ],
     "region": "Europe",
     "subregion": "Northern Europe",
     "latlng": [
@@ -1429,6 +1757,9 @@ window.COUNTRIES = [
     "capital": "Beirut",
     "population": 5810000,
     "government": "Parliamentary republic",
+    "languages": [
+      "Arabic"
+    ],
     "region": "Asia",
     "subregion": "Western Asia",
     "latlng": [
@@ -1444,6 +1775,10 @@ window.COUNTRIES = [
     "capital": "Maseru",
     "population": 2340000,
     "government": "Parliamentary constitutional monarchy",
+    "languages": [
+      "Sesotho",
+      "English"
+    ],
     "region": "Africa",
     "subregion": "Southern Africa",
     "latlng": [
@@ -1459,6 +1794,9 @@ window.COUNTRIES = [
     "capital": "Monrovia",
     "population": 5610000,
     "government": "Presidential republic",
+    "languages": [
+      "English"
+    ],
     "region": "Africa",
     "subregion": "Western Africa",
     "latlng": [
@@ -1474,6 +1812,9 @@ window.COUNTRIES = [
     "capital": "Tripoli",
     "population": 7380000,
     "government": "Military or provisional government",
+    "languages": [
+      "Arabic"
+    ],
     "region": "Africa",
     "subregion": "Northern Africa",
     "latlng": [
@@ -1489,6 +1830,9 @@ window.COUNTRIES = [
     "capital": "Vaduz",
     "population": 40000,
     "government": "Semi-constitutional monarchy",
+    "languages": [
+      "German"
+    ],
     "region": "Europe",
     "subregion": "Western Europe",
     "latlng": [
@@ -1504,6 +1848,9 @@ window.COUNTRIES = [
     "capital": "Vilnius",
     "population": 2870000,
     "government": "Semi-presidential republic",
+    "languages": [
+      "Lithuanian"
+    ],
     "region": "Europe",
     "subregion": "Northern Europe",
     "latlng": [
@@ -1519,6 +1866,11 @@ window.COUNTRIES = [
     "capital": "Luxembourg City",
     "population": 673000,
     "government": "Parliamentary constitutional monarchy",
+    "languages": [
+      "Luxembourgish",
+      "French",
+      "German"
+    ],
     "region": "Europe",
     "subregion": "Western Europe",
     "latlng": [
@@ -1534,6 +1886,10 @@ window.COUNTRIES = [
     "capital": "Antananarivo",
     "population": 31900000,
     "government": "Military or provisional government",
+    "languages": [
+      "Malagasy",
+      "French"
+    ],
     "region": "Africa",
     "subregion": "Eastern Africa",
     "latlng": [
@@ -1549,6 +1905,10 @@ window.COUNTRIES = [
     "capital": "Lilongwe",
     "population": 21700000,
     "government": "Presidential republic",
+    "languages": [
+      "English",
+      "Chichewa"
+    ],
     "region": "Africa",
     "subregion": "Eastern Africa",
     "latlng": [
@@ -1564,6 +1924,9 @@ window.COUNTRIES = [
     "capital": "Kuala Lumpur",
     "population": 35600000,
     "government": "Parliamentary constitutional monarchy",
+    "languages": [
+      "Malay"
+    ],
     "region": "Asia",
     "subregion": "South-Eastern Asia",
     "latlng": [
@@ -1579,6 +1942,9 @@ window.COUNTRIES = [
     "capital": "Malé",
     "population": 527000,
     "government": "Presidential republic",
+    "languages": [
+      "Dhivehi"
+    ],
     "region": "Asia",
     "subregion": "Southern Asia",
     "latlng": [
@@ -1594,6 +1960,12 @@ window.COUNTRIES = [
     "capital": "Bamako",
     "population": 24500000,
     "government": "Military or provisional government",
+    "languages": [
+      "Bambara",
+      "Fula",
+      "Soninke",
+      "Tamasheq"
+    ],
     "region": "Africa",
     "subregion": "Western Africa",
     "latlng": [
@@ -1609,6 +1981,10 @@ window.COUNTRIES = [
     "capital": "Valletta",
     "population": 563000,
     "government": "Parliamentary republic",
+    "languages": [
+      "Maltese",
+      "English"
+    ],
     "region": "Europe",
     "subregion": "Southern Europe",
     "latlng": [
@@ -1624,6 +2000,10 @@ window.COUNTRIES = [
     "capital": "Majuro",
     "population": 38000,
     "government": "Parliamentary republic",
+    "languages": [
+      "Marshallese",
+      "English"
+    ],
     "region": "Oceania",
     "subregion": "Micronesia",
     "latlng": [
@@ -1639,6 +2019,9 @@ window.COUNTRIES = [
     "capital": "Nouakchott",
     "population": 5170000,
     "government": "Presidential republic",
+    "languages": [
+      "Arabic"
+    ],
     "region": "Africa",
     "subregion": "Western Africa",
     "latlng": [
@@ -1654,6 +2037,10 @@ window.COUNTRIES = [
     "capital": "Port Louis",
     "population": 1270000,
     "government": "Parliamentary republic",
+    "languages": [
+      "English",
+      "French"
+    ],
     "region": "Africa",
     "subregion": "Eastern Africa",
     "latlng": [
@@ -1669,6 +2056,9 @@ window.COUNTRIES = [
     "capital": "Mexico City",
     "population": 131000000,
     "government": "Presidential republic",
+    "languages": [
+      "Spanish"
+    ],
     "region": "Americas",
     "subregion": "North America",
     "latlng": [
@@ -1684,6 +2074,9 @@ window.COUNTRIES = [
     "capital": "Palikir",
     "population": 113000,
     "government": "Parliamentary republic",
+    "languages": [
+      "English"
+    ],
     "region": "Oceania",
     "subregion": "Micronesia",
     "latlng": [
@@ -1699,6 +2092,9 @@ window.COUNTRIES = [
     "capital": "Chișinău",
     "population": 2420000,
     "government": "Parliamentary republic",
+    "languages": [
+      "Romanian"
+    ],
     "region": "Europe",
     "subregion": "Eastern Europe",
     "latlng": [
@@ -1714,6 +2110,9 @@ window.COUNTRIES = [
     "capital": "Monaco",
     "population": 38600,
     "government": "Semi-constitutional monarchy",
+    "languages": [
+      "French"
+    ],
     "region": "Europe",
     "subregion": "Western Europe",
     "latlng": [
@@ -1729,6 +2128,9 @@ window.COUNTRIES = [
     "capital": "Ulaanbaatar",
     "population": 3480000,
     "government": "Semi-presidential republic",
+    "languages": [
+      "Mongolian"
+    ],
     "region": "Asia",
     "subregion": "Eastern Asia",
     "latlng": [
@@ -1744,6 +2146,9 @@ window.COUNTRIES = [
     "capital": "Podgorica",
     "population": 624000,
     "government": "Parliamentary republic",
+    "languages": [
+      "Montenegrin"
+    ],
     "region": "Europe",
     "subregion": "Southeast Europe",
     "latlng": [
@@ -1759,6 +2164,10 @@ window.COUNTRIES = [
     "capital": "Rabat",
     "population": 38100000,
     "government": "Semi-constitutional monarchy",
+    "languages": [
+      "Arabic",
+      "Berber"
+    ],
     "region": "Africa",
     "subregion": "Northern Africa",
     "latlng": [
@@ -1774,6 +2183,9 @@ window.COUNTRIES = [
     "capital": "Maputo",
     "population": 34600000,
     "government": "Presidential republic",
+    "languages": [
+      "Portuguese"
+    ],
     "region": "Africa",
     "subregion": "Eastern Africa",
     "latlng": [
@@ -1789,6 +2201,9 @@ window.COUNTRIES = [
     "capital": "Naypyidaw",
     "population": 54500000,
     "government": "Military or provisional government",
+    "languages": [
+      "Burmese"
+    ],
     "region": "Asia",
     "subregion": "South-Eastern Asia",
     "latlng": [
@@ -1804,6 +2219,9 @@ window.COUNTRIES = [
     "capital": "Windhoek",
     "population": 3030000,
     "government": "Presidential republic",
+    "languages": [
+      "English"
+    ],
     "region": "Africa",
     "subregion": "Southern Africa",
     "latlng": [
@@ -1819,6 +2237,10 @@ window.COUNTRIES = [
     "capital": "Yaren",
     "population": 12000,
     "government": "Parliamentary republic",
+    "languages": [
+      "Nauruan",
+      "English"
+    ],
     "region": "Oceania",
     "subregion": "Micronesia",
     "latlng": [
@@ -1834,6 +2256,9 @@ window.COUNTRIES = [
     "capital": "Kathmandu",
     "population": 29700000,
     "government": "Parliamentary republic",
+    "languages": [
+      "Nepali"
+    ],
     "region": "Asia",
     "subregion": "Southern Asia",
     "latlng": [
@@ -1849,6 +2274,9 @@ window.COUNTRIES = [
     "capital": "Amsterdam",
     "population": 18000000,
     "government": "Parliamentary constitutional monarchy",
+    "languages": [
+      "Dutch"
+    ],
     "region": "Europe",
     "subregion": "Western Europe",
     "latlng": [
@@ -1864,6 +2292,11 @@ window.COUNTRIES = [
     "capital": "Wellington",
     "population": 5270000,
     "government": "Parliamentary constitutional monarchy",
+    "languages": [
+      "English",
+      "Māori",
+      "New Zealand Sign Language"
+    ],
     "region": "Oceania",
     "subregion": "Australia and New Zealand",
     "latlng": [
@@ -1879,6 +2312,9 @@ window.COUNTRIES = [
     "capital": "Managua",
     "population": 6920000,
     "government": "Presidential republic",
+    "languages": [
+      "Spanish"
+    ],
     "region": "Americas",
     "subregion": "Central America",
     "latlng": [
@@ -1894,6 +2330,12 @@ window.COUNTRIES = [
     "capital": "Niamey",
     "population": 27000000,
     "government": "Military or provisional government",
+    "languages": [
+      "Hausa",
+      "Zarma",
+      "Fula",
+      "Tamasheq"
+    ],
     "region": "Africa",
     "subregion": "Western Africa",
     "latlng": [
@@ -1909,6 +2351,9 @@ window.COUNTRIES = [
     "capital": "Abuja",
     "population": 232000000,
     "government": "Presidential republic",
+    "languages": [
+      "English"
+    ],
     "region": "Africa",
     "subregion": "Western Africa",
     "latlng": [
@@ -1924,6 +2369,9 @@ window.COUNTRIES = [
     "capital": "Pyongyang",
     "population": 26300000,
     "government": "One-party state",
+    "languages": [
+      "Korean"
+    ],
     "region": "Asia",
     "subregion": "Eastern Asia",
     "latlng": [
@@ -1939,6 +2387,10 @@ window.COUNTRIES = [
     "capital": "Skopje",
     "population": 1820000,
     "government": "Parliamentary republic",
+    "languages": [
+      "Macedonian",
+      "Albanian"
+    ],
     "region": "Europe",
     "subregion": "Southeast Europe",
     "latlng": [
@@ -1954,6 +2406,10 @@ window.COUNTRIES = [
     "capital": "Oslo",
     "population": 5580000,
     "government": "Parliamentary constitutional monarchy",
+    "languages": [
+      "Norwegian",
+      "Sámi"
+    ],
     "region": "Europe",
     "subregion": "Northern Europe",
     "latlng": [
@@ -1969,6 +2425,9 @@ window.COUNTRIES = [
     "capital": "Muscat",
     "population": 5280000,
     "government": "Absolute monarchy",
+    "languages": [
+      "Arabic"
+    ],
     "region": "Asia",
     "subregion": "Western Asia",
     "latlng": [
@@ -1984,6 +2443,10 @@ window.COUNTRIES = [
     "capital": "Islamabad",
     "population": 251000000,
     "government": "Parliamentary republic",
+    "languages": [
+      "Urdu",
+      "English"
+    ],
     "region": "Asia",
     "subregion": "Southern Asia",
     "latlng": [
@@ -1999,6 +2462,10 @@ window.COUNTRIES = [
     "capital": "Ngerulmud",
     "population": 17700,
     "government": "Presidential republic",
+    "languages": [
+      "Palauan",
+      "English"
+    ],
     "region": "Oceania",
     "subregion": "Micronesia",
     "latlng": [
@@ -2014,6 +2481,9 @@ window.COUNTRIES = [
     "capital": "Ramallah",
     "population": 5500000,
     "government": "Semi-presidential republic",
+    "languages": [
+      "Arabic"
+    ],
     "region": "Asia",
     "subregion": "Western Asia",
     "latlng": [
@@ -2029,6 +2499,9 @@ window.COUNTRIES = [
     "capital": "Panama City",
     "population": 4520000,
     "government": "Presidential republic",
+    "languages": [
+      "Spanish"
+    ],
     "region": "Americas",
     "subregion": "Central America",
     "latlng": [
@@ -2044,6 +2517,12 @@ window.COUNTRIES = [
     "capital": "Port Moresby",
     "population": 10600000,
     "government": "Parliamentary constitutional monarchy",
+    "languages": [
+      "Tok Pisin",
+      "English",
+      "Hiri Motu",
+      "PNG Sign Language"
+    ],
     "region": "Oceania",
     "subregion": "Melanesia",
     "latlng": [
@@ -2059,6 +2538,10 @@ window.COUNTRIES = [
     "capital": "Asunción",
     "population": 6930000,
     "government": "Presidential republic",
+    "languages": [
+      "Spanish",
+      "Guaraní"
+    ],
     "region": "Americas",
     "subregion": "South America",
     "latlng": [
@@ -2074,6 +2557,11 @@ window.COUNTRIES = [
     "capital": "Lima",
     "population": 34200000,
     "government": "Presidential republic",
+    "languages": [
+      "Spanish",
+      "Quechua",
+      "Aymara"
+    ],
     "region": "Americas",
     "subregion": "South America",
     "latlng": [
@@ -2089,6 +2577,10 @@ window.COUNTRIES = [
     "capital": "Manila",
     "population": 116000000,
     "government": "Presidential republic",
+    "languages": [
+      "Filipino",
+      "English"
+    ],
     "region": "Asia",
     "subregion": "South-Eastern Asia",
     "latlng": [
@@ -2104,6 +2596,9 @@ window.COUNTRIES = [
     "capital": "Warsaw",
     "population": 38300000,
     "government": "Parliamentary republic",
+    "languages": [
+      "Polish"
+    ],
     "region": "Europe",
     "subregion": "Central Europe",
     "latlng": [
@@ -2119,6 +2614,9 @@ window.COUNTRIES = [
     "capital": "Lisbon",
     "population": 10400000,
     "government": "Semi-presidential republic",
+    "languages": [
+      "Portuguese"
+    ],
     "region": "Europe",
     "subregion": "Southern Europe",
     "latlng": [
@@ -2134,6 +2632,9 @@ window.COUNTRIES = [
     "capital": "Doha",
     "population": 3050000,
     "government": "Absolute monarchy",
+    "languages": [
+      "Arabic"
+    ],
     "region": "Asia",
     "subregion": "Western Asia",
     "latlng": [
@@ -2149,6 +2650,9 @@ window.COUNTRIES = [
     "capital": "Brazzaville",
     "population": 6330000,
     "government": "Presidential republic",
+    "languages": [
+      "French"
+    ],
     "region": "Africa",
     "subregion": "Middle Africa",
     "latlng": [
@@ -2164,6 +2668,9 @@ window.COUNTRIES = [
     "capital": "Bucharest",
     "population": 19000000,
     "government": "Semi-presidential republic",
+    "languages": [
+      "Romanian"
+    ],
     "region": "Europe",
     "subregion": "Southeast Europe",
     "latlng": [
@@ -2179,6 +2686,9 @@ window.COUNTRIES = [
     "capital": "Moscow",
     "population": 144000000,
     "government": "Semi-presidential republic",
+    "languages": [
+      "Russian"
+    ],
     "region": "Europe",
     "subregion": "Eastern Europe",
     "latlng": [
@@ -2194,6 +2704,12 @@ window.COUNTRIES = [
     "capital": "Kigali",
     "population": 14300000,
     "government": "Presidential republic",
+    "languages": [
+      "Kinyarwanda",
+      "French",
+      "English",
+      "Swahili"
+    ],
     "region": "Africa",
     "subregion": "Eastern Africa",
     "latlng": [
@@ -2209,6 +2725,9 @@ window.COUNTRIES = [
     "capital": "Basseterre",
     "population": 47000,
     "government": "Parliamentary constitutional monarchy",
+    "languages": [
+      "English"
+    ],
     "region": "Americas",
     "subregion": "Caribbean",
     "latlng": [
@@ -2224,6 +2743,9 @@ window.COUNTRIES = [
     "capital": "Castries",
     "population": 180000,
     "government": "Parliamentary constitutional monarchy",
+    "languages": [
+      "English"
+    ],
     "region": "Americas",
     "subregion": "Caribbean",
     "latlng": [
@@ -2239,6 +2761,9 @@ window.COUNTRIES = [
     "capital": "Kingstown",
     "population": 101000,
     "government": "Parliamentary constitutional monarchy",
+    "languages": [
+      "English"
+    ],
     "region": "Americas",
     "subregion": "Caribbean",
     "latlng": [
@@ -2254,6 +2779,10 @@ window.COUNTRIES = [
     "capital": "Apia",
     "population": 218000,
     "government": "Parliamentary republic",
+    "languages": [
+      "Samoan",
+      "English"
+    ],
     "region": "Oceania",
     "subregion": "Polynesia",
     "latlng": [
@@ -2269,6 +2798,9 @@ window.COUNTRIES = [
     "capital": "San Marino",
     "population": 33600,
     "government": "Parliamentary republic",
+    "languages": [
+      "Italian"
+    ],
     "region": "Europe",
     "subregion": "Southern Europe",
     "latlng": [
@@ -2284,6 +2816,9 @@ window.COUNTRIES = [
     "capital": "São Tomé",
     "population": 235000,
     "government": "Semi-presidential republic",
+    "languages": [
+      "Portuguese"
+    ],
     "region": "Africa",
     "subregion": "Middle Africa",
     "latlng": [
@@ -2299,6 +2834,9 @@ window.COUNTRIES = [
     "capital": "Riyadh",
     "population": 33900000,
     "government": "Absolute monarchy",
+    "languages": [
+      "Arabic"
+    ],
     "region": "Asia",
     "subregion": "Western Asia",
     "latlng": [
@@ -2314,6 +2852,9 @@ window.COUNTRIES = [
     "capital": "Dakar",
     "population": 18500000,
     "government": "Presidential republic",
+    "languages": [
+      "French"
+    ],
     "region": "Africa",
     "subregion": "Western Africa",
     "latlng": [
@@ -2329,6 +2870,9 @@ window.COUNTRIES = [
     "capital": "Belgrade",
     "population": 6620000,
     "government": "Parliamentary republic",
+    "languages": [
+      "Serbian"
+    ],
     "region": "Europe",
     "subregion": "Southeast Europe",
     "latlng": [
@@ -2344,6 +2888,11 @@ window.COUNTRIES = [
     "capital": "Victoria",
     "population": 131000,
     "government": "Presidential republic",
+    "languages": [
+      "Seychellois Creole",
+      "English",
+      "French"
+    ],
     "region": "Africa",
     "subregion": "Eastern Africa",
     "latlng": [
@@ -2359,6 +2908,9 @@ window.COUNTRIES = [
     "capital": "Freetown",
     "population": 8640000,
     "government": "Presidential republic",
+    "languages": [
+      "English"
+    ],
     "region": "Africa",
     "subregion": "Western Africa",
     "latlng": [
@@ -2374,6 +2926,12 @@ window.COUNTRIES = [
     "capital": "Singapore",
     "population": 6040000,
     "government": "Parliamentary republic",
+    "languages": [
+      "English",
+      "Malay",
+      "Mandarin Chinese",
+      "Tamil"
+    ],
     "region": "Asia",
     "subregion": "South-Eastern Asia",
     "latlng": [
@@ -2389,6 +2947,9 @@ window.COUNTRIES = [
     "capital": "Bratislava",
     "population": 5430000,
     "government": "Parliamentary republic",
+    "languages": [
+      "Slovak"
+    ],
     "region": "Europe",
     "subregion": "Central Europe",
     "latlng": [
@@ -2404,6 +2965,9 @@ window.COUNTRIES = [
     "capital": "Ljubljana",
     "population": 2120000,
     "government": "Parliamentary republic",
+    "languages": [
+      "Slovene"
+    ],
     "region": "Europe",
     "subregion": "Central Europe",
     "latlng": [
@@ -2419,6 +2983,9 @@ window.COUNTRIES = [
     "capital": "Honiara",
     "population": 819000,
     "government": "Parliamentary constitutional monarchy",
+    "languages": [
+      "English"
+    ],
     "region": "Oceania",
     "subregion": "Melanesia",
     "latlng": [
@@ -2434,6 +3001,10 @@ window.COUNTRIES = [
     "capital": "Mogadishu",
     "population": 19000000,
     "government": "Parliamentary republic",
+    "languages": [
+      "Somali",
+      "Arabic"
+    ],
     "region": "Africa",
     "subregion": "Eastern Africa",
     "latlng": [
@@ -2449,6 +3020,20 @@ window.COUNTRIES = [
     "capital": "Pretoria",
     "population": 64000000,
     "government": "Parliamentary republic",
+    "languages": [
+      "Zulu",
+      "Xhosa",
+      "Afrikaans",
+      "English",
+      "Northern Sotho",
+      "Sesotho",
+      "Tswana",
+      "Swazi",
+      "Venda",
+      "Tsonga",
+      "Southern Ndebele",
+      "South African Sign Language"
+    ],
     "region": "Africa",
     "subregion": "Southern Africa",
     "latlng": [
@@ -2464,6 +3049,9 @@ window.COUNTRIES = [
     "capital": "Seoul",
     "population": 51700000,
     "government": "Presidential republic",
+    "languages": [
+      "Korean"
+    ],
     "region": "Asia",
     "subregion": "Eastern Asia",
     "latlng": [
@@ -2479,6 +3067,9 @@ window.COUNTRIES = [
     "capital": "Juba",
     "population": 11900000,
     "government": "Presidential republic",
+    "languages": [
+      "English"
+    ],
     "region": "Africa",
     "subregion": "Middle Africa",
     "latlng": [
@@ -2494,6 +3085,9 @@ window.COUNTRIES = [
     "capital": "Madrid",
     "population": 48600000,
     "government": "Parliamentary constitutional monarchy",
+    "languages": [
+      "Spanish"
+    ],
     "region": "Europe",
     "subregion": "Southern Europe",
     "latlng": [
@@ -2509,6 +3103,10 @@ window.COUNTRIES = [
     "capital": "Sri Jayawardenepura Kotte",
     "population": 23100000,
     "government": "Semi-presidential republic",
+    "languages": [
+      "Sinhala",
+      "Tamil"
+    ],
     "region": "Asia",
     "subregion": "Southern Asia",
     "latlng": [
@@ -2524,6 +3122,10 @@ window.COUNTRIES = [
     "capital": "Khartoum",
     "population": 50400000,
     "government": "Military or provisional government",
+    "languages": [
+      "Arabic",
+      "English"
+    ],
     "region": "Africa",
     "subregion": "Northern Africa",
     "latlng": [
@@ -2539,6 +3141,9 @@ window.COUNTRIES = [
     "capital": "Paramaribo",
     "population": 634000,
     "government": "Parliamentary republic",
+    "languages": [
+      "Dutch"
+    ],
     "region": "Americas",
     "subregion": "South America",
     "latlng": [
@@ -2554,6 +3159,9 @@ window.COUNTRIES = [
     "capital": "Stockholm",
     "population": 10600000,
     "government": "Parliamentary constitutional monarchy",
+    "languages": [
+      "Swedish"
+    ],
     "region": "Europe",
     "subregion": "Northern Europe",
     "latlng": [
@@ -2569,6 +3177,12 @@ window.COUNTRIES = [
     "capital": "Bern",
     "population": 8960000,
     "government": "Directorial republic",
+    "languages": [
+      "German",
+      "French",
+      "Italian",
+      "Romansh"
+    ],
     "region": "Europe",
     "subregion": "Western Europe",
     "latlng": [
@@ -2584,6 +3198,9 @@ window.COUNTRIES = [
     "capital": "Damascus",
     "population": 24700000,
     "government": "Military or provisional government",
+    "languages": [
+      "Arabic"
+    ],
     "region": "Asia",
     "subregion": "Western Asia",
     "latlng": [
@@ -2599,6 +3216,9 @@ window.COUNTRIES = [
     "capital": "Taipei",
     "population": 23400000,
     "government": "Semi-presidential republic",
+    "languages": [
+      "Mandarin Chinese"
+    ],
     "region": "Asia",
     "subregion": "Eastern Asia",
     "latlng": [
@@ -2614,6 +3234,9 @@ window.COUNTRIES = [
     "capital": "Dushanbe",
     "population": 10600000,
     "government": "Presidential republic",
+    "languages": [
+      "Tajik"
+    ],
     "region": "Asia",
     "subregion": "Central Asia",
     "latlng": [
@@ -2629,6 +3252,10 @@ window.COUNTRIES = [
     "capital": "Dodoma",
     "population": 68600000,
     "government": "Presidential republic",
+    "languages": [
+      "Swahili",
+      "English"
+    ],
     "region": "Africa",
     "subregion": "Eastern Africa",
     "latlng": [
@@ -2644,6 +3271,9 @@ window.COUNTRIES = [
     "capital": "Bangkok",
     "population": 71700000,
     "government": "Parliamentary constitutional monarchy",
+    "languages": [
+      "Thai"
+    ],
     "region": "Asia",
     "subregion": "South-Eastern Asia",
     "latlng": [
@@ -2659,6 +3289,10 @@ window.COUNTRIES = [
     "capital": "Dili",
     "population": 1400000,
     "government": "Semi-presidential republic",
+    "languages": [
+      "Tetum",
+      "Portuguese"
+    ],
     "region": "Asia",
     "subregion": "South-Eastern Asia",
     "latlng": [
@@ -2674,6 +3308,9 @@ window.COUNTRIES = [
     "capital": "Lomé",
     "population": 9520000,
     "government": "Parliamentary republic",
+    "languages": [
+      "French"
+    ],
     "region": "Africa",
     "subregion": "Western Africa",
     "latlng": [
@@ -2689,6 +3326,10 @@ window.COUNTRIES = [
     "capital": "Nuku'alofa",
     "population": 104000,
     "government": "Parliamentary constitutional monarchy",
+    "languages": [
+      "Tongan",
+      "English"
+    ],
     "region": "Oceania",
     "subregion": "Polynesia",
     "latlng": [
@@ -2704,6 +3345,9 @@ window.COUNTRIES = [
     "capital": "Port of Spain",
     "population": 1510000,
     "government": "Parliamentary republic",
+    "languages": [
+      "English"
+    ],
     "region": "Americas",
     "subregion": "Caribbean",
     "latlng": [
@@ -2719,6 +3363,9 @@ window.COUNTRIES = [
     "capital": "Tunis",
     "population": 12300000,
     "government": "Presidential republic",
+    "languages": [
+      "Arabic"
+    ],
     "region": "Africa",
     "subregion": "Northern Africa",
     "latlng": [
@@ -2734,6 +3381,9 @@ window.COUNTRIES = [
     "capital": "Ankara",
     "population": 85700000,
     "government": "Presidential republic",
+    "languages": [
+      "Turkish"
+    ],
     "region": "Asia",
     "subregion": "Western Asia",
     "latlng": [
@@ -2749,6 +3399,9 @@ window.COUNTRIES = [
     "capital": "Ashgabat",
     "population": 7490000,
     "government": "Presidential republic",
+    "languages": [
+      "Turkmen"
+    ],
     "region": "Asia",
     "subregion": "Central Asia",
     "latlng": [
@@ -2764,6 +3417,10 @@ window.COUNTRIES = [
     "capital": "Funafuti",
     "population": 9600,
     "government": "Parliamentary republic",
+    "languages": [
+      "Tuvaluan",
+      "English"
+    ],
     "region": "Oceania",
     "subregion": "Polynesia",
     "latlng": [
@@ -2779,6 +3436,10 @@ window.COUNTRIES = [
     "capital": "Kampala",
     "population": 50000000,
     "government": "Presidential republic",
+    "languages": [
+      "English",
+      "Swahili"
+    ],
     "region": "Africa",
     "subregion": "Eastern Africa",
     "latlng": [
@@ -2794,6 +3455,9 @@ window.COUNTRIES = [
     "capital": "Kyiv",
     "population": 37900000,
     "government": "Semi-presidential republic",
+    "languages": [
+      "Ukrainian"
+    ],
     "region": "Europe",
     "subregion": "Eastern Europe",
     "latlng": [
@@ -2809,6 +3473,9 @@ window.COUNTRIES = [
     "capital": "Abu Dhabi",
     "population": 10900000,
     "government": "Absolute monarchy",
+    "languages": [
+      "Arabic"
+    ],
     "region": "Asia",
     "subregion": "Western Asia",
     "latlng": [
@@ -2824,6 +3491,9 @@ window.COUNTRIES = [
     "capital": "London",
     "population": 69100000,
     "government": "Parliamentary constitutional monarchy",
+    "languages": [
+      "English"
+    ],
     "region": "Europe",
     "subregion": "Northern Europe",
     "latlng": [
@@ -2839,6 +3509,9 @@ window.COUNTRIES = [
     "capital": "Washington, D.C.",
     "population": 341000000,
     "government": "Presidential republic",
+    "languages": [
+      "English"
+    ],
     "region": "Americas",
     "subregion": "North America",
     "latlng": [
@@ -2854,6 +3527,9 @@ window.COUNTRIES = [
     "capital": "Montevideo",
     "population": 3390000,
     "government": "Presidential republic",
+    "languages": [
+      "Spanish"
+    ],
     "region": "Americas",
     "subregion": "South America",
     "latlng": [
@@ -2869,6 +3545,9 @@ window.COUNTRIES = [
     "capital": "Tashkent",
     "population": 36400000,
     "government": "Presidential republic",
+    "languages": [
+      "Uzbek"
+    ],
     "region": "Asia",
     "subregion": "Central Asia",
     "latlng": [
@@ -2884,6 +3563,11 @@ window.COUNTRIES = [
     "capital": "Port Vila",
     "population": 327000,
     "government": "Parliamentary republic",
+    "languages": [
+      "Bislama",
+      "English",
+      "French"
+    ],
     "region": "Oceania",
     "subregion": "Melanesia",
     "latlng": [
@@ -2899,6 +3583,10 @@ window.COUNTRIES = [
     "capital": "Vatican City",
     "population": 760,
     "government": "Theocracy",
+    "languages": [
+      "Italian",
+      "Latin"
+    ],
     "region": "Europe",
     "subregion": "Southern Europe",
     "latlng": [
@@ -2914,6 +3602,9 @@ window.COUNTRIES = [
     "capital": "Caracas",
     "population": 28400000,
     "government": "Presidential republic",
+    "languages": [
+      "Spanish"
+    ],
     "region": "Americas",
     "subregion": "South America",
     "latlng": [
@@ -2929,6 +3620,9 @@ window.COUNTRIES = [
     "capital": "Hanoi",
     "population": 101000000,
     "government": "One-party state",
+    "languages": [
+      "Vietnamese"
+    ],
     "region": "Asia",
     "subregion": "South-Eastern Asia",
     "latlng": [
@@ -2944,6 +3638,9 @@ window.COUNTRIES = [
     "capital": "Sana'a",
     "population": 40600000,
     "government": "Military or provisional government",
+    "languages": [
+      "Arabic"
+    ],
     "region": "Asia",
     "subregion": "Western Asia",
     "latlng": [
@@ -2959,6 +3656,9 @@ window.COUNTRIES = [
     "capital": "Lusaka",
     "population": 21300000,
     "government": "Presidential republic",
+    "languages": [
+      "English"
+    ],
     "region": "Africa",
     "subregion": "Eastern Africa",
     "latlng": [
@@ -2974,6 +3674,24 @@ window.COUNTRIES = [
     "capital": "Harare",
     "population": 16600000,
     "government": "Presidential republic",
+    "languages": [
+      "Shona",
+      "Northern Ndebele",
+      "English",
+      "Chewa",
+      "Chibarwe",
+      "Kalanga",
+      "Khoisan",
+      "Nambya",
+      "Ndau",
+      "Shangani",
+      "Sotho",
+      "Tonga",
+      "Tswana",
+      "Venda",
+      "Xhosa",
+      "Zimbabwean Sign Language"
+    ],
     "region": "Africa",
     "subregion": "Eastern Africa",
     "latlng": [

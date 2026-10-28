@@ -8,7 +8,7 @@ import { readFileSync, writeFileSync, mkdirSync, copyFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import * as topojson from 'topojson-client';
-import { FACTS, GOVERNMENTS, NAME_OVERRIDES, CAPITAL_OVERRIDES } from './country-facts.mjs';
+import { FACTS, GOVERNMENTS, LANGUAGES, NAME_OVERRIDES, CAPITAL_OVERRIDES } from './country-facts.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const pkgFile = (pkg, file) => join(root, 'node_modules', pkg, file);
@@ -19,6 +19,8 @@ const topo50 = readJSON(pkgFile('world-atlas', 'countries-50m.json'));
 const topo10 = readJSON(pkgFile('world-atlas', 'countries-10m.json'));
 
 const quiz = worldCountries.filter((c) => FACTS[c.cca3]);
+const noLang = quiz.filter((c) => !LANGUAGES[c.cca3]).map((c) => c.cca3);
+if (noLang.length) throw new Error('No languages for ' + noLang);
 if (quiz.length !== 198) throw new Error(`Expected 198 countries, got ${quiz.length}`);
 const byNumeric = new Map(quiz.filter((c) => c.ccn3).map((c) => [c.ccn3, c]));
 
@@ -79,6 +81,7 @@ const countries = quiz
     capital: CAPITAL_OVERRIDES[c.cca3] || c.capital[0],
     population: FACTS[c.cca3][0],
     government: GOVERNMENTS[FACTS[c.cca3][1]],
+    languages: LANGUAGES[c.cca3].split('|'),
     region: c.region,
     subregion: c.subregion,
     latlng: c.latlng,
