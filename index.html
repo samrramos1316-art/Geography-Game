@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Atlas Quest — Geography Game</title>
+  <meta name="description" content="Interactive map geography quiz: find countries, and test yourself on capitals, flags, shapes, populations and governments." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌍</text></svg>" />
+</head>
+<body>
+  <!-- The world map is always on stage -->
+  <div id="map-wrap">
+    <svg id="map" aria-label="World map"></svg>
+    <div id="tooltip" class="tooltip" hidden></div>
+    <div class="map-controls" id="map-controls">
+      <button class="icon-btn" id="zoom-in" title="Zoom in" aria-label="Zoom in">+</button>
+      <button class="icon-btn" id="zoom-out" title="Zoom out" aria-label="Zoom out">−</button>
+      <button class="icon-btn" id="zoom-reset" title="Show whole world" aria-label="Show whole world">
+        <svg viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Top bar -->
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">◎</span>
+      <span class="brand-name">Atlas Quest</span>
+    </div>
+    <div class="hud" id="hud" hidden>
+      <div class="hud-progress">
+        <div class="hud-label"><span id="hud-country">Country 1 / 10</span></div>
+        <div class="progress"><div class="progress-fill" id="progress-fill"></div></div>
+      </div>
+      <div class="hud-stat"><span class="hud-stat-value" id="hud-score">0</span><span class="hud-stat-label">correct</span></div>
+      <div class="hud-stat"><span class="hud-stat-value" id="hud-streak">0</span><span class="hud-stat-label">streak</span></div>
+      <button class="ghost-btn" id="quit-btn">Quit</button>
+    </div>
+  </header>
+
+  <!-- Setup -->
+  <section class="overlay" id="setup">
+    <div class="setup-card glass">
+      <p class="eyebrow">Geography trainer</p>
+      <h1>Explore the world,<br /><em>one country at a time.</em></h1>
+
+      <div class="step">
+        <div class="step-head">
+          <span class="step-num">1</span>
+          <h2>What would you like to study?</h2>
+          <button class="link-btn" id="select-all">Select all</button>
+        </div>
+        <div class="category-grid" id="category-grid"></div>
+      </div>
+
+      <div class="step">
+        <div class="step-head">
+          <span class="step-num">2</span>
+          <h2>How many countries?</h2>
+        </div>
+        <div class="count-row" id="count-row"></div>
+      </div>
+
+      <div class="setup-footer">
+        <p class="setup-summary" id="setup-summary"></p>
+        <button class="primary-btn" id="start-btn">Start journey <span aria-hidden="true">→</span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Question panel -->
+  <aside class="panel glass" id="panel" hidden>
+    <div class="panel-head">
+      <div class="country-chip" id="country-chip">
+        <span class="chip-dot"></span>
+        <span id="country-title">Mystery country</span>
+      </div>
+      <div class="q-steps" id="q-steps"></div>
+    </div>
+    <div class="panel-body" id="panel-body"></div>
+    <div class="panel-foot" id="panel-foot"></div>
+  </aside>
+
+  <!-- Results -->
+  <section class="overlay" id="results" hidden>
+    <div class="results-card glass" id="results-card"></div>
+  </section>
+
+  <script src="vendor/d3.min.js"></script>
+  <script src="vendor/topojson-client.min.js"></script>
+  <script src="data/world.js"></script>
+  <script src="data/countries.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
