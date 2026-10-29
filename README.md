@@ -13,6 +13,7 @@ An interactive, map-based geography quiz covering all **198 countries**
    - Population (rounded to 2 significant figures)
    - System of government
    - Official language
+   - Currency
 2. **Pick a part of the world** – the whole world, or any mix of 11 regions: Africa,
    Central America & Caribbean, Central Asia, East Asia, Europe, Middle East / West Asia,
    North America, Oceania, South America, South Asia and Southeast Asia.
@@ -22,7 +23,7 @@ An interactive, map-based geography quiz covering all **198 countries**
 3. **Pick how many countries** – 10, 25, 50, 75, 100, 150 or All (only counts that fit
    the chosen regions are offered).
 4. For each country the selected questions are asked in this order:
-   **shape → location → capital → flag → population → government → language**.
+   **shape → location → capital → flag → population → government → language → currency**.
    Shape always comes first because the country's name stays hidden until it's answered.
 
 The world map stays on screen the whole time: you can zoom (scroll / pinch / buttons)
@@ -46,7 +47,7 @@ npm run serve        # http://localhost:8080
 | What | Source |
 | --- | --- |
 | Borders & shapes | [Natural Earth](https://www.naturalearthdata.com/) via `world-atlas` (1:50m; Tuvalu from 1:10m) |
-| Names, capitals, regions | `world-countries` (with a few display tweaks) |
+| Names, capitals, regions, currencies | `world-countries` (with a few corrections) |
 | Flags | `flag-icons` |
 | Population, government & official languages | `scripts/country-facts.mjs` (hand-maintained, ≈2025 estimates) |
 

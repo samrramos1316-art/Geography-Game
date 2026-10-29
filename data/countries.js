@@ -23,6 +23,14 @@ window.COUNTRIES = [
       "Pashto",
       "Dari"
     ],
+    "currencies": [
+      {
+        "code": "AFN",
+        "name": "Afghan afghani",
+        "symbol": "؋",
+        "unit": "Afghani"
+      }
+    ],
     "region": "Asia",
     "subregion": "Southern Asia",
     "latlng": [
@@ -40,6 +48,14 @@ window.COUNTRIES = [
     "government": "Parliamentary republic",
     "languages": [
       "Albanian"
+    ],
+    "currencies": [
+      {
+        "code": "ALL",
+        "name": "Albanian lek",
+        "symbol": "L",
+        "unit": "Lek"
+      }
     ],
     "region": "Europe",
     "subregion": "Southeast Europe",
@@ -60,6 +76,14 @@ window.COUNTRIES = [
       "Arabic",
       "Berber"
     ],
+    "currencies": [
+      {
+        "code": "DZD",
+        "name": "Algerian dinar",
+        "symbol": "د.ج",
+        "unit": "Dinar"
+      }
+    ],
     "region": "Africa",
     "subregion": "Northern Africa",
     "latlng": [
@@ -77,6 +101,14 @@ window.COUNTRIES = [
     "government": "Parliamentary constitutional monarchy",
     "languages": [
       "Catalan"
+    ],
+    "currencies": [
+      {
+        "code": "EUR",
+        "name": "Euro",
+        "symbol": "€",
+        "unit": "Euro"
+      }
     ],
     "region": "Europe",
     "subregion": "Southern Europe",
@@ -96,6 +128,14 @@ window.COUNTRIES = [
     "languages": [
       "Portuguese"
     ],
+    "currencies": [
+      {
+        "code": "AOA",
+        "name": "Angolan kwanza",
+        "symbol": "Kz",
+        "unit": "Kwanza"
+      }
+    ],
     "region": "Africa",
     "subregion": "Middle Africa",
     "latlng": [
@@ -113,6 +153,14 @@ window.COUNTRIES = [
     "government": "Parliamentary constitutional monarchy",
     "languages": [
       "English"
+    ],
+    "currencies": [
+      {
+        "code": "XCD",
+        "name": "Eastern Caribbean dollar",
+        "symbol": "$",
+        "unit": "Dollar"
+      }
     ],
     "region": "Americas",
     "subregion": "Caribbean",
@@ -132,6 +180,14 @@ window.COUNTRIES = [
     "languages": [
       "Spanish"
     ],
+    "currencies": [
+      {
+        "code": "ARS",
+        "name": "Argentine peso",
+        "symbol": "$",
+        "unit": "Peso"
+      }
+    ],
     "region": "Americas",
     "subregion": "South America",
     "latlng": [
@@ -149,6 +205,14 @@ window.COUNTRIES = [
     "government": "Parliamentary republic",
     "languages": [
       "Armenian"
+    ],
+    "currencies": [
+      {
+        "code": "AMD",
+        "name": "Armenian dram",
+        "symbol": "֏",
+        "unit": "Dram"
+      }
     ],
     "region": "Asia",
     "subregion": "Western Asia",
@@ -168,6 +232,14 @@ window.COUNTRIES = [
     "languages": [
       "English"
     ],
+    "currencies": [
+      {
+        "code": "AUD",
+        "name": "Australian dollar",
+        "symbol": "$",
+        "unit": "Dollar"
+      }
+    ],
     "region": "Oceania",
     "subregion": "Australia and New Zealand",
     "latlng": [
@@ -185,6 +257,14 @@ window.COUNTRIES = [
     "government": "Parliamentary republic",
     "languages": [
       "German"
+    ],
+    "currencies": [
+      {
+        "code": "EUR",
+        "name": "Euro",
+        "symbol": "€",
+        "unit": "Euro"
+      }
     ],
     "region": "Europe",
     "subregion": "Central Europe",
@@ -204,6 +284,14 @@ window.COUNTRIES = [
     "languages": [
       "Azerbaijani"
     ],
+    "currencies": [
+      {
+        "code": "AZN",
+        "name": "Azerbaijani manat",
+        "symbol": "₼",
+        "unit": "Manat"
+      }
+    ],
     "region": "Asia",
     "subregion": "Western Asia",
     "latlng": [
@@ -221,6 +309,20 @@ window.COUNTRIES = [
     "government": "Parliamentary constitutional monarchy",
     "languages": [
       "English"
+    ],
+    "currencies": [
+      {
+        "code": "BSD",
+        "name": "Bahamian dollar",
+        "symbol": "$",
+        "unit": "Dollar"
+      },
+      {
+        "code": "USD",
+        "name": "United States dollar",
+        "symbol": "$",
+        "unit": "Dollar"
+      }
     ],
     "region": "Americas",
     "subregion": "Caribbean",
@@ -240,6 +342,14 @@ window.COUNTRIES = [
     "languages": [
       "Arabic"
     ],
+    "currencies": [
+      {
+        "code": "BHD",
+        "name": "Bahraini dinar",
+        "symbol": ".د.ب",
+        "unit": "Dinar"
+      }
+    ],
     "region": "Asia",
     "subregion": "Western Asia",
     "latlng": [
@@ -257,6 +367,14 @@ window.COUNTRIES = [
     "government": "Parliamentary republic",
     "languages": [
       "Bengali"
+    ],
+    "currencies": [
+      {
+        "code": "BDT",
+        "name": "Bangladeshi taka",
+        "symbol": "৳",
+        "unit": "Taka"
+      }
     ],
     "region": "Asia",
     "subregion": "Southern Asia",
@@ -276,6 +394,14 @@ window.COUNTRIES = [
     "languages": [
       "English"
     ],
+    "currencies": [
+      {
+        "code": "BBD",
+        "name": "Barbadian dollar",
+        "symbol": "$",
+        "unit": "Dollar"
+      }
+    ],
     "region": "Americas",
     "subregion": "Caribbean",
     "latlng": [
@@ -294,6 +420,14 @@ window.COUNTRIES = [
     "languages": [
       "Belarusian",
       "Russian"
+    ],
+    "currencies": [
+      {
+        "code": "BYN",
+        "name": "Belarusian ruble",
+        "symbol": "Br",
+        "unit": "Ruble"
+      }
     ],
     "region": "Europe",
     "subregion": "Eastern Europe",
@@ -315,6 +449,14 @@ window.COUNTRIES = [
       "French",
       "German"
     ],
+    "currencies": [
+      {
+        "code": "EUR",
+        "name": "Euro",
+        "symbol": "€",
+        "unit": "Euro"
+      }
+    ],
     "region": "Europe",
     "subregion": "Western Europe",
     "latlng": [
@@ -332,6 +474,14 @@ window.COUNTRIES = [
     "government": "Parliamentary constitutional monarchy",
     "languages": [
       "English"
+    ],
+    "currencies": [
+      {
+        "code": "BZD",
+        "name": "Belize dollar",
+        "symbol": "$",
+        "unit": "Dollar"
+      }
     ],
     "region": "Americas",
     "subregion": "Central America",
@@ -351,6 +501,14 @@ window.COUNTRIES = [
     "languages": [
       "French"
     ],
+    "currencies": [
+      {
+        "code": "XOF",
+        "name": "West African CFA franc",
+        "symbol": "Fr",
+        "unit": "CFA franc"
+      }
+    ],
     "region": "Africa",
     "subregion": "Western Africa",
     "latlng": [
@@ -368,6 +526,20 @@ window.COUNTRIES = [
     "government": "Parliamentary constitutional monarchy",
     "languages": [
       "Dzongkha"
+    ],
+    "currencies": [
+      {
+        "code": "BTN",
+        "name": "Bhutanese ngultrum",
+        "symbol": "Nu.",
+        "unit": "Ngultrum"
+      },
+      {
+        "code": "INR",
+        "name": "Indian rupee",
+        "symbol": "₹",
+        "unit": "Rupee"
+      }
     ],
     "region": "Asia",
     "subregion": "Southern Asia",
@@ -390,6 +562,14 @@ window.COUNTRIES = [
       "Aymara",
       "Guaraní"
     ],
+    "currencies": [
+      {
+        "code": "BOB",
+        "name": "Bolivian boliviano",
+        "symbol": "Bs.",
+        "unit": "Boliviano"
+      }
+    ],
     "region": "Americas",
     "subregion": "South America",
     "latlng": [
@@ -410,6 +590,14 @@ window.COUNTRIES = [
       "Croatian",
       "Serbian"
     ],
+    "currencies": [
+      {
+        "code": "BAM",
+        "name": "Bosnia and Herzegovina convertible mark",
+        "symbol": "KM",
+        "unit": "Convertible mark"
+      }
+    ],
     "region": "Europe",
     "subregion": "Southeast Europe",
     "latlng": [
@@ -429,6 +617,14 @@ window.COUNTRIES = [
       "English",
       "Tswana"
     ],
+    "currencies": [
+      {
+        "code": "BWP",
+        "name": "Botswana pula",
+        "symbol": "P",
+        "unit": "Pula"
+      }
+    ],
     "region": "Africa",
     "subregion": "Southern Africa",
     "latlng": [
@@ -446,6 +642,14 @@ window.COUNTRIES = [
     "government": "Presidential republic",
     "languages": [
       "Portuguese"
+    ],
+    "currencies": [
+      {
+        "code": "BRL",
+        "name": "Brazilian real",
+        "symbol": "R$",
+        "unit": "Real"
+      }
     ],
     "region": "Americas",
     "subregion": "South America",
@@ -465,6 +669,20 @@ window.COUNTRIES = [
     "languages": [
       "Malay"
     ],
+    "currencies": [
+      {
+        "code": "BND",
+        "name": "Brunei dollar",
+        "symbol": "$",
+        "unit": "Dollar"
+      },
+      {
+        "code": "SGD",
+        "name": "Singapore dollar",
+        "symbol": "$",
+        "unit": "Dollar"
+      }
+    ],
     "region": "Asia",
     "subregion": "South-Eastern Asia",
     "latlng": [
@@ -482,6 +700,14 @@ window.COUNTRIES = [
     "government": "Parliamentary republic",
     "languages": [
       "Bulgarian"
+    ],
+    "currencies": [
+      {
+        "code": "EUR",
+        "name": "Euro",
+        "symbol": "€",
+        "unit": "Euro"
+      }
     ],
     "region": "Europe",
     "subregion": "Southeast Europe",
@@ -504,6 +730,14 @@ window.COUNTRIES = [
       "Fula",
       "Bissa"
     ],
+    "currencies": [
+      {
+        "code": "XOF",
+        "name": "West African CFA franc",
+        "symbol": "Fr",
+        "unit": "CFA franc"
+      }
+    ],
     "region": "Africa",
     "subregion": "Western Africa",
     "latlng": [
@@ -524,6 +758,14 @@ window.COUNTRIES = [
       "French",
       "English"
     ],
+    "currencies": [
+      {
+        "code": "BIF",
+        "name": "Burundian franc",
+        "symbol": "Fr",
+        "unit": "Franc"
+      }
+    ],
     "region": "Africa",
     "subregion": "Eastern Africa",
     "latlng": [
@@ -541,6 +783,20 @@ window.COUNTRIES = [
     "government": "Parliamentary constitutional monarchy",
     "languages": [
       "Khmer"
+    ],
+    "currencies": [
+      {
+        "code": "KHR",
+        "name": "Cambodian riel",
+        "symbol": "៛",
+        "unit": "Riel"
+      },
+      {
+        "code": "USD",
+        "name": "United States dollar",
+        "symbol": "$",
+        "unit": "Dollar"
+      }
     ],
     "region": "Asia",
     "subregion": "South-Eastern Asia",
@@ -561,6 +817,14 @@ window.COUNTRIES = [
       "French",
       "English"
     ],
+    "currencies": [
+      {
+        "code": "XAF",
+        "name": "Central African CFA franc",
+        "symbol": "Fr",
+        "unit": "CFA franc"
+      }
+    ],
     "region": "Africa",
     "subregion": "Middle Africa",
     "latlng": [
@@ -580,6 +844,14 @@ window.COUNTRIES = [
       "English",
       "French"
     ],
+    "currencies": [
+      {
+        "code": "CAD",
+        "name": "Canadian dollar",
+        "symbol": "$",
+        "unit": "Dollar"
+      }
+    ],
     "region": "Americas",
     "subregion": "North America",
     "latlng": [
@@ -597,6 +869,14 @@ window.COUNTRIES = [
     "government": "Semi-presidential republic",
     "languages": [
       "Portuguese"
+    ],
+    "currencies": [
+      {
+        "code": "CVE",
+        "name": "Cape Verdean escudo",
+        "symbol": "Esc",
+        "unit": "Escudo"
+      }
     ],
     "region": "Africa",
     "subregion": "Western Africa",
@@ -617,6 +897,14 @@ window.COUNTRIES = [
       "French",
       "Sango"
     ],
+    "currencies": [
+      {
+        "code": "XAF",
+        "name": "Central African CFA franc",
+        "symbol": "Fr",
+        "unit": "CFA franc"
+      }
+    ],
     "region": "Africa",
     "subregion": "Middle Africa",
     "latlng": [
@@ -636,6 +924,14 @@ window.COUNTRIES = [
       "French",
       "Arabic"
     ],
+    "currencies": [
+      {
+        "code": "XAF",
+        "name": "Central African CFA franc",
+        "symbol": "Fr",
+        "unit": "CFA franc"
+      }
+    ],
     "region": "Africa",
     "subregion": "Middle Africa",
     "latlng": [
@@ -653,6 +949,14 @@ window.COUNTRIES = [
     "government": "Presidential republic",
     "languages": [
       "Spanish"
+    ],
+    "currencies": [
+      {
+        "code": "CLP",
+        "name": "Chilean peso",
+        "symbol": "$",
+        "unit": "Peso"
+      }
     ],
     "region": "Americas",
     "subregion": "South America",
@@ -672,6 +976,14 @@ window.COUNTRIES = [
     "languages": [
       "Mandarin Chinese"
     ],
+    "currencies": [
+      {
+        "code": "CNY",
+        "name": "Chinese yuan",
+        "symbol": "¥",
+        "unit": "Yuan"
+      }
+    ],
     "region": "Asia",
     "subregion": "Eastern Asia",
     "latlng": [
@@ -689,6 +1001,14 @@ window.COUNTRIES = [
     "government": "Presidential republic",
     "languages": [
       "Spanish"
+    ],
+    "currencies": [
+      {
+        "code": "COP",
+        "name": "Colombian peso",
+        "symbol": "$",
+        "unit": "Peso"
+      }
     ],
     "region": "Americas",
     "subregion": "South America",
@@ -710,6 +1030,14 @@ window.COUNTRIES = [
       "Arabic",
       "French"
     ],
+    "currencies": [
+      {
+        "code": "KMF",
+        "name": "Comorian franc",
+        "symbol": "Fr",
+        "unit": "Franc"
+      }
+    ],
     "region": "Africa",
     "subregion": "Eastern Africa",
     "latlng": [
@@ -729,6 +1057,20 @@ window.COUNTRIES = [
       "English",
       "Cook Islands Māori"
     ],
+    "currencies": [
+      {
+        "code": "NZD",
+        "name": "New Zealand dollar",
+        "symbol": "$",
+        "unit": "Dollar"
+      },
+      {
+        "code": "CKD",
+        "name": "Cook Islands dollar",
+        "symbol": "$",
+        "unit": "Dollar"
+      }
+    ],
     "region": "Oceania",
     "subregion": "Polynesia",
     "latlng": [
@@ -746,6 +1088,14 @@ window.COUNTRIES = [
     "government": "Presidential republic",
     "languages": [
       "Spanish"
+    ],
+    "currencies": [
+      {
+        "code": "CRC",
+        "name": "Costa Rican colón",
+        "symbol": "₡",
+        "unit": "Colón"
+      }
     ],
     "region": "Americas",
     "subregion": "Central America",
@@ -765,6 +1115,14 @@ window.COUNTRIES = [
     "languages": [
       "French"
     ],
+    "currencies": [
+      {
+        "code": "XOF",
+        "name": "West African CFA franc",
+        "symbol": "Fr",
+        "unit": "CFA franc"
+      }
+    ],
     "region": "Africa",
     "subregion": "Western Africa",
     "latlng": [
@@ -783,6 +1141,14 @@ window.COUNTRIES = [
     "languages": [
       "Croatian"
     ],
+    "currencies": [
+      {
+        "code": "EUR",
+        "name": "Euro",
+        "symbol": "€",
+        "unit": "Euro"
+      }
+    ],
     "region": "Europe",
     "subregion": "Southeast Europe",
     "latlng": [
@@ -800,6 +1166,14 @@ window.COUNTRIES = [
     "government": "One-party state",
     "languages": [
       "Spanish"
+    ],
+    "currencies": [
+      {
+        "code": "CUP",
+        "name": "Cuban peso",
+        "symbol": "$",
+        "unit": "Peso"
+      }
     ],
     "region": "Americas",
     "subregion": "Caribbean",
@@ -820,6 +1194,14 @@ window.COUNTRIES = [
       "Greek",
       "Turkish"
     ],
+    "currencies": [
+      {
+        "code": "EUR",
+        "name": "Euro",
+        "symbol": "€",
+        "unit": "Euro"
+      }
+    ],
     "region": "Europe",
     "subregion": "Southern Europe",
     "latlng": [
@@ -837,6 +1219,14 @@ window.COUNTRIES = [
     "government": "Parliamentary republic",
     "languages": [
       "Czech"
+    ],
+    "currencies": [
+      {
+        "code": "CZK",
+        "name": "Czech koruna",
+        "symbol": "Kč",
+        "unit": "Koruna"
+      }
     ],
     "region": "Europe",
     "subregion": "Central Europe",
@@ -856,6 +1246,14 @@ window.COUNTRIES = [
     "languages": [
       "French"
     ],
+    "currencies": [
+      {
+        "code": "CDF",
+        "name": "Congolese franc",
+        "symbol": "FC",
+        "unit": "Franc"
+      }
+    ],
     "region": "Africa",
     "subregion": "Middle Africa",
     "latlng": [
@@ -873,6 +1271,14 @@ window.COUNTRIES = [
     "government": "Parliamentary constitutional monarchy",
     "languages": [
       "Danish"
+    ],
+    "currencies": [
+      {
+        "code": "DKK",
+        "name": "Danish krone",
+        "symbol": "kr",
+        "unit": "Krone"
+      }
     ],
     "region": "Europe",
     "subregion": "Northern Europe",
@@ -893,6 +1299,14 @@ window.COUNTRIES = [
       "French",
       "Arabic"
     ],
+    "currencies": [
+      {
+        "code": "DJF",
+        "name": "Djiboutian franc",
+        "symbol": "Fr",
+        "unit": "Franc"
+      }
+    ],
     "region": "Africa",
     "subregion": "Eastern Africa",
     "latlng": [
@@ -910,6 +1324,14 @@ window.COUNTRIES = [
     "government": "Parliamentary republic",
     "languages": [
       "English"
+    ],
+    "currencies": [
+      {
+        "code": "XCD",
+        "name": "Eastern Caribbean dollar",
+        "symbol": "$",
+        "unit": "Dollar"
+      }
     ],
     "region": "Americas",
     "subregion": "Caribbean",
@@ -929,6 +1351,14 @@ window.COUNTRIES = [
     "languages": [
       "Spanish"
     ],
+    "currencies": [
+      {
+        "code": "DOP",
+        "name": "Dominican peso",
+        "symbol": "$",
+        "unit": "Peso"
+      }
+    ],
     "region": "Americas",
     "subregion": "Caribbean",
     "latlng": [
@@ -946,6 +1376,14 @@ window.COUNTRIES = [
     "government": "Presidential republic",
     "languages": [
       "Spanish"
+    ],
+    "currencies": [
+      {
+        "code": "USD",
+        "name": "United States dollar",
+        "symbol": "$",
+        "unit": "Dollar"
+      }
     ],
     "region": "Americas",
     "subregion": "South America",
@@ -965,6 +1403,14 @@ window.COUNTRIES = [
     "languages": [
       "Arabic"
     ],
+    "currencies": [
+      {
+        "code": "EGP",
+        "name": "Egyptian pound",
+        "symbol": "£",
+        "unit": "Pound"
+      }
+    ],
     "region": "Africa",
     "subregion": "Northern Africa",
     "latlng": [
@@ -982,6 +1428,14 @@ window.COUNTRIES = [
     "government": "Presidential republic",
     "languages": [
       "Spanish"
+    ],
+    "currencies": [
+      {
+        "code": "USD",
+        "name": "United States dollar",
+        "symbol": "$",
+        "unit": "Dollar"
+      }
     ],
     "region": "Americas",
     "subregion": "Central America",
@@ -1003,6 +1457,14 @@ window.COUNTRIES = [
       "French",
       "Portuguese"
     ],
+    "currencies": [
+      {
+        "code": "XAF",
+        "name": "Central African CFA franc",
+        "symbol": "Fr",
+        "unit": "CFA franc"
+      }
+    ],
     "region": "Africa",
     "subregion": "Middle Africa",
     "latlng": [
@@ -1023,6 +1485,14 @@ window.COUNTRIES = [
       "Arabic",
       "English"
     ],
+    "currencies": [
+      {
+        "code": "ERN",
+        "name": "Eritrean nakfa",
+        "symbol": "Nfk",
+        "unit": "Nakfa"
+      }
+    ],
     "region": "Africa",
     "subregion": "Eastern Africa",
     "latlng": [
@@ -1040,6 +1510,14 @@ window.COUNTRIES = [
     "government": "Parliamentary republic",
     "languages": [
       "Estonian"
+    ],
+    "currencies": [
+      {
+        "code": "EUR",
+        "name": "Euro",
+        "symbol": "€",
+        "unit": "Euro"
+      }
     ],
     "region": "Europe",
     "subregion": "Northern Europe",
@@ -1059,6 +1537,20 @@ window.COUNTRIES = [
     "languages": [
       "Swazi",
       "English"
+    ],
+    "currencies": [
+      {
+        "code": "SZL",
+        "name": "Swazi lilangeni",
+        "symbol": "L",
+        "unit": "Lilangeni"
+      },
+      {
+        "code": "ZAR",
+        "name": "South African rand",
+        "symbol": "R",
+        "unit": "Rand"
+      }
     ],
     "region": "Africa",
     "subregion": "Southern Africa",
@@ -1082,6 +1574,14 @@ window.COUNTRIES = [
       "Tigrinya",
       "Afar"
     ],
+    "currencies": [
+      {
+        "code": "ETB",
+        "name": "Ethiopian birr",
+        "symbol": "Br",
+        "unit": "Birr"
+      }
+    ],
     "region": "Africa",
     "subregion": "Eastern Africa",
     "latlng": [
@@ -1102,6 +1602,14 @@ window.COUNTRIES = [
       "Fijian",
       "Fiji Hindi"
     ],
+    "currencies": [
+      {
+        "code": "FJD",
+        "name": "Fijian dollar",
+        "symbol": "$",
+        "unit": "Dollar"
+      }
+    ],
     "region": "Oceania",
     "subregion": "Melanesia",
     "latlng": [
@@ -1121,6 +1629,14 @@ window.COUNTRIES = [
       "Finnish",
       "Swedish"
     ],
+    "currencies": [
+      {
+        "code": "EUR",
+        "name": "Euro",
+        "symbol": "€",
+        "unit": "Euro"
+      }
+    ],
     "region": "Europe",
     "subregion": "Northern Europe",
     "latlng": [
@@ -1138,6 +1654,14 @@ window.COUNTRIES = [
     "government": "Semi-presidential republic",
     "languages": [
       "French"
+    ],
+    "currencies": [
+      {
+        "code": "EUR",
+        "name": "Euro",
+        "symbol": "€",
+        "unit": "Euro"
+      }
     ],
     "region": "Europe",
     "subregion": "Western Europe",
@@ -1157,6 +1681,14 @@ window.COUNTRIES = [
     "languages": [
       "French"
     ],
+    "currencies": [
+      {
+        "code": "XAF",
+        "name": "Central African CFA franc",
+        "symbol": "Fr",
+        "unit": "CFA franc"
+      }
+    ],
     "region": "Africa",
     "subregion": "Middle Africa",
     "latlng": [
@@ -1174,6 +1706,14 @@ window.COUNTRIES = [
     "government": "Presidential republic",
     "languages": [
       "English"
+    ],
+    "currencies": [
+      {
+        "code": "GMD",
+        "name": "Gambian dalasi",
+        "symbol": "D",
+        "unit": "Dalasi"
+      }
     ],
     "region": "Africa",
     "subregion": "Western Africa",
@@ -1193,6 +1733,14 @@ window.COUNTRIES = [
     "languages": [
       "Georgian"
     ],
+    "currencies": [
+      {
+        "code": "GEL",
+        "name": "Georgian lari",
+        "symbol": "₾",
+        "unit": "Lari"
+      }
+    ],
     "region": "Asia",
     "subregion": "Western Asia",
     "latlng": [
@@ -1210,6 +1758,14 @@ window.COUNTRIES = [
     "government": "Parliamentary republic",
     "languages": [
       "German"
+    ],
+    "currencies": [
+      {
+        "code": "EUR",
+        "name": "Euro",
+        "symbol": "€",
+        "unit": "Euro"
+      }
     ],
     "region": "Europe",
     "subregion": "Western Europe",
@@ -1229,6 +1785,14 @@ window.COUNTRIES = [
     "languages": [
       "English"
     ],
+    "currencies": [
+      {
+        "code": "GHS",
+        "name": "Ghanaian cedi",
+        "symbol": "₵",
+        "unit": "Cedi"
+      }
+    ],
     "region": "Africa",
     "subregion": "Western Africa",
     "latlng": [
@@ -1246,6 +1810,14 @@ window.COUNTRIES = [
     "government": "Parliamentary republic",
     "languages": [
       "Greek"
+    ],
+    "currencies": [
+      {
+        "code": "EUR",
+        "name": "Euro",
+        "symbol": "€",
+        "unit": "Euro"
+      }
     ],
     "region": "Europe",
     "subregion": "Southern Europe",
@@ -1265,6 +1837,14 @@ window.COUNTRIES = [
     "languages": [
       "English"
     ],
+    "currencies": [
+      {
+        "code": "XCD",
+        "name": "Eastern Caribbean dollar",
+        "symbol": "$",
+        "unit": "Dollar"
+      }
+    ],
     "region": "Americas",
     "subregion": "Caribbean",
     "latlng": [
@@ -1282,6 +1862,14 @@ window.COUNTRIES = [
     "government": "Presidential republic",
     "languages": [
       "Spanish"
+    ],
+    "currencies": [
+      {
+        "code": "GTQ",
+        "name": "Guatemalan quetzal",
+        "symbol": "Q",
+        "unit": "Quetzal"
+      }
     ],
     "region": "Americas",
     "subregion": "Central America",
@@ -1301,6 +1889,14 @@ window.COUNTRIES = [
     "languages": [
       "French"
     ],
+    "currencies": [
+      {
+        "code": "GNF",
+        "name": "Guinean franc",
+        "symbol": "Fr",
+        "unit": "Franc"
+      }
+    ],
     "region": "Africa",
     "subregion": "Western Africa",
     "latlng": [
@@ -1319,6 +1915,14 @@ window.COUNTRIES = [
     "languages": [
       "Portuguese"
     ],
+    "currencies": [
+      {
+        "code": "XOF",
+        "name": "West African CFA franc",
+        "symbol": "Fr",
+        "unit": "CFA franc"
+      }
+    ],
     "region": "Africa",
     "subregion": "Western Africa",
     "latlng": [
@@ -1336,6 +1940,14 @@ window.COUNTRIES = [
     "government": "Presidential republic",
     "languages": [
       "English"
+    ],
+    "currencies": [
+      {
+        "code": "GYD",
+        "name": "Guyanese dollar",
+        "symbol": "$",
+        "unit": "Dollar"
+      }
     ],
     "region": "Americas",
     "subregion": "South America",
@@ -1356,6 +1968,14 @@ window.COUNTRIES = [
       "Haitian Creole",
       "French"
     ],
+    "currencies": [
+      {
+        "code": "HTG",
+        "name": "Haitian gourde",
+        "symbol": "G",
+        "unit": "Gourde"
+      }
+    ],
     "region": "Americas",
     "subregion": "Caribbean",
     "latlng": [
@@ -1373,6 +1993,14 @@ window.COUNTRIES = [
     "government": "Presidential republic",
     "languages": [
       "Spanish"
+    ],
+    "currencies": [
+      {
+        "code": "HNL",
+        "name": "Honduran lempira",
+        "symbol": "L",
+        "unit": "Lempira"
+      }
     ],
     "region": "Americas",
     "subregion": "Central America",
@@ -1392,6 +2020,14 @@ window.COUNTRIES = [
     "languages": [
       "Hungarian"
     ],
+    "currencies": [
+      {
+        "code": "HUF",
+        "name": "Hungarian forint",
+        "symbol": "Ft",
+        "unit": "Forint"
+      }
+    ],
     "region": "Europe",
     "subregion": "Central Europe",
     "latlng": [
@@ -1409,6 +2045,14 @@ window.COUNTRIES = [
     "government": "Parliamentary republic",
     "languages": [
       "Icelandic"
+    ],
+    "currencies": [
+      {
+        "code": "ISK",
+        "name": "Icelandic króna",
+        "symbol": "kr",
+        "unit": "Króna"
+      }
     ],
     "region": "Europe",
     "subregion": "Northern Europe",
@@ -1429,6 +2073,14 @@ window.COUNTRIES = [
       "Hindi",
       "English"
     ],
+    "currencies": [
+      {
+        "code": "INR",
+        "name": "Indian rupee",
+        "symbol": "₹",
+        "unit": "Rupee"
+      }
+    ],
     "region": "Asia",
     "subregion": "Southern Asia",
     "latlng": [
@@ -1447,6 +2099,14 @@ window.COUNTRIES = [
     "languages": [
       "Indonesian"
     ],
+    "currencies": [
+      {
+        "code": "IDR",
+        "name": "Indonesian rupiah",
+        "symbol": "Rp",
+        "unit": "Rupiah"
+      }
+    ],
     "region": "Asia",
     "subregion": "South-Eastern Asia",
     "latlng": [
@@ -1464,6 +2124,14 @@ window.COUNTRIES = [
     "government": "Theocracy",
     "languages": [
       "Persian"
+    ],
+    "currencies": [
+      {
+        "code": "IRR",
+        "name": "Iranian rial",
+        "symbol": "﷼",
+        "unit": "Rial"
+      }
     ],
     "region": "Asia",
     "subregion": "Southern Asia",
@@ -1484,6 +2152,14 @@ window.COUNTRIES = [
       "Arabic",
       "Kurdish"
     ],
+    "currencies": [
+      {
+        "code": "IQD",
+        "name": "Iraqi dinar",
+        "symbol": "ع.د",
+        "unit": "Dinar"
+      }
+    ],
     "region": "Asia",
     "subregion": "Western Asia",
     "latlng": [
@@ -1503,6 +2179,14 @@ window.COUNTRIES = [
       "Irish",
       "English"
     ],
+    "currencies": [
+      {
+        "code": "EUR",
+        "name": "Euro",
+        "symbol": "€",
+        "unit": "Euro"
+      }
+    ],
     "region": "Europe",
     "subregion": "Northern Europe",
     "latlng": [
@@ -1520,6 +2204,14 @@ window.COUNTRIES = [
     "government": "Parliamentary republic",
     "languages": [
       "Hebrew"
+    ],
+    "currencies": [
+      {
+        "code": "ILS",
+        "name": "Israeli new shekel",
+        "symbol": "₪",
+        "unit": "Shekel"
+      }
     ],
     "region": "Asia",
     "subregion": "Western Asia",
@@ -1539,6 +2231,14 @@ window.COUNTRIES = [
     "languages": [
       "Italian"
     ],
+    "currencies": [
+      {
+        "code": "EUR",
+        "name": "Euro",
+        "symbol": "€",
+        "unit": "Euro"
+      }
+    ],
     "region": "Europe",
     "subregion": "Southern Europe",
     "latlng": [
@@ -1556,6 +2256,14 @@ window.COUNTRIES = [
     "government": "Parliamentary constitutional monarchy",
     "languages": [
       "English"
+    ],
+    "currencies": [
+      {
+        "code": "JMD",
+        "name": "Jamaican dollar",
+        "symbol": "$",
+        "unit": "Dollar"
+      }
     ],
     "region": "Americas",
     "subregion": "Caribbean",
@@ -1575,6 +2283,14 @@ window.COUNTRIES = [
     "languages": [
       "Japanese"
     ],
+    "currencies": [
+      {
+        "code": "JPY",
+        "name": "Japanese yen",
+        "symbol": "¥",
+        "unit": "Yen"
+      }
+    ],
     "region": "Asia",
     "subregion": "Eastern Asia",
     "latlng": [
@@ -1592,6 +2308,14 @@ window.COUNTRIES = [
     "government": "Semi-constitutional monarchy",
     "languages": [
       "Arabic"
+    ],
+    "currencies": [
+      {
+        "code": "JOD",
+        "name": "Jordanian dinar",
+        "symbol": "د.ا",
+        "unit": "Dinar"
+      }
     ],
     "region": "Asia",
     "subregion": "Western Asia",
@@ -1612,6 +2336,14 @@ window.COUNTRIES = [
       "Kazakh",
       "Russian"
     ],
+    "currencies": [
+      {
+        "code": "KZT",
+        "name": "Kazakhstani tenge",
+        "symbol": "₸",
+        "unit": "Tenge"
+      }
+    ],
     "region": "Asia",
     "subregion": "Central Asia",
     "latlng": [
@@ -1630,6 +2362,14 @@ window.COUNTRIES = [
     "languages": [
       "Swahili",
       "English"
+    ],
+    "currencies": [
+      {
+        "code": "KES",
+        "name": "Kenyan shilling",
+        "symbol": "Sh",
+        "unit": "Shilling"
+      }
     ],
     "region": "Africa",
     "subregion": "Eastern Africa",
@@ -1650,6 +2390,20 @@ window.COUNTRIES = [
       "English",
       "Gilbertese"
     ],
+    "currencies": [
+      {
+        "code": "AUD",
+        "name": "Australian dollar",
+        "symbol": "$",
+        "unit": "Dollar"
+      },
+      {
+        "code": "KID",
+        "name": "Kiribati dollar",
+        "symbol": "$",
+        "unit": "Dollar"
+      }
+    ],
     "region": "Oceania",
     "subregion": "Micronesia",
     "latlng": [
@@ -1669,6 +2423,14 @@ window.COUNTRIES = [
       "Albanian",
       "Serbian"
     ],
+    "currencies": [
+      {
+        "code": "EUR",
+        "name": "Euro",
+        "symbol": "€",
+        "unit": "Euro"
+      }
+    ],
     "region": "Europe",
     "subregion": "Southeast Europe",
     "latlng": [
@@ -1686,6 +2448,14 @@ window.COUNTRIES = [
     "government": "Semi-constitutional monarchy",
     "languages": [
       "Arabic"
+    ],
+    "currencies": [
+      {
+        "code": "KWD",
+        "name": "Kuwaiti dinar",
+        "symbol": "د.ك",
+        "unit": "Dinar"
+      }
     ],
     "region": "Asia",
     "subregion": "Western Asia",
@@ -1706,6 +2476,14 @@ window.COUNTRIES = [
       "Kyrgyz",
       "Russian"
     ],
+    "currencies": [
+      {
+        "code": "KGS",
+        "name": "Kyrgyzstani som",
+        "symbol": "с",
+        "unit": "Som"
+      }
+    ],
     "region": "Asia",
     "subregion": "Central Asia",
     "latlng": [
@@ -1723,6 +2501,14 @@ window.COUNTRIES = [
     "government": "One-party state",
     "languages": [
       "Lao"
+    ],
+    "currencies": [
+      {
+        "code": "LAK",
+        "name": "Lao kip",
+        "symbol": "₭",
+        "unit": "Kip"
+      }
     ],
     "region": "Asia",
     "subregion": "South-Eastern Asia",
@@ -1742,6 +2528,14 @@ window.COUNTRIES = [
     "languages": [
       "Latvian"
     ],
+    "currencies": [
+      {
+        "code": "EUR",
+        "name": "Euro",
+        "symbol": "€",
+        "unit": "Euro"
+      }
+    ],
     "region": "Europe",
     "subregion": "Northern Europe",
     "latlng": [
@@ -1759,6 +2553,14 @@ window.COUNTRIES = [
     "government": "Parliamentary republic",
     "languages": [
       "Arabic"
+    ],
+    "currencies": [
+      {
+        "code": "LBP",
+        "name": "Lebanese pound",
+        "symbol": "ل.ل",
+        "unit": "Pound"
+      }
     ],
     "region": "Asia",
     "subregion": "Western Asia",
@@ -1779,6 +2581,20 @@ window.COUNTRIES = [
       "Sesotho",
       "English"
     ],
+    "currencies": [
+      {
+        "code": "LSL",
+        "name": "Lesotho loti",
+        "symbol": "L",
+        "unit": "Loti"
+      },
+      {
+        "code": "ZAR",
+        "name": "South African rand",
+        "symbol": "R",
+        "unit": "Rand"
+      }
+    ],
     "region": "Africa",
     "subregion": "Southern Africa",
     "latlng": [
@@ -1796,6 +2612,14 @@ window.COUNTRIES = [
     "government": "Presidential republic",
     "languages": [
       "English"
+    ],
+    "currencies": [
+      {
+        "code": "LRD",
+        "name": "Liberian dollar",
+        "symbol": "$",
+        "unit": "Dollar"
+      }
     ],
     "region": "Africa",
     "subregion": "Western Africa",
@@ -1815,6 +2639,14 @@ window.COUNTRIES = [
     "languages": [
       "Arabic"
     ],
+    "currencies": [
+      {
+        "code": "LYD",
+        "name": "Libyan dinar",
+        "symbol": "ل.د",
+        "unit": "Dinar"
+      }
+    ],
     "region": "Africa",
     "subregion": "Northern Africa",
     "latlng": [
@@ -1833,6 +2665,14 @@ window.COUNTRIES = [
     "languages": [
       "German"
     ],
+    "currencies": [
+      {
+        "code": "CHF",
+        "name": "Swiss franc",
+        "symbol": "Fr",
+        "unit": "Franc"
+      }
+    ],
     "region": "Europe",
     "subregion": "Western Europe",
     "latlng": [
@@ -1850,6 +2690,14 @@ window.COUNTRIES = [
     "government": "Semi-presidential republic",
     "languages": [
       "Lithuanian"
+    ],
+    "currencies": [
+      {
+        "code": "EUR",
+        "name": "Euro",
+        "symbol": "€",
+        "unit": "Euro"
+      }
     ],
     "region": "Europe",
     "subregion": "Northern Europe",
@@ -1871,6 +2719,14 @@ window.COUNTRIES = [
       "French",
       "German"
     ],
+    "currencies": [
+      {
+        "code": "EUR",
+        "name": "Euro",
+        "symbol": "€",
+        "unit": "Euro"
+      }
+    ],
     "region": "Europe",
     "subregion": "Western Europe",
     "latlng": [
@@ -1889,6 +2745,14 @@ window.COUNTRIES = [
     "languages": [
       "Malagasy",
       "French"
+    ],
+    "currencies": [
+      {
+        "code": "MGA",
+        "name": "Malagasy ariary",
+        "symbol": "Ar",
+        "unit": "Ariary"
+      }
     ],
     "region": "Africa",
     "subregion": "Eastern Africa",
@@ -1909,6 +2773,14 @@ window.COUNTRIES = [
       "English",
       "Chichewa"
     ],
+    "currencies": [
+      {
+        "code": "MWK",
+        "name": "Malawian kwacha",
+        "symbol": "MK",
+        "unit": "Kwacha"
+      }
+    ],
     "region": "Africa",
     "subregion": "Eastern Africa",
     "latlng": [
@@ -1927,6 +2799,14 @@ window.COUNTRIES = [
     "languages": [
       "Malay"
     ],
+    "currencies": [
+      {
+        "code": "MYR",
+        "name": "Malaysian ringgit",
+        "symbol": "RM",
+        "unit": "Ringgit"
+      }
+    ],
     "region": "Asia",
     "subregion": "South-Eastern Asia",
     "latlng": [
@@ -1944,6 +2824,14 @@ window.COUNTRIES = [
     "government": "Presidential republic",
     "languages": [
       "Dhivehi"
+    ],
+    "currencies": [
+      {
+        "code": "MVR",
+        "name": "Maldivian rufiyaa",
+        "symbol": ".ރ",
+        "unit": "Rufiyaa"
+      }
     ],
     "region": "Asia",
     "subregion": "Southern Asia",
@@ -1966,6 +2854,14 @@ window.COUNTRIES = [
       "Soninke",
       "Tamasheq"
     ],
+    "currencies": [
+      {
+        "code": "XOF",
+        "name": "West African CFA franc",
+        "symbol": "Fr",
+        "unit": "CFA franc"
+      }
+    ],
     "region": "Africa",
     "subregion": "Western Africa",
     "latlng": [
@@ -1984,6 +2880,14 @@ window.COUNTRIES = [
     "languages": [
       "Maltese",
       "English"
+    ],
+    "currencies": [
+      {
+        "code": "EUR",
+        "name": "Euro",
+        "symbol": "€",
+        "unit": "Euro"
+      }
     ],
     "region": "Europe",
     "subregion": "Southern Europe",
@@ -2004,6 +2908,14 @@ window.COUNTRIES = [
       "Marshallese",
       "English"
     ],
+    "currencies": [
+      {
+        "code": "USD",
+        "name": "United States dollar",
+        "symbol": "$",
+        "unit": "Dollar"
+      }
+    ],
     "region": "Oceania",
     "subregion": "Micronesia",
     "latlng": [
@@ -2021,6 +2933,14 @@ window.COUNTRIES = [
     "government": "Presidential republic",
     "languages": [
       "Arabic"
+    ],
+    "currencies": [
+      {
+        "code": "MRU",
+        "name": "Mauritanian ouguiya",
+        "symbol": "UM",
+        "unit": "Ouguiya"
+      }
     ],
     "region": "Africa",
     "subregion": "Western Africa",
@@ -2041,6 +2961,14 @@ window.COUNTRIES = [
       "English",
       "French"
     ],
+    "currencies": [
+      {
+        "code": "MUR",
+        "name": "Mauritian rupee",
+        "symbol": "₨",
+        "unit": "Rupee"
+      }
+    ],
     "region": "Africa",
     "subregion": "Eastern Africa",
     "latlng": [
@@ -2058,6 +2986,14 @@ window.COUNTRIES = [
     "government": "Presidential republic",
     "languages": [
       "Spanish"
+    ],
+    "currencies": [
+      {
+        "code": "MXN",
+        "name": "Mexican peso",
+        "symbol": "$",
+        "unit": "Peso"
+      }
     ],
     "region": "Americas",
     "subregion": "North America",
@@ -2077,6 +3013,14 @@ window.COUNTRIES = [
     "languages": [
       "English"
     ],
+    "currencies": [
+      {
+        "code": "USD",
+        "name": "United States dollar",
+        "symbol": "$",
+        "unit": "Dollar"
+      }
+    ],
     "region": "Oceania",
     "subregion": "Micronesia",
     "latlng": [
@@ -2094,6 +3038,14 @@ window.COUNTRIES = [
     "government": "Parliamentary republic",
     "languages": [
       "Romanian"
+    ],
+    "currencies": [
+      {
+        "code": "MDL",
+        "name": "Moldovan leu",
+        "symbol": "L",
+        "unit": "Leu"
+      }
     ],
     "region": "Europe",
     "subregion": "Eastern Europe",
@@ -2113,6 +3065,14 @@ window.COUNTRIES = [
     "languages": [
       "French"
     ],
+    "currencies": [
+      {
+        "code": "EUR",
+        "name": "Euro",
+        "symbol": "€",
+        "unit": "Euro"
+      }
+    ],
     "region": "Europe",
     "subregion": "Western Europe",
     "latlng": [
@@ -2131,6 +3091,14 @@ window.COUNTRIES = [
     "languages": [
       "Mongolian"
     ],
+    "currencies": [
+      {
+        "code": "MNT",
+        "name": "Mongolian tögrög",
+        "symbol": "₮",
+        "unit": "Tögrög"
+      }
+    ],
     "region": "Asia",
     "subregion": "Eastern Asia",
     "latlng": [
@@ -2148,6 +3116,14 @@ window.COUNTRIES = [
     "government": "Parliamentary republic",
     "languages": [
       "Montenegrin"
+    ],
+    "currencies": [
+      {
+        "code": "EUR",
+        "name": "Euro",
+        "symbol": "€",
+        "unit": "Euro"
+      }
     ],
     "region": "Europe",
     "subregion": "Southeast Europe",
@@ -2168,6 +3144,14 @@ window.COUNTRIES = [
       "Arabic",
       "Berber"
     ],
+    "currencies": [
+      {
+        "code": "MAD",
+        "name": "Moroccan dirham",
+        "symbol": "د.م.",
+        "unit": "Dirham"
+      }
+    ],
     "region": "Africa",
     "subregion": "Northern Africa",
     "latlng": [
@@ -2185,6 +3169,14 @@ window.COUNTRIES = [
     "government": "Presidential republic",
     "languages": [
       "Portuguese"
+    ],
+    "currencies": [
+      {
+        "code": "MZN",
+        "name": "Mozambican metical",
+        "symbol": "MT",
+        "unit": "Metical"
+      }
     ],
     "region": "Africa",
     "subregion": "Eastern Africa",
@@ -2204,6 +3196,14 @@ window.COUNTRIES = [
     "languages": [
       "Burmese"
     ],
+    "currencies": [
+      {
+        "code": "MMK",
+        "name": "Burmese kyat",
+        "symbol": "Ks",
+        "unit": "Kyat"
+      }
+    ],
     "region": "Asia",
     "subregion": "South-Eastern Asia",
     "latlng": [
@@ -2221,6 +3221,20 @@ window.COUNTRIES = [
     "government": "Presidential republic",
     "languages": [
       "English"
+    ],
+    "currencies": [
+      {
+        "code": "NAD",
+        "name": "Namibian dollar",
+        "symbol": "$",
+        "unit": "Dollar"
+      },
+      {
+        "code": "ZAR",
+        "name": "South African rand",
+        "symbol": "R",
+        "unit": "Rand"
+      }
     ],
     "region": "Africa",
     "subregion": "Southern Africa",
@@ -2241,6 +3255,14 @@ window.COUNTRIES = [
       "Nauruan",
       "English"
     ],
+    "currencies": [
+      {
+        "code": "AUD",
+        "name": "Australian dollar",
+        "symbol": "$",
+        "unit": "Dollar"
+      }
+    ],
     "region": "Oceania",
     "subregion": "Micronesia",
     "latlng": [
@@ -2259,6 +3281,14 @@ window.COUNTRIES = [
     "languages": [
       "Nepali"
     ],
+    "currencies": [
+      {
+        "code": "NPR",
+        "name": "Nepalese rupee",
+        "symbol": "₨",
+        "unit": "Rupee"
+      }
+    ],
     "region": "Asia",
     "subregion": "Southern Asia",
     "latlng": [
@@ -2276,6 +3306,14 @@ window.COUNTRIES = [
     "government": "Parliamentary constitutional monarchy",
     "languages": [
       "Dutch"
+    ],
+    "currencies": [
+      {
+        "code": "EUR",
+        "name": "Euro",
+        "symbol": "€",
+        "unit": "Euro"
+      }
     ],
     "region": "Europe",
     "subregion": "Western Europe",
@@ -2297,6 +3335,14 @@ window.COUNTRIES = [
       "Māori",
       "New Zealand Sign Language"
     ],
+    "currencies": [
+      {
+        "code": "NZD",
+        "name": "New Zealand dollar",
+        "symbol": "$",
+        "unit": "Dollar"
+      }
+    ],
     "region": "Oceania",
     "subregion": "Australia and New Zealand",
     "latlng": [
@@ -2314,6 +3360,14 @@ window.COUNTRIES = [
     "government": "Presidential republic",
     "languages": [
       "Spanish"
+    ],
+    "currencies": [
+      {
+        "code": "NIO",
+        "name": "Nicaraguan córdoba",
+        "symbol": "C$",
+        "unit": "Córdoba"
+      }
     ],
     "region": "Americas",
     "subregion": "Central America",
@@ -2336,6 +3390,14 @@ window.COUNTRIES = [
       "Fula",
       "Tamasheq"
     ],
+    "currencies": [
+      {
+        "code": "XOF",
+        "name": "West African CFA franc",
+        "symbol": "Fr",
+        "unit": "CFA franc"
+      }
+    ],
     "region": "Africa",
     "subregion": "Western Africa",
     "latlng": [
@@ -2354,6 +3416,14 @@ window.COUNTRIES = [
     "languages": [
       "English"
     ],
+    "currencies": [
+      {
+        "code": "NGN",
+        "name": "Nigerian naira",
+        "symbol": "₦",
+        "unit": "Naira"
+      }
+    ],
     "region": "Africa",
     "subregion": "Western Africa",
     "latlng": [
@@ -2371,6 +3441,14 @@ window.COUNTRIES = [
     "government": "One-party state",
     "languages": [
       "Korean"
+    ],
+    "currencies": [
+      {
+        "code": "KPW",
+        "name": "North Korean won",
+        "symbol": "₩",
+        "unit": "Won"
+      }
     ],
     "region": "Asia",
     "subregion": "Eastern Asia",
@@ -2391,6 +3469,14 @@ window.COUNTRIES = [
       "Macedonian",
       "Albanian"
     ],
+    "currencies": [
+      {
+        "code": "MKD",
+        "name": "Macedonian denar",
+        "symbol": "den",
+        "unit": "Denar"
+      }
+    ],
     "region": "Europe",
     "subregion": "Southeast Europe",
     "latlng": [
@@ -2410,6 +3496,14 @@ window.COUNTRIES = [
       "Norwegian",
       "Sámi"
     ],
+    "currencies": [
+      {
+        "code": "NOK",
+        "name": "Norwegian krone",
+        "symbol": "kr",
+        "unit": "Krone"
+      }
+    ],
     "region": "Europe",
     "subregion": "Northern Europe",
     "latlng": [
@@ -2427,6 +3521,14 @@ window.COUNTRIES = [
     "government": "Absolute monarchy",
     "languages": [
       "Arabic"
+    ],
+    "currencies": [
+      {
+        "code": "OMR",
+        "name": "Omani rial",
+        "symbol": "ر.ع.",
+        "unit": "Rial"
+      }
     ],
     "region": "Asia",
     "subregion": "Western Asia",
@@ -2447,6 +3549,14 @@ window.COUNTRIES = [
       "Urdu",
       "English"
     ],
+    "currencies": [
+      {
+        "code": "PKR",
+        "name": "Pakistani rupee",
+        "symbol": "₨",
+        "unit": "Rupee"
+      }
+    ],
     "region": "Asia",
     "subregion": "Southern Asia",
     "latlng": [
@@ -2466,6 +3576,14 @@ window.COUNTRIES = [
       "Palauan",
       "English"
     ],
+    "currencies": [
+      {
+        "code": "USD",
+        "name": "United States dollar",
+        "symbol": "$",
+        "unit": "Dollar"
+      }
+    ],
     "region": "Oceania",
     "subregion": "Micronesia",
     "latlng": [
@@ -2484,6 +3602,26 @@ window.COUNTRIES = [
     "languages": [
       "Arabic"
     ],
+    "currencies": [
+      {
+        "code": "ILS",
+        "name": "Israeli new shekel",
+        "symbol": "₪",
+        "unit": "Shekel"
+      },
+      {
+        "code": "JOD",
+        "name": "Jordanian dinar",
+        "symbol": "JD",
+        "unit": "Dinar"
+      },
+      {
+        "code": "EGP",
+        "name": "Egyptian pound",
+        "symbol": "E£",
+        "unit": "Pound"
+      }
+    ],
     "region": "Asia",
     "subregion": "Western Asia",
     "latlng": [
@@ -2501,6 +3639,20 @@ window.COUNTRIES = [
     "government": "Presidential republic",
     "languages": [
       "Spanish"
+    ],
+    "currencies": [
+      {
+        "code": "PAB",
+        "name": "Panamanian balboa",
+        "symbol": "B/.",
+        "unit": "Balboa"
+      },
+      {
+        "code": "USD",
+        "name": "United States dollar",
+        "symbol": "$",
+        "unit": "Dollar"
+      }
     ],
     "region": "Americas",
     "subregion": "Central America",
@@ -2523,6 +3675,14 @@ window.COUNTRIES = [
       "Hiri Motu",
       "PNG Sign Language"
     ],
+    "currencies": [
+      {
+        "code": "PGK",
+        "name": "Papua New Guinean kina",
+        "symbol": "K",
+        "unit": "Kina"
+      }
+    ],
     "region": "Oceania",
     "subregion": "Melanesia",
     "latlng": [
@@ -2541,6 +3701,14 @@ window.COUNTRIES = [
     "languages": [
       "Spanish",
       "Guaraní"
+    ],
+    "currencies": [
+      {
+        "code": "PYG",
+        "name": "Paraguayan guaraní",
+        "symbol": "₲",
+        "unit": "Guaraní"
+      }
     ],
     "region": "Americas",
     "subregion": "South America",
@@ -2562,6 +3730,14 @@ window.COUNTRIES = [
       "Quechua",
       "Aymara"
     ],
+    "currencies": [
+      {
+        "code": "PEN",
+        "name": "Peruvian sol",
+        "symbol": "S/.",
+        "unit": "Sol"
+      }
+    ],
     "region": "Americas",
     "subregion": "South America",
     "latlng": [
@@ -2581,6 +3757,14 @@ window.COUNTRIES = [
       "Filipino",
       "English"
     ],
+    "currencies": [
+      {
+        "code": "PHP",
+        "name": "Philippine peso",
+        "symbol": "₱",
+        "unit": "Peso"
+      }
+    ],
     "region": "Asia",
     "subregion": "South-Eastern Asia",
     "latlng": [
@@ -2598,6 +3782,14 @@ window.COUNTRIES = [
     "government": "Parliamentary republic",
     "languages": [
       "Polish"
+    ],
+    "currencies": [
+      {
+        "code": "PLN",
+        "name": "Polish złoty",
+        "symbol": "zł",
+        "unit": "Złoty"
+      }
     ],
     "region": "Europe",
     "subregion": "Central Europe",
@@ -2617,6 +3809,14 @@ window.COUNTRIES = [
     "languages": [
       "Portuguese"
     ],
+    "currencies": [
+      {
+        "code": "EUR",
+        "name": "Euro",
+        "symbol": "€",
+        "unit": "Euro"
+      }
+    ],
     "region": "Europe",
     "subregion": "Southern Europe",
     "latlng": [
@@ -2634,6 +3834,14 @@ window.COUNTRIES = [
     "government": "Absolute monarchy",
     "languages": [
       "Arabic"
+    ],
+    "currencies": [
+      {
+        "code": "QAR",
+        "name": "Qatari riyal",
+        "symbol": "ر.ق",
+        "unit": "Riyal"
+      }
     ],
     "region": "Asia",
     "subregion": "Western Asia",
@@ -2653,6 +3861,14 @@ window.COUNTRIES = [
     "languages": [
       "French"
     ],
+    "currencies": [
+      {
+        "code": "XAF",
+        "name": "Central African CFA franc",
+        "symbol": "Fr",
+        "unit": "CFA franc"
+      }
+    ],
     "region": "Africa",
     "subregion": "Middle Africa",
     "latlng": [
@@ -2671,6 +3887,14 @@ window.COUNTRIES = [
     "languages": [
       "Romanian"
     ],
+    "currencies": [
+      {
+        "code": "RON",
+        "name": "Romanian leu",
+        "symbol": "lei",
+        "unit": "Leu"
+      }
+    ],
     "region": "Europe",
     "subregion": "Southeast Europe",
     "latlng": [
@@ -2688,6 +3912,14 @@ window.COUNTRIES = [
     "government": "Semi-presidential republic",
     "languages": [
       "Russian"
+    ],
+    "currencies": [
+      {
+        "code": "RUB",
+        "name": "Russian ruble",
+        "symbol": "₽",
+        "unit": "Ruble"
+      }
     ],
     "region": "Europe",
     "subregion": "Eastern Europe",
@@ -2710,6 +3942,14 @@ window.COUNTRIES = [
       "English",
       "Swahili"
     ],
+    "currencies": [
+      {
+        "code": "RWF",
+        "name": "Rwandan franc",
+        "symbol": "Fr",
+        "unit": "Franc"
+      }
+    ],
     "region": "Africa",
     "subregion": "Eastern Africa",
     "latlng": [
@@ -2727,6 +3967,14 @@ window.COUNTRIES = [
     "government": "Parliamentary constitutional monarchy",
     "languages": [
       "English"
+    ],
+    "currencies": [
+      {
+        "code": "XCD",
+        "name": "Eastern Caribbean dollar",
+        "symbol": "$",
+        "unit": "Dollar"
+      }
     ],
     "region": "Americas",
     "subregion": "Caribbean",
@@ -2746,6 +3994,14 @@ window.COUNTRIES = [
     "languages": [
       "English"
     ],
+    "currencies": [
+      {
+        "code": "XCD",
+        "name": "Eastern Caribbean dollar",
+        "symbol": "$",
+        "unit": "Dollar"
+      }
+    ],
     "region": "Americas",
     "subregion": "Caribbean",
     "latlng": [
@@ -2763,6 +4019,14 @@ window.COUNTRIES = [
     "government": "Parliamentary constitutional monarchy",
     "languages": [
       "English"
+    ],
+    "currencies": [
+      {
+        "code": "XCD",
+        "name": "Eastern Caribbean dollar",
+        "symbol": "$",
+        "unit": "Dollar"
+      }
     ],
     "region": "Americas",
     "subregion": "Caribbean",
@@ -2783,6 +4047,14 @@ window.COUNTRIES = [
       "Samoan",
       "English"
     ],
+    "currencies": [
+      {
+        "code": "WST",
+        "name": "Samoan tālā",
+        "symbol": "T",
+        "unit": "Tālā"
+      }
+    ],
     "region": "Oceania",
     "subregion": "Polynesia",
     "latlng": [
@@ -2800,6 +4072,14 @@ window.COUNTRIES = [
     "government": "Parliamentary republic",
     "languages": [
       "Italian"
+    ],
+    "currencies": [
+      {
+        "code": "EUR",
+        "name": "Euro",
+        "symbol": "€",
+        "unit": "Euro"
+      }
     ],
     "region": "Europe",
     "subregion": "Southern Europe",
@@ -2819,6 +4099,14 @@ window.COUNTRIES = [
     "languages": [
       "Portuguese"
     ],
+    "currencies": [
+      {
+        "code": "STN",
+        "name": "São Tomé and Príncipe dobra",
+        "symbol": "Db",
+        "unit": "Dobra"
+      }
+    ],
     "region": "Africa",
     "subregion": "Middle Africa",
     "latlng": [
@@ -2836,6 +4124,14 @@ window.COUNTRIES = [
     "government": "Absolute monarchy",
     "languages": [
       "Arabic"
+    ],
+    "currencies": [
+      {
+        "code": "SAR",
+        "name": "Saudi riyal",
+        "symbol": "ر.س",
+        "unit": "Riyal"
+      }
     ],
     "region": "Asia",
     "subregion": "Western Asia",
@@ -2855,6 +4151,14 @@ window.COUNTRIES = [
     "languages": [
       "French"
     ],
+    "currencies": [
+      {
+        "code": "XOF",
+        "name": "West African CFA franc",
+        "symbol": "Fr",
+        "unit": "CFA franc"
+      }
+    ],
     "region": "Africa",
     "subregion": "Western Africa",
     "latlng": [
@@ -2872,6 +4176,14 @@ window.COUNTRIES = [
     "government": "Parliamentary republic",
     "languages": [
       "Serbian"
+    ],
+    "currencies": [
+      {
+        "code": "RSD",
+        "name": "Serbian dinar",
+        "symbol": "дин.",
+        "unit": "Dinar"
+      }
     ],
     "region": "Europe",
     "subregion": "Southeast Europe",
@@ -2893,6 +4205,14 @@ window.COUNTRIES = [
       "English",
       "French"
     ],
+    "currencies": [
+      {
+        "code": "SCR",
+        "name": "Seychellois rupee",
+        "symbol": "₨",
+        "unit": "Rupee"
+      }
+    ],
     "region": "Africa",
     "subregion": "Eastern Africa",
     "latlng": [
@@ -2910,6 +4230,14 @@ window.COUNTRIES = [
     "government": "Presidential republic",
     "languages": [
       "English"
+    ],
+    "currencies": [
+      {
+        "code": "SLE",
+        "name": "Sierra Leonean leone",
+        "symbol": "Le",
+        "unit": "Leone"
+      }
     ],
     "region": "Africa",
     "subregion": "Western Africa",
@@ -2932,6 +4260,14 @@ window.COUNTRIES = [
       "Mandarin Chinese",
       "Tamil"
     ],
+    "currencies": [
+      {
+        "code": "SGD",
+        "name": "Singapore dollar",
+        "symbol": "$",
+        "unit": "Dollar"
+      }
+    ],
     "region": "Asia",
     "subregion": "South-Eastern Asia",
     "latlng": [
@@ -2949,6 +4285,14 @@ window.COUNTRIES = [
     "government": "Parliamentary republic",
     "languages": [
       "Slovak"
+    ],
+    "currencies": [
+      {
+        "code": "EUR",
+        "name": "Euro",
+        "symbol": "€",
+        "unit": "Euro"
+      }
     ],
     "region": "Europe",
     "subregion": "Central Europe",
@@ -2968,6 +4312,14 @@ window.COUNTRIES = [
     "languages": [
       "Slovene"
     ],
+    "currencies": [
+      {
+        "code": "EUR",
+        "name": "Euro",
+        "symbol": "€",
+        "unit": "Euro"
+      }
+    ],
     "region": "Europe",
     "subregion": "Central Europe",
     "latlng": [
@@ -2985,6 +4337,14 @@ window.COUNTRIES = [
     "government": "Parliamentary constitutional monarchy",
     "languages": [
       "English"
+    ],
+    "currencies": [
+      {
+        "code": "SBD",
+        "name": "Solomon Islands dollar",
+        "symbol": "$",
+        "unit": "Dollar"
+      }
     ],
     "region": "Oceania",
     "subregion": "Melanesia",
@@ -3004,6 +4364,14 @@ window.COUNTRIES = [
     "languages": [
       "Somali",
       "Arabic"
+    ],
+    "currencies": [
+      {
+        "code": "SOS",
+        "name": "Somali shilling",
+        "symbol": "Sh",
+        "unit": "Shilling"
+      }
     ],
     "region": "Africa",
     "subregion": "Eastern Africa",
@@ -3034,6 +4402,14 @@ window.COUNTRIES = [
       "Southern Ndebele",
       "South African Sign Language"
     ],
+    "currencies": [
+      {
+        "code": "ZAR",
+        "name": "South African rand",
+        "symbol": "R",
+        "unit": "Rand"
+      }
+    ],
     "region": "Africa",
     "subregion": "Southern Africa",
     "latlng": [
@@ -3051,6 +4427,14 @@ window.COUNTRIES = [
     "government": "Presidential republic",
     "languages": [
       "Korean"
+    ],
+    "currencies": [
+      {
+        "code": "KRW",
+        "name": "South Korean won",
+        "symbol": "₩",
+        "unit": "Won"
+      }
     ],
     "region": "Asia",
     "subregion": "Eastern Asia",
@@ -3070,6 +4454,14 @@ window.COUNTRIES = [
     "languages": [
       "English"
     ],
+    "currencies": [
+      {
+        "code": "SSP",
+        "name": "South Sudanese pound",
+        "symbol": "£",
+        "unit": "Pound"
+      }
+    ],
     "region": "Africa",
     "subregion": "Middle Africa",
     "latlng": [
@@ -3087,6 +4479,14 @@ window.COUNTRIES = [
     "government": "Parliamentary constitutional monarchy",
     "languages": [
       "Spanish"
+    ],
+    "currencies": [
+      {
+        "code": "EUR",
+        "name": "Euro",
+        "symbol": "€",
+        "unit": "Euro"
+      }
     ],
     "region": "Europe",
     "subregion": "Southern Europe",
@@ -3107,6 +4507,14 @@ window.COUNTRIES = [
       "Sinhala",
       "Tamil"
     ],
+    "currencies": [
+      {
+        "code": "LKR",
+        "name": "Sri Lankan rupee",
+        "symbol": "Rs  රු",
+        "unit": "Rupee"
+      }
+    ],
     "region": "Asia",
     "subregion": "Southern Asia",
     "latlng": [
@@ -3126,6 +4534,14 @@ window.COUNTRIES = [
       "Arabic",
       "English"
     ],
+    "currencies": [
+      {
+        "code": "SDG",
+        "name": "Sudanese pound",
+        "symbol": "PT",
+        "unit": "Pound"
+      }
+    ],
     "region": "Africa",
     "subregion": "Northern Africa",
     "latlng": [
@@ -3144,6 +4560,14 @@ window.COUNTRIES = [
     "languages": [
       "Dutch"
     ],
+    "currencies": [
+      {
+        "code": "SRD",
+        "name": "Surinamese dollar",
+        "symbol": "$",
+        "unit": "Dollar"
+      }
+    ],
     "region": "Americas",
     "subregion": "South America",
     "latlng": [
@@ -3161,6 +4585,14 @@ window.COUNTRIES = [
     "government": "Parliamentary constitutional monarchy",
     "languages": [
       "Swedish"
+    ],
+    "currencies": [
+      {
+        "code": "SEK",
+        "name": "Swedish krona",
+        "symbol": "kr",
+        "unit": "Krona"
+      }
     ],
     "region": "Europe",
     "subregion": "Northern Europe",
@@ -3183,6 +4615,14 @@ window.COUNTRIES = [
       "Italian",
       "Romansh"
     ],
+    "currencies": [
+      {
+        "code": "CHF",
+        "name": "Swiss franc",
+        "symbol": "Fr.",
+        "unit": "Franc"
+      }
+    ],
     "region": "Europe",
     "subregion": "Western Europe",
     "latlng": [
@@ -3200,6 +4640,14 @@ window.COUNTRIES = [
     "government": "Military or provisional government",
     "languages": [
       "Arabic"
+    ],
+    "currencies": [
+      {
+        "code": "SYP",
+        "name": "Syrian pound",
+        "symbol": "£",
+        "unit": "Pound"
+      }
     ],
     "region": "Asia",
     "subregion": "Western Asia",
@@ -3219,6 +4667,14 @@ window.COUNTRIES = [
     "languages": [
       "Mandarin Chinese"
     ],
+    "currencies": [
+      {
+        "code": "TWD",
+        "name": "New Taiwan dollar",
+        "symbol": "$",
+        "unit": "Dollar"
+      }
+    ],
     "region": "Asia",
     "subregion": "Eastern Asia",
     "latlng": [
@@ -3236,6 +4692,14 @@ window.COUNTRIES = [
     "government": "Presidential republic",
     "languages": [
       "Tajik"
+    ],
+    "currencies": [
+      {
+        "code": "TJS",
+        "name": "Tajikistani somoni",
+        "symbol": "ЅМ",
+        "unit": "Somoni"
+      }
     ],
     "region": "Asia",
     "subregion": "Central Asia",
@@ -3256,6 +4720,14 @@ window.COUNTRIES = [
       "Swahili",
       "English"
     ],
+    "currencies": [
+      {
+        "code": "TZS",
+        "name": "Tanzanian shilling",
+        "symbol": "Sh",
+        "unit": "Shilling"
+      }
+    ],
     "region": "Africa",
     "subregion": "Eastern Africa",
     "latlng": [
@@ -3273,6 +4745,14 @@ window.COUNTRIES = [
     "government": "Parliamentary constitutional monarchy",
     "languages": [
       "Thai"
+    ],
+    "currencies": [
+      {
+        "code": "THB",
+        "name": "Thai baht",
+        "symbol": "฿",
+        "unit": "Baht"
+      }
     ],
     "region": "Asia",
     "subregion": "South-Eastern Asia",
@@ -3293,6 +4773,14 @@ window.COUNTRIES = [
       "Tetum",
       "Portuguese"
     ],
+    "currencies": [
+      {
+        "code": "USD",
+        "name": "United States dollar",
+        "symbol": "$",
+        "unit": "Dollar"
+      }
+    ],
     "region": "Asia",
     "subregion": "South-Eastern Asia",
     "latlng": [
@@ -3310,6 +4798,14 @@ window.COUNTRIES = [
     "government": "Parliamentary republic",
     "languages": [
       "French"
+    ],
+    "currencies": [
+      {
+        "code": "XOF",
+        "name": "West African CFA franc",
+        "symbol": "Fr",
+        "unit": "CFA franc"
+      }
     ],
     "region": "Africa",
     "subregion": "Western Africa",
@@ -3330,6 +4826,14 @@ window.COUNTRIES = [
       "Tongan",
       "English"
     ],
+    "currencies": [
+      {
+        "code": "TOP",
+        "name": "Tongan paʻanga",
+        "symbol": "T$",
+        "unit": "Paʻanga"
+      }
+    ],
     "region": "Oceania",
     "subregion": "Polynesia",
     "latlng": [
@@ -3347,6 +4851,14 @@ window.COUNTRIES = [
     "government": "Parliamentary republic",
     "languages": [
       "English"
+    ],
+    "currencies": [
+      {
+        "code": "TTD",
+        "name": "Trinidad and Tobago dollar",
+        "symbol": "$",
+        "unit": "Dollar"
+      }
     ],
     "region": "Americas",
     "subregion": "Caribbean",
@@ -3366,6 +4878,14 @@ window.COUNTRIES = [
     "languages": [
       "Arabic"
     ],
+    "currencies": [
+      {
+        "code": "TND",
+        "name": "Tunisian dinar",
+        "symbol": "د.ت",
+        "unit": "Dinar"
+      }
+    ],
     "region": "Africa",
     "subregion": "Northern Africa",
     "latlng": [
@@ -3384,6 +4904,14 @@ window.COUNTRIES = [
     "languages": [
       "Turkish"
     ],
+    "currencies": [
+      {
+        "code": "TRY",
+        "name": "Turkish lira",
+        "symbol": "₺",
+        "unit": "Lira"
+      }
+    ],
     "region": "Asia",
     "subregion": "Western Asia",
     "latlng": [
@@ -3401,6 +4929,14 @@ window.COUNTRIES = [
     "government": "Presidential republic",
     "languages": [
       "Turkmen"
+    ],
+    "currencies": [
+      {
+        "code": "TMT",
+        "name": "Turkmenistan manat",
+        "symbol": "m",
+        "unit": "Manat"
+      }
     ],
     "region": "Asia",
     "subregion": "Central Asia",
@@ -3421,6 +4957,20 @@ window.COUNTRIES = [
       "Tuvaluan",
       "English"
     ],
+    "currencies": [
+      {
+        "code": "AUD",
+        "name": "Australian dollar",
+        "symbol": "$",
+        "unit": "Dollar"
+      },
+      {
+        "code": "TVD",
+        "name": "Tuvaluan dollar",
+        "symbol": "$",
+        "unit": "Dollar"
+      }
+    ],
     "region": "Oceania",
     "subregion": "Polynesia",
     "latlng": [
@@ -3440,6 +4990,14 @@ window.COUNTRIES = [
       "English",
       "Swahili"
     ],
+    "currencies": [
+      {
+        "code": "UGX",
+        "name": "Ugandan shilling",
+        "symbol": "Sh",
+        "unit": "Shilling"
+      }
+    ],
     "region": "Africa",
     "subregion": "Eastern Africa",
     "latlng": [
@@ -3457,6 +5015,14 @@ window.COUNTRIES = [
     "government": "Semi-presidential republic",
     "languages": [
       "Ukrainian"
+    ],
+    "currencies": [
+      {
+        "code": "UAH",
+        "name": "Ukrainian hryvnia",
+        "symbol": "₴",
+        "unit": "Hryvnia"
+      }
     ],
     "region": "Europe",
     "subregion": "Eastern Europe",
@@ -3476,6 +5042,14 @@ window.COUNTRIES = [
     "languages": [
       "Arabic"
     ],
+    "currencies": [
+      {
+        "code": "AED",
+        "name": "United Arab Emirates dirham",
+        "symbol": "د.إ",
+        "unit": "Dirham"
+      }
+    ],
     "region": "Asia",
     "subregion": "Western Asia",
     "latlng": [
@@ -3493,6 +5067,14 @@ window.COUNTRIES = [
     "government": "Parliamentary constitutional monarchy",
     "languages": [
       "English"
+    ],
+    "currencies": [
+      {
+        "code": "GBP",
+        "name": "British pound",
+        "symbol": "£",
+        "unit": "Pound"
+      }
     ],
     "region": "Europe",
     "subregion": "Northern Europe",
@@ -3512,6 +5094,14 @@ window.COUNTRIES = [
     "languages": [
       "English"
     ],
+    "currencies": [
+      {
+        "code": "USD",
+        "name": "United States dollar",
+        "symbol": "$",
+        "unit": "Dollar"
+      }
+    ],
     "region": "Americas",
     "subregion": "North America",
     "latlng": [
@@ -3530,6 +5120,14 @@ window.COUNTRIES = [
     "languages": [
       "Spanish"
     ],
+    "currencies": [
+      {
+        "code": "UYU",
+        "name": "Uruguayan peso",
+        "symbol": "$",
+        "unit": "Peso"
+      }
+    ],
     "region": "Americas",
     "subregion": "South America",
     "latlng": [
@@ -3547,6 +5145,14 @@ window.COUNTRIES = [
     "government": "Presidential republic",
     "languages": [
       "Uzbek"
+    ],
+    "currencies": [
+      {
+        "code": "UZS",
+        "name": "Uzbekistani soʻm",
+        "symbol": "so'm",
+        "unit": "Soʻm"
+      }
     ],
     "region": "Asia",
     "subregion": "Central Asia",
@@ -3568,6 +5174,14 @@ window.COUNTRIES = [
       "English",
       "French"
     ],
+    "currencies": [
+      {
+        "code": "VUV",
+        "name": "Vanuatu vatu",
+        "symbol": "Vt",
+        "unit": "Vatu"
+      }
+    ],
     "region": "Oceania",
     "subregion": "Melanesia",
     "latlng": [
@@ -3587,6 +5201,14 @@ window.COUNTRIES = [
       "Italian",
       "Latin"
     ],
+    "currencies": [
+      {
+        "code": "EUR",
+        "name": "Euro",
+        "symbol": "€",
+        "unit": "Euro"
+      }
+    ],
     "region": "Europe",
     "subregion": "Southern Europe",
     "latlng": [
@@ -3604,6 +5226,14 @@ window.COUNTRIES = [
     "government": "Presidential republic",
     "languages": [
       "Spanish"
+    ],
+    "currencies": [
+      {
+        "code": "VES",
+        "name": "Venezuelan bolívar",
+        "symbol": "Bs.",
+        "unit": "Bolívar"
+      }
     ],
     "region": "Americas",
     "subregion": "South America",
@@ -3623,6 +5253,14 @@ window.COUNTRIES = [
     "languages": [
       "Vietnamese"
     ],
+    "currencies": [
+      {
+        "code": "VND",
+        "name": "Vietnamese đồng",
+        "symbol": "₫",
+        "unit": "Đồng"
+      }
+    ],
     "region": "Asia",
     "subregion": "South-Eastern Asia",
     "latlng": [
@@ -3641,6 +5279,14 @@ window.COUNTRIES = [
     "languages": [
       "Arabic"
     ],
+    "currencies": [
+      {
+        "code": "YER",
+        "name": "Yemeni rial",
+        "symbol": "﷼",
+        "unit": "Rial"
+      }
+    ],
     "region": "Asia",
     "subregion": "Western Asia",
     "latlng": [
@@ -3658,6 +5304,14 @@ window.COUNTRIES = [
     "government": "Presidential republic",
     "languages": [
       "English"
+    ],
+    "currencies": [
+      {
+        "code": "ZMW",
+        "name": "Zambian kwacha",
+        "symbol": "ZK",
+        "unit": "Kwacha"
+      }
     ],
     "region": "Africa",
     "subregion": "Eastern Africa",
@@ -3691,6 +5345,20 @@ window.COUNTRIES = [
       "Venda",
       "Xhosa",
       "Zimbabwean Sign Language"
+    ],
+    "currencies": [
+      {
+        "code": "ZWG",
+        "name": "Zimbabwe Gold (ZiG)",
+        "symbol": "ZiG",
+        "unit": "ZiG"
+      },
+      {
+        "code": "USD",
+        "name": "United States dollar",
+        "symbol": "$",
+        "unit": "Dollar"
+      }
     ],
     "region": "Africa",
     "subregion": "Eastern Africa",

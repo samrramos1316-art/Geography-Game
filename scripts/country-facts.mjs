@@ -445,3 +445,29 @@ export const LANGUAGES = {
   ZMB: 'English',
   ZWE: 'Shona|Northern Ndebele|English|Chewa|Chibarwe|Kalanga|Khoisan|Nambya|Ndau|Shangani|Sotho|Tonga|Tswana|Venda|Xhosa|Zimbabwean Sign Language',
 };
+
+// Corrections to the world-countries currency data: [code, name, symbol], main one first.
+export const CURRENCY_OVERRIDES = {
+  BGR: [['EUR', 'Euro', '€']], // joined the euro on 1 January 2026
+  COK: [['NZD', 'New Zealand dollar', '$'], ['CKD', 'Cook Islands dollar', '$']],
+  CUB: [['CUP', 'Cuban peso', '$']],
+  FSM: [['USD', 'United States dollar', '$']],
+  GEO: [['GEL', 'Georgian lari', '₾']],
+  GMB: [['GMD', 'Gambian dalasi', 'D']],
+  MKD: [['MKD', 'Macedonian denar', 'den']],
+  PSE: [['ILS', 'Israeli new shekel', '₪'], ['JOD', 'Jordanian dinar', 'JD'], ['EGP', 'Egyptian pound', 'E£']],
+  SLE: [['SLE', 'Sierra Leonean leone', 'Le']],
+  VEN: [['VES', 'Venezuelan bolívar', 'Bs.']],
+  ZWE: [['ZWG', 'Zimbabwe Gold (ZiG)', 'ZiG'], ['USD', 'United States dollar', '$']],
+};
+
+// The bare unit asked about in the quiz ("Japanese yen" -> "Yen") when it isn't
+// simply the last word of the currency's name.
+export const CURRENCY_UNITS = {
+  BAM: 'Convertible mark',
+  XOF: 'CFA franc',
+  XAF: 'CFA franc',
+  ILS: 'Shekel',
+  ZWG: 'ZiG',
+  XCD: 'Dollar',
+};

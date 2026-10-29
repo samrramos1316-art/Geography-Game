@@ -8,7 +8,7 @@ import { readFileSync, writeFileSync, mkdirSync, copyFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import * as topojson from 'topojson-client';
-import { FACTS, GOVERNMENTS, LANGUAGES, NAME_OVERRIDES, CAPITAL_OVERRIDES } from './country-facts.mjs';
+import { FACTS, GOVERNMENTS, LANGUAGES, NAME_OVERRIDES, CAPITAL_OVERRIDES, CURRENCY_OVERRIDES, CURRENCY_UNITS } from './country-facts.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const pkgFile = (pkg, file) => join(root, 'node_modules', pkg, file);
@@ -72,6 +72,16 @@ if (missing.length) throw new Error('No geometry for ' + missing.map((c) => c.cc
 topo50.objects.countries.geometries = keep;
 
 // ---- Facts ---------------------------------------------------------------
+function currenciesOf(c) {
+  const list = CURRENCY_OVERRIDES[c.cca3] || Object.entries(c.currencies || {}).map(([code, v]) => [code, v.name, v.symbol]);
+  if (!list.length) throw new Error('No currency for ' + c.cca3);
+  return list.map(([code, name, symbol]) => {
+    const last = name.split(' ').pop();
+    const unit = CURRENCY_UNITS[code] || last[0].toUpperCase() + last.slice(1);
+    return { code, name: name[0].toUpperCase() + name.slice(1), symbol, unit };
+  });
+}
+
 const countries = quiz
   .map((c) => ({
     id: c.cca3,
@@ -82,6 +92,7 @@ const countries = quiz
     population: FACTS[c.cca3][0],
     government: GOVERNMENTS[FACTS[c.cca3][1]],
     languages: LANGUAGES[c.cca3].split('|'),
+    currencies: currenciesOf(c),
     region: c.region,
     subregion: c.subregion,
     latlng: c.latlng,
