@@ -63,6 +63,21 @@
           <h2>Which part of the world?</h2>
         </div>
         <div class="count-row" id="region-row"></div>
+        <div class="custom-panel" id="custom-panel" hidden>
+          <div class="custom-tools">
+            <label class="search" for="custom-search">
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M16 16l4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              <input type="search" id="custom-search" placeholder="Search countries, capitals or regions" autocomplete="off" />
+            </label>
+            <span class="custom-count" id="custom-count">0 selected</span>
+          </div>
+          <div class="custom-actions">
+            <button class="chip-btn" id="custom-toggle-shown">Tick shown</button>
+            <button class="chip-btn" id="custom-only" aria-pressed="false">Show ticked only</button>
+            <button class="chip-btn" id="custom-clear">Clear all</button>
+          </div>
+          <div class="custom-list" id="custom-list"></div>
+        </div>
       </div>
 
       <div class="step">

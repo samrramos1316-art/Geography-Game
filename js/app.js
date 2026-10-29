@@ -230,9 +230,12 @@
   }
   const featureById = new Map(features.filter((f) => f.country).map((f) => [f.id, f]));
 
-  // Regions being studied (empty = whole world); countries outside them are dimmed.
+  // What is being studied: regions (empty = whole world) or, in custom mode, a hand-picked
+  // set of country ids. Countries outside the focus are dimmed.
   let focusRegions = new Set();
-  const inFocus = (f) => !!f.country && (!focusRegions.size || focusRegions.has(f.country.continent));
+  let focusIds = null;
+  const inFocus = (f) =>
+    !!f.country && (focusIds ? focusIds.has(f.id) : !focusRegions.size || focusRegions.has(f.country.continent));
   function baseClass(f) {
     return 'country' + (inFocus(f) ? '' : ' inactive');
   }
@@ -331,7 +334,16 @@
 
   function zoomWorld(duration = 900) {
     const [[x0, y0], [x1, y1]] = path.bounds({ type: 'Sphere' });
-    const views = REGIONS.filter((r) => focusRegions.has(r.key)).map((r) => r.view);
+    if (focusIds && focusIds.size) {
+      // Frame the hand-picked countries, unless they are spread across the whole map.
+      const boxes = [...focusIds].map((id) => path.bounds(featureById.get(id).main));
+      const b = [[d3.min(boxes, (q) => q[0][0]), d3.min(boxes, (q) => q[0][1])], [d3.max(boxes, (q) => q[1][0]), d3.max(boxes, (q) => q[1][1])]];
+      if (b[1][0] - b[0][0] < (x1 - x0) * 0.75) {
+        zoomToBounds(b, { duration, maxK: 8, padding: 0.85 });
+        return;
+      }
+    }
+    const views = focusIds ? [] : REGIONS.filter((r) => focusRegions.has(r.key)).map((r) => r.view);
     if (views.length && views.every(Boolean)) {
       // Frame the studied regions: project points along each box's edges.
       const pts = views.flatMap(([[w, so], [e, n]]) =>
@@ -474,18 +486,77 @@
     cats: new Set(['location', 'capital', 'flag']),
     count: 25,
     regions: new Set(),
+    custom: false,
+    picked: loadPicked(),
+    search: '',
+    onlyPicked: false,
   };
 
-  const setupPool = () => COUNTRIES.filter((c) => !setup.regions.size || setup.regions.has(c.continent));
+  // The custom checklist is remembered in this browser, so a test list survives a reload.
+  function loadPicked() {
+    try {
+      const ids = JSON.parse(localStorage.getItem('globelet.custom') || '[]');
+      return new Set(ids.filter((id) => byId.has(id)));
+    } catch (e) {
+      return new Set();
+    }
+  }
+  function savePicked() {
+    try {
+      localStorage.setItem('globelet.custom', JSON.stringify([...setup.picked]));
+    } catch (e) {
+      // Storage can be unavailable (private mode); the list then lasts for this visit only.
+    }
+  }
+
+  const setupPool = () =>
+    setup.custom
+      ? COUNTRIES.filter((c) => setup.picked.has(c.id))
+      : COUNTRIES.filter((c) => !setup.regions.size || setup.regions.has(c.continent));
+
+  const norm = (t) => t.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+  // Countries matching the search box: by name, official name, capital or region.
+  function customMatches() {
+    const q = norm(setup.search.trim());
+    return COUNTRIES.filter((c) => {
+      if (setup.onlyPicked && !setup.picked.has(c.id)) return false;
+      if (!q) return true;
+      return [c.name, c.official, c.capital, c.continent, c.subregion].some((t) => norm(t).includes(q));
+    });
+  }
+
+  function renderCustomList() {
+    const list = customMatches();
+    const allShownPicked = list.length > 0 && list.every((c) => setup.picked.has(c.id));
+    $('#custom-count').textContent = `${setup.picked.size} selected`;
+    $('#custom-toggle-shown').textContent = allShownPicked ? `Untick shown (${list.length})` : `Tick shown (${list.length})`;
+    $('#custom-toggle-shown').disabled = !list.length;
+    $('#custom-only').setAttribute('aria-pressed', setup.onlyPicked);
+    $('#custom-clear').disabled = !setup.picked.size;
+    $('#custom-list').innerHTML = list.length
+      ? list
+          .map(
+            (c) => `<label class="pick">
+              <input type="checkbox" id="pick-${c.id}" data-id="${c.id}" ${setup.picked.has(c.id) ? 'checked' : ''} />
+              <img src="${flagUrl(c)}" alt="" loading="lazy" />
+              <span class="pick-name">${esc(c.name)}</span>
+              <span class="pick-region">${esc(c.continent)}</span>
+            </label>`
+          )
+          .join('')
+      : `<p class="pick-empty">${setup.onlyPicked && !setup.search ? 'No countries ticked yet.' : `No country matches “${esc(setup.search)}”.`}</p>`;
+  }
 
   function renderSetup() {
     const pool = setupPool();
     const regionCount = (key) => COUNTRIES.filter((c) => c.continent === key).length;
     $('#region-row').innerHTML =
-      `<button class="count region" data-region="" aria-pressed="${!setup.regions.size}">Whole world<small>${COUNTRIES.length}</small></button>` +
+      `<button class="count region" data-region="" aria-pressed="${!setup.custom && !setup.regions.size}">Whole world<small>${COUNTRIES.length}</small></button>` +
       REGIONS.map(
-        (r) => `<button class="count region" data-region="${r.key}" aria-pressed="${setup.regions.has(r.key)}">${r.key}<small>${regionCount(r.key)}</small></button>`
-      ).join('');
+        (r) => `<button class="count region" data-region="${r.key}" aria-pressed="${!setup.custom && setup.regions.has(r.key)}">${r.key}<small>${regionCount(r.key)}</small></button>`
+      ).join('') +
+      `<button class="count region custom" data-region="__custom" aria-pressed="${setup.custom}">Custom<small>${setup.picked.size}</small></button>`;
+    $('#custom-panel').hidden = !setup.custom;
     const total = Math.min(setup.count, pool.length);
     const order = QUESTION_ORDER.filter((k) => setup.cats.has(k));
     $('#category-grid').innerHTML = CATEGORIES.map((c) => {
@@ -499,30 +570,84 @@
         <span class="order">${on ? 'Q' + n : ''}</span>
       </button>`;
     }).join('');
-    $('#count-row').innerHTML =
-      COUNTS.filter((n) => n < pool.length)
+    $('#count-row').innerHTML = !pool.length
+      ? '<p class="count-empty">Tick some countries above first.</p>'
+      : COUNTS.filter((n) => n < pool.length)
         .map((n) => `<button class="count" data-count="${n}" aria-pressed="${setup.count === n}">${n}</button>`)
         .join('') +
       `<button class="count" data-count="all" aria-pressed="${setup.count >= pool.length}">All<small>${pool.length}</small></button>`;
     $('#select-all').textContent = setup.cats.size === CATEGORIES.length ? 'Clear' : 'Select all';
     const q = setup.cats.size * total;
     $('#setup-summary').innerHTML = setup.cats.size
-      ? `<strong>${total}</strong> ${setup.regions.size === 1 ? [...setup.regions][0] + ' ' : ''}countries${setup.regions.size > 1 ? ` from <strong>${setup.regions.size}</strong> regions` : ''} × <strong>${setup.cats.size}</strong> topic${setup.cats.size > 1 ? 's' : ''} = <strong>${q}</strong> questions`
+      ? !pool.length
+        ? 'Tick at least one country in your custom list.'
+        : setup.custom
+        ? `<strong>${total}</strong> of your countries × <strong>${setup.cats.size}</strong> topic${setup.cats.size > 1 ? 's' : ''} = <strong>${q}</strong> questions`
+        : `<strong>${total}</strong> ${setup.regions.size === 1 ? [...setup.regions][0] + ' ' : ''}countries${setup.regions.size > 1 ? ` from <strong>${setup.regions.size}</strong> regions` : ''} × <strong>${setup.cats.size}</strong> topic${setup.cats.size > 1 ? 's' : ''} = <strong>${q}</strong> questions`
       : 'Pick at least one topic to begin.';
-    $('#start-btn').disabled = setup.cats.size === 0;
+    $('#start-btn').disabled = setup.cats.size === 0 || !pool.length;
     // Preview the chosen regions on the map behind the setup card.
-    focusRegions = new Set(setup.regions);
+    applyFocus();
     if (!game) {
       countryPaths.attr('class', baseClass);
       syncMarkerClasses();
-      zoomWorld(600);
+      clearTimeout(previewTimer);
+      previewTimer = setTimeout(() => zoomWorld(600), 200);
     }
   }
+  let previewTimer;
+
+  function applyFocus() {
+    focusRegions = new Set(setup.custom ? [] : setup.regions);
+    focusIds = setup.custom ? new Set(setup.picked) : null;
+  }
+
+  $('#custom-search').addEventListener('input', (e) => {
+    setup.search = e.target.value;
+    renderCustomList();
+  });
+  $('#custom-list').addEventListener('change', (e) => {
+    const id = e.target.dataset.id;
+    if (!id) return;
+    e.target.checked ? setup.picked.add(id) : setup.picked.delete(id);
+    savePicked();
+    renderCustomList();
+    renderSetup();
+  });
+  $('#custom-toggle-shown').addEventListener('click', () => {
+    const list = customMatches();
+    const allPicked = list.every((c) => setup.picked.has(c.id));
+    list.forEach((c) => (allPicked ? setup.picked.delete(c.id) : setup.picked.add(c.id)));
+    savePicked();
+    renderCustomList();
+    renderSetup();
+  });
+  $('#custom-only').addEventListener('click', () => {
+    setup.onlyPicked = !setup.onlyPicked;
+    renderCustomList();
+  });
+  $('#custom-clear').addEventListener('click', () => {
+    setup.picked.clear();
+    setup.onlyPicked = false;
+    savePicked();
+    renderCustomList();
+    renderSetup();
+  });
 
   $('#region-row').addEventListener('click', (e) => {
     const b = e.target.closest('[data-region]');
     if (!b) return;
     const k = b.dataset.region;
+    if (k === '__custom') {
+      setup.custom = !setup.custom;
+      if (setup.custom) {
+        renderCustomList();
+        requestAnimationFrame(() => $('#custom-panel').scrollIntoView({ block: 'nearest', behavior: 'smooth' }));
+      }
+      renderSetup();
+      return;
+    }
+    setup.custom = false;
     if (!k) setup.regions.clear();
     else if (setup.regions.has(k)) setup.regions.delete(k);
     else setup.regions.add(k);
@@ -556,7 +681,7 @@
   let game = null;
 
   function startGame(countries) {
-    focusRegions = new Set(setup.regions);
+    applyFocus();
     game = {
       countries,
       steps: QUESTION_ORDER.filter((k) => setup.cats.has(k)),

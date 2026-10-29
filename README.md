@@ -17,6 +17,8 @@ An interactive, map-based geography quiz covering all **198 countries**
    Central America & Caribbean, Central Asia, East Asia, Europe, Middle East / West Asia,
    North America, Oceania, South America, South Asia and Southeast Asia.
    The map frames the chosen regions and dims the rest.
+   Or pick **Custom** to search for and tick exactly the countries you want (handy for a
+   specific map test); the list is remembered in your browser.
 3. **Pick how many countries** – 10, 25, 50, 75, 100, 150 or All (only counts that fit
    the chosen regions are offered).
 4. For each country the selected questions are asked in this order:
