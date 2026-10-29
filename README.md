@@ -1,4 +1,4 @@
-# Worldwise — Geography Game
+# Globelet — Geography Game
 
 An interactive, map-based geography quiz covering all **198 countries**
 (the 193 UN members plus Vatican City, Palestine, Kosovo, Taiwan and the Cook Islands).
