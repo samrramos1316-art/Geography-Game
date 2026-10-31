@@ -703,9 +703,57 @@
   // ---------------------------------------------------------------------------
   let game = null;
 
-  function startGame(countries) {
+  // ---------------------------------------------------------------------------
+  // Anonymous quiz tracking for the owner dashboard (/owner). Nothing personal is sent:
+  // topics, region, score and which countries were answered right or wrong.
+  // ---------------------------------------------------------------------------
+  const TRACKING =
+    !/^(localhost|127\.|0\.0\.0\.0)/.test(location.hostname) &&
+    (() => {
+      try {
+        return localStorage.getItem('globelet.notrack') !== '1';
+      } catch (e) {
+        return true;
+      }
+    })();
+  const DEVICE = IS_TOUCH ? (Math.min(screen.width, screen.height) < 600 ? 'phone' : 'tablet') : 'desktop';
+  const newId = () => (crypto.randomUUID ? crypto.randomUUID() : `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 12)}`);
+
+  function track(data, beacon = false) {
+    if (!TRACKING) return;
+    const body = JSON.stringify(data);
+    if (beacon && navigator.sendBeacon) {
+      navigator.sendBeacon('/api/track', new Blob([body], { type: 'application/json' }));
+      return;
+    }
+    fetch('/api/track', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body, keepalive: true }).catch(() => {});
+  }
+
+  function trackEnd(g, status, beacon = false) {
+    if (!g || g.ended) return;
+    g.ended = true;
+    track(
+      {
+        type: 'end',
+        id: g.id,
+        status,
+        bestStreak: g.bestStreak,
+        durationS: Math.round((Date.now() - g.startedAt) / 1000),
+        results: g.results.map((r) => [r.country.id, r.kind, r.correct ? 1 : 0]),
+      },
+      beacon
+    );
+  }
+  // Closing the tab mid-quiz still records how far the player got.
+  window.addEventListener('pagehide', () => game && trackEnd(game, 'abandoned', true));
+
+  function startGame(countries, scope) {
     applyFocus();
+    if (game) trackEnd(game, 'quit');
     game = {
+      id: newId(),
+      startedAt: Date.now(),
+      ended: false,
       countries,
       steps: QUESTION_ORDER.filter((k) => setup.cats.has(k)),
       ci: 0,
@@ -722,6 +770,17 @@
     $('#results').hidden = true;
     $('#hud').hidden = false;
     $('#panel').hidden = false;
+    track({
+      type: 'start',
+      id: game.id,
+      topics: game.steps,
+      scope:
+        scope ||
+        (setup.custom ? `Custom list (${setup.picked.size})` : setup.regions.size ? [...setup.regions].sort().join(' + ') : 'Whole world'),
+      countries: countries.length,
+      questions: countries.length * game.steps.length,
+      device: DEVICE,
+    });
     showCountry();
   }
 
@@ -1020,6 +1079,7 @@
   // ---------------------------------------------------------------------------
   function showResults() {
     clearTimeout(game.timer);
+    trackEnd(game, game.results.length === game.countries.length * game.steps.length ? 'finished' : 'quit');
     mapClickHandler = null;
     namesHidden = false;
     svg.classed('map-interactive', false);
@@ -1090,14 +1150,17 @@
       $('#retry-btn').addEventListener('click', () => {
         setup.cats = new Set(steps);
         renderSetup();
-        startGame(shuffle(missedCountries));
+        startGame(shuffle(missedCountries), 'Retry missed');
       });
     }
     game = null;
   }
 
   function backToSetup() {
-    if (game) clearTimeout(game.timer);
+    if (game) {
+      clearTimeout(game.timer);
+      trackEnd(game, 'quit');
+    }
     game = null;
     mapClickHandler = null;
     namesHidden = false;

@@ -58,3 +58,17 @@ after editing `scripts/country-facts.mjs`:
 npm install
 npm run build:data
 ```
+
+## Owner dashboard
+
+`/owner` (e.g. https://globelet.net/owner) shows quiz activity: quizzes started and
+finished, scores, topic popularity and accuracy, regions, devices, the hardest and
+most-quizzed countries, and a log of recent quizzes.
+
+- The game sends anonymous events to `api/track.js` (topics, region, score, which
+  countries were right or wrong; nothing personal). Plays on `localhost` aren't sent.
+- `api/stats.js` serves the numbers and needs the `OWNER_PASSWORD` environment variable
+  (set in Vercel → Project → Settings → Environment Variables).
+- Data lives in a Neon Postgres database connected through the Vercel Marketplace
+  (`DATABASE_URL`); tables are created automatically on first use.
+- The dashboard has a "Count my games" switch so your own plays can be left out.

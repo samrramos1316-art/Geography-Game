@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Globelet Owner Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>" />
+  <style>
+    /* Same world as the game: deep-ocean navy, warm gold accent, glass panels. */
+    :root {
+      --bg: #071423;
+      --bg-2: #0d2238;
+      --panel: rgba(12, 28, 46, 0.82);
+      --line: rgba(255, 255, 255, 0.08);
+      --ink: #eef4fb;
+      --ink-soft: #a9bbd0;
+      --ink-faint: #6f849c;
+      --accent: #f6c56b;
+      --accent-2: #f39a6b;
+      --good: #3ddc97;
+      --bad: #ff6b7a;
+      --muted-bar: rgba(255, 255, 255, 0.08);
+      --serif: 'Fraunces', Georgia, serif;
+      --sans: 'Plus Jakarta Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+      color-scheme: dark;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: var(--sans);
+      color: var(--ink);
+      background: radial-gradient(1100px 700px at 80% -10%, var(--bg-2), var(--bg) 70%) fixed, var(--bg);
+      -webkit-font-smoothing: antialiased;
+    }
+    button, input { font: inherit; color: inherit; }
+    button { cursor: pointer; }
+    [hidden] { display: none !important; }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+    .wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding-block: 24px 60px;
+      padding-left: max(20px, env(safe-area-inset-left, 0px));
+      padding-right: max(20px, env(safe-area-inset-right, 0px));
+      display: grid;
+      gap: 20px;
+    }
+    header { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+    .brand { display: flex; align-items: center; gap: 10px; margin-right: auto; text-decoration: none; color: inherit; }
+    .mark {
+      width: 34px; height: 34px; border-radius: 11px; display: grid; place-items: center;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #1b1206; font-weight: 800;
+    }
+    .brand b { font-family: var(--serif); font-size: 21px; }
+    .brand span { color: var(--ink-faint); font-size: 13px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
+
+    .seg { display: flex; padding: 3px; border-radius: 12px; background: rgba(255, 255, 255, 0.05); border: 1px solid var(--line); }
+    .seg button { border: 0; background: none; padding: 7px 12px; border-radius: 9px; font-size: 13px; font-weight: 700; color: var(--ink-soft); }
+    .seg button[aria-pressed="true"] { background: var(--ink); color: #0a1626; }
+    .btn {
+      padding: 8px 14px; border-radius: 12px; border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.04); font-size: 13px; font-weight: 700; color: var(--ink-soft);
+    }
+    .btn:hover { color: var(--ink); background: rgba(255, 255, 255, 0.08); }
+    .btn.primary { background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: #22160a; border: 0; }
+
+    .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 18px; padding: 20px; min-width: 0; }
+    .panel h2 { margin: 0 0 14px; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-soft); }
+    .panel h2 small { text-transform: none; letter-spacing: 0; font-weight: 600; color: var(--ink-faint); margin-left: 6px; }
+
+    /* Login */
+    .login { max-width: 400px; margin: 12vh auto 0; display: grid; gap: 14px; }
+    .login h1 { font-family: var(--serif); font-size: 30px; margin: 0; }
+    .login p { margin: 0; color: var(--ink-soft); line-height: 1.5; }
+    .login input {
+      width: 100%; padding: 13px 14px; border-radius: 12px; border: 1px solid var(--line);
+      background: rgba(0, 0, 0, 0.25); font-size: 16px;
+    }
+    .login input:focus { outline: none; border-color: var(--accent); }
+    .error { color: var(--bad); font-size: 14px; font-weight: 600; min-height: 1.2em; }
+
+    /* KPIs */
+    .kpis { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+    .kpi { padding: 16px 18px; }
+    .kpi .label { font-size: 12px; font-weight: 700; color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.08em; }
+    .kpi .value { font-family: var(--serif); font-size: 34px; line-height: 1.1; margin-top: 6px; font-variant-numeric: tabular-nums; }
+    .kpi .sub { font-size: 13px; color: var(--ink-soft); margin-top: 4px; }
+
+    .grid-2 { display: grid; grid-template-columns: 1.3fr 1fr; gap: 16px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+
+    /* Chart */
+    .chart svg { width: 100%; height: 220px; display: block; overflow: visible; }
+    .chart .legend { display: flex; gap: 16px; font-size: 12.5px; color: var(--ink-soft); margin-top: 8px; }
+    .chart .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; }
+    .axis { fill: var(--ink-faint); font-size: 11px; font-family: var(--sans); }
+    .gridline { stroke: rgba(255, 255, 255, 0.06); }
+
+    /* Bar rows */
+    .rows { display: grid; gap: 10px; }
+    .row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 4px 12px; align-items: center; font-size: 14px; }
+    .row .name { font-weight: 600; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .row .num { color: var(--ink-soft); font-variant-numeric: tabular-nums; font-size: 13px; text-align: right; }
+    .row .bar { grid-column: 1 / -1; height: 6px; border-radius: 99px; background: var(--muted-bar); overflow: hidden; }
+    .row .bar div { height: 100%; border-radius: inherit; background: linear-gradient(90deg, var(--accent), var(--accent-2)); }
+    .row .bar.acc div { background: var(--good); }
+    .row .bar.acc.low div { background: var(--bad); }
+    .empty { color: var(--ink-faint); font-size: 14px; margin: 0; }
+
+    .country { display: grid; grid-template-columns: 30px minmax(0, 1fr) auto; gap: 10px; align-items: center; font-size: 14px; }
+    .country img { width: 30px; border-radius: 3px; box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.15); }
+    .country .num { font-size: 13px; color: var(--ink-soft); font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .country .num b { color: var(--ink); }
+    .country .num b.low { color: var(--bad); }
+
+    /* Table */
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: 13.5px; min-width: 760px; }
+    th { text-align: left; font-size: 11.5px; font-weight: 700; color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.07em; padding: 0 10px 10px; }
+    td { padding: 10px; border-top: 1px solid var(--line); vertical-align: middle; }
+    td.n { font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .pill { white-space: nowrap; display: inline-block; padding: 3px 9px; border-radius: 99px; font-size: 11.5px; font-weight: 700; }
+    .pill.finished { background: rgba(61, 220, 151, 0.14); color: var(--good); }
+    .pill.quit { background: rgba(246, 197, 107, 0.14); color: var(--accent); }
+    .pill.abandoned, .pill.started { background: rgba(255, 255, 255, 0.07); color: var(--ink-soft); }
+    .topics { color: var(--ink-soft); }
+
+    .settings { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .settings p { margin: 0; color: var(--ink-soft); font-size: 14px; max-width: 62ch; line-height: 1.5; }
+    .switch { display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 14px; cursor: pointer; }
+    .switch input { width: 18px; height: 18px; accent-color: var(--accent); }
+    .updated { font-size: 12.5px; color: var(--ink-faint); }
+
+    @media (max-width: 980px) {
+      .kpis { grid-template-columns: repeat(2, 1fr); }
+      .kpis .kpi:first-child { grid-column: 1 / -1; }
+      .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      .row .bar div { transition: width 0.6s ease; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="/"><span class="mark">◎</span><b>Globelet</b><span>Owner</span></a>
+      <div class="seg" id="range" hidden>
+        <button data-days="1">24h</button>
+        <button data-days="7">7 days</button>
+        <button data-days="30" aria-pressed="true">30 days</button>
+        <button data-days="90">90 days</button>
+        <button data-days="3650">All time</button>
+      </div>
+      <button class="btn" id="refresh" hidden>Refresh</button>
+      <button class="btn" id="signout" hidden>Sign out</button>
+    </header>
+
+    <form class="login panel" id="login" hidden>
+      <h1>Owner dashboard</h1>
+      <p>See who's playing Globelet: quizzes started and finished, scores, popular topics and the countries players miss most.</p>
+      <input type="password" id="password" placeholder="Owner password" autocomplete="current-password" required />
+      <div class="error" id="login-error"></div>
+      <button class="btn primary" type="submit">Open dashboard</button>
+    </form>
+
+    <main id="dash" hidden style="display: grid; gap: 20px">
+      <section class="kpis" id="kpis"></section>
+
+      <section class="grid-2">
+        <div class="panel chart">
+          <h2>Quizzes per day <small id="chart-range"></small></h2>
+          <div id="chart"></div>
+          <div class="legend"><span><i style="background: var(--muted-bar); outline: 1px solid rgba(255,255,255,.18)"></i>Started</span><span><i style="background: var(--accent)"></i>Finished</span></div>
+        </div>
+        <div class="panel">
+          <h2>Topics <small>how often picked · % answered correctly</small></h2>
+          <div class="rows" id="topics"></div>
+        </div>
+      </section>
+
+      <section class="grid-3">
+        <div class="panel"><h2>Where in the world</h2><div class="rows" id="scopes"></div></div>
+        <div class="panel"><h2>Hardest countries <small>min. 3 answers</small></h2><div class="rows" id="hardest"></div></div>
+        <div class="panel"><h2>Most quizzed countries</h2><div class="rows" id="popular"></div></div>
+      </section>
+
+      <section class="grid-2">
+        <div class="panel"><h2>Devices</h2><div class="rows" id="devices"></div></div>
+        <div class="panel settings">
+          <p>Your own games count as players too. Turn this off to stop counting games played in this browser.</p>
+          <label class="switch"><input type="checkbox" id="count-me" /> Count my games</label>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Recent quizzes <small id="updated" class="updated"></small></h2>
+        <div class="table-wrap"><table>
+          <thead><tr><th>When</th><th>Status</th><th>Score</th><th>Topics</th><th>Where</th><th>Countries</th><th>Time</th><th>Device</th></tr></thead>
+          <tbody id="recent"></tbody>
+        </table></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="data/countries.js"></script>
+  <script>
+    (() => {
+      const $ = (s) => document.querySelector(s);
+      const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
+      const byId = new Map(window.COUNTRIES.map((c) => [c.id, c]));
+      const TOPIC_NAMES = {
+        shape: 'Country shape', location: 'Location', capital: 'Capital', flag: 'Flag',
+        population: 'Population', government: 'Government', language: 'Language', currency: 'Currency',
+      };
+      const store = {
+        get(k) { try { return sessionStorage.getItem(k); } catch (e) { return null; } },
+        set(k, v) { try { v == null ? sessionStorage.removeItem(k) : sessionStorage.setItem(k, v); } catch (e) {} },
+      };
+      let password = store.get('globelet.owner');
+      let days = 30;
+
+      const pct = (a, b) => (b ? Math.round((a / b) * 100) : 0);
+      const fmt = (n) => Number(n || 0).toLocaleString('en-US');
+      const dur = (s) => (s == null ? '–' : s < 60 ? `${s}s` : `${Math.floor(s / 60)}m ${String(s % 60).padStart(2, '0')}s`);
+      function ago(iso) {
+        const s = (Date.now() - new Date(iso.replace(' ', 'T').replace(/\+00$/, 'Z')).getTime()) / 1000;
+        if (s < 60) return 'just now';
+        if (s < 3600) return `${Math.floor(s / 60)} min ago`;
+        if (s < 86400) return `${Math.floor(s / 3600)} h ago`;
+        return new Date(iso.replace(' ', 'T').replace(/\+00$/, 'Z')).toLocaleDateString(undefined, { month: 'short', day: 'numeric' });
+      }
+
+      function showLogin(message) {
+        $('#dash').hidden = true;
+        ['#range', '#refresh', '#signout'].forEach((s) => ($(s).hidden = true));
+        $('#login').hidden = false;
+        $('#login-error').textContent = message || '';
+        $('#password').focus();
+      }
+
+      async function load() {
+        $('#refresh').textContent = 'Loading…';
+        try {
+          const res = await fetch(`/api/stats?days=${days}`, { headers: { Authorization: `Bearer ${password}` } });
+          const data = await res.json().catch(() => ({}));
+          if (res.status === 401) {
+            store.set('globelet.owner', null);
+            return showLogin('That password is not right. Try again.');
+          }
+          if (!res.ok) throw new Error(data.error || `Server error ${res.status}`);
+          store.set('globelet.owner', password);
+          $('#login').hidden = true;
+          ['#range', '#refresh', '#signout'].forEach((s) => ($(s).hidden = false));
+          $('#dash').hidden = false;
+          render(data);
+        } catch (e) {
+          if (!$('#dash').hidden) $('#updated').textContent = `Could not refresh: ${e.message}`;
+          else showLogin(`Could not load the dashboard: ${e.message}`);
+        } finally {
+          $('#refresh').textContent = 'Refresh';
+        }
+      }
+
+      function barRow(name, num, frac, cls = '') {
+        return `<div class="row"><span class="name">${name}</span><span class="num">${num}</span><div class="bar ${cls}"><div style="width:${Math.max(0, Math.min(100, frac * 100))}%"></div></div></div>`;
+      }
+      const empty = (msg = 'No quizzes in this period yet.') => `<p class="empty">${msg}</p>`;
+
+      function render(d) {
+        const t = d.totals;
+        const completion = pct(t.finished, t.started);
+        $('#kpis').innerHTML = [
+          ['Quizzes started', fmt(t.started), `${fmt(t.finished)} finished · ${fmt(t.quit)} quit · ${fmt(t.unfinished)} left open`],
+          ['Completion rate', `${completion}%`, 'of started quizzes were finished'],
+          ['Questions answered', fmt(t.answered), `${pct(t.correct, t.answered)}% answered correctly`],
+          ['Average score', t.avg_score == null ? '–' : `${t.avg_score}%`, 'in finished quizzes'],
+          ['Average quiz time', dur(t.avg_duration), 'for finished quizzes'],
+        ].map(([l, v, s]) => `<div class="panel kpi"><div class="label">${l}</div><div class="value">${v}</div><div class="sub">${s}</div></div>`).join('');
+
+        renderChart(d.daily);
+
+        const acc = new Map(d.accuracy.map((a) => [a.topic, a]));
+        const topicMax = Math.max(1, ...d.topics.map((x) => x.quizzes));
+        $('#topics').innerHTML = d.topics.length
+          ? d.topics.sort((a, b) => b.quizzes - a.quizzes).map((x) => {
+              const a = acc.get(x.topic);
+              const p = a ? pct(a.correct, a.answered) : null;
+              return barRow(esc(TOPIC_NAMES[x.topic] || x.topic), `${fmt(x.quizzes)} quiz${x.quizzes === 1 ? '' : 'zes'} · ${p == null ? 'no answers' : p + '% correct'}`, x.quizzes / topicMax);
+            }).join('')
+          : empty();
+
+        const scopeMax = Math.max(1, ...d.scopes.map((x) => x.quizzes));
+        $('#scopes').innerHTML = d.scopes.length ? d.scopes.map((x) => barRow(esc(x.scope), fmt(x.quizzes), x.quizzes / scopeMax)).join('') : empty();
+
+        const devMax = Math.max(1, ...d.devices.map((x) => x.quizzes));
+        $('#devices').innerHTML = d.devices.length
+          ? d.devices.map((x) => barRow(esc(x.device[0].toUpperCase() + x.device.slice(1)), `${fmt(x.quizzes)} · ${pct(x.quizzes, t.started)}%`, x.quizzes / devMax)).join('')
+          : empty();
+
+        const countryRow = (id, right) => {
+          const c = byId.get(id);
+          return `<div class="country"><img src="flags/${c ? c.iso2 : 'xx'}.svg" alt="" /><span class="name">${esc(c ? c.name : id)}</span><span class="num">${right}</span></div>`;
+        };
+        $('#hardest').innerHTML = d.hardest.length
+          ? d.hardest.map((x) => countryRow(x.country, `<b class="${pct(x.correct, x.answered) < 50 ? 'low' : ''}">${pct(x.correct, x.answered)}%</b> correct of ${fmt(x.answered)}`)).join('')
+          : empty('Not enough answers yet.');
+        $('#popular').innerHTML = d.popular.length
+          ? d.popular.map((x) => countryRow(x.country, `${fmt(x.quizzes)} quiz${x.quizzes === 1 ? '' : 'zes'}`)).join('')
+          : empty();
+
+        $('#recent').innerHTML = d.recent.length
+          ? d.recent.map((r) => `<tr>
+              <td class="n">${ago(r.started_at)}</td>
+              <td><span class="pill ${r.status}">${r.status === 'started' ? 'in progress' : r.status === 'abandoned' ? 'closed early' : r.status}</span></td>
+              <td class="n">${r.answered ? `${r.correct}/${r.answered} · ${pct(r.correct, r.answered)}%` : '–'}</td>
+              <td class="topics">${r.topics.map((x) => esc(TOPIC_NAMES[x] || x)).join(', ')}</td>
+              <td>${esc(r.scope)}</td>
+              <td class="n">${fmt(r.countries)}</td>
+              <td class="n">${dur(r.duration_s)}</td>
+              <td>${esc(r.device || '–')}</td>
+            </tr>`).join('')
+          : `<tr><td colspan="8">${empty('No quizzes in this period yet. Play one at globelet.net and refresh.')}</td></tr>`;
+        $('#updated').textContent = `updated ${new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`;
+        $('#chart-range').textContent = days >= 3650 ? 'all time' : days === 1 ? 'last 24 hours' : `last ${days} days`;
+      }
+
+      let lastDaily = [];
+      window.addEventListener('resize', () => lastDaily && !$('#dash').hidden && renderChart(lastDaily));
+      function renderChart(daily) {
+        lastDaily = daily;
+        // One bar pair per day; fill in missing days so gaps show as gaps.
+        const map = new Map(daily.map((x) => [x.day, x]));
+        const span = Math.min(days, 90);
+        let list;
+        if (days >= 3650 && daily.length) {
+          const first = new Date(daily[0].day + 'T00:00:00Z');
+          const n = Math.max(1, Math.round((Date.now() - first) / 864e5) + 1);
+          list = Array.from({ length: Math.min(n, 365) }, (_, i) => new Date(Date.now() - (Math.min(n, 365) - 1 - i) * 864e5));
+        } else {
+          list = Array.from({ length: Math.max(span, 1) }, (_, i) => new Date(Date.now() - (span - 1 - i) * 864e5));
+        }
+        const rows = list.map((d) => {
+          const key = d.toISOString().slice(0, 10);
+          return { key, started: map.get(key)?.started || 0, finished: map.get(key)?.finished || 0 };
+        });
+        // Drawn at the container's real width so text keeps its size on any screen.
+        const W = Math.max(280, $('#chart').clientWidth), H = 220, L = 30, B = 22, T = 10;
+        const max = Math.max(4, ...rows.map((r) => r.started));
+        const nice = Math.ceil(max / 4) * 4;
+        const bw = (W - L) / rows.length;
+        const y = (v) => H - B - (v / nice) * (H - B - T);
+        let g = '';
+        for (let i = 0; i <= 4; i++) {
+          const v = (nice / 4) * i;
+          g += `<line class="gridline" x1="${L}" x2="${W}" y1="${y(v)}" y2="${y(v)}"/><text class="axis" x="${L - 6}" y="${y(v) + 4}" text-anchor="end">${v}</text>`;
+        }
+        const step = Math.ceil(rows.length / Math.max(2, Math.floor(W / 90)));
+        rows.forEach((r, i) => {
+          const x = L + i * bw + bw * 0.15;
+          const w = Math.max(1, bw * 0.7);
+          g += `<rect x="${x}" y="${y(r.started)}" width="${w}" height="${H - B - y(r.started)}" rx="2" fill="rgba(255,255,255,0.12)"><title>${r.key}: ${r.started} started, ${r.finished} finished</title></rect>`;
+          g += `<rect x="${x}" y="${y(r.finished)}" width="${w}" height="${H - B - y(r.finished)}" rx="2" fill="var(--accent)" pointer-events="none"/>`;
+          if (i % step === 0 || i === rows.length - 1) {
+            const label = new Date(r.key + 'T00:00:00Z').toLocaleDateString(undefined, { month: 'short', day: 'numeric', timeZone: 'UTC' });
+            const last = i === rows.length - 1;
+            if (!last && rows.length - 1 - i < step * 0.6) return;
+            g += `<text class="axis" x="${last ? W : x + w / 2}" y="${H - 6}" text-anchor="${last ? 'end' : 'middle'}">${label}</text>`;
+          }
+        });
+        $('#chart').innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Quizzes started and finished per day">${g}</svg>`;
+      }
+
+      $('#login').addEventListener('submit', (e) => {
+        e.preventDefault();
+        password = $('#password').value.trim();
+        if (password) load();
+      });
+      $('#range').addEventListener('click', (e) => {
+        const b = e.target.closest('[data-days]');
+        if (!b) return;
+        days = Number(b.dataset.days);
+        document.querySelectorAll('#range button').forEach((x) => x.setAttribute('aria-pressed', x === b));
+        load();
+      });
+      $('#refresh').addEventListener('click', load);
+      $('#signout').addEventListener('click', () => {
+        store.set('globelet.owner', null);
+        password = null;
+        $('#password').value = '';
+        showLogin();
+      });
+
+      // Same storage key the game checks before sending anything.
+      const countMe = $('#count-me');
+      try { countMe.checked = localStorage.getItem('globelet.notrack') !== '1'; } catch (e) { countMe.checked = true; }
+      countMe.addEventListener('change', () => {
+        try { countMe.checked ? localStorage.removeItem('globelet.notrack') : localStorage.setItem('globelet.notrack', '1'); } catch (e) {}
+      });
+
+      if (password) load();
+      else showLogin();
+      setInterval(() => { if (!document.hidden && password && !$('#dash').hidden) load(); }, 60000);
+    })();
+  </script>
+</body>
+</html>
